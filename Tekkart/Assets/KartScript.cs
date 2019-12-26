@@ -12,9 +12,9 @@ public class KartScript : MonoBehaviour
     float speed, currentSpeed;
     float rotate, currentRotate;
 
-    private float acceleration = 30f;
-    private float steering = 30f;
-    private float gravity = 10f;
+    public float acceleration = 60f;
+    public float steering = 15f;
+    const float gravity = 10f;
 
 
 
