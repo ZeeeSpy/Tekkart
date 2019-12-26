@@ -8,10 +8,11 @@ public class KartScript : MonoBehaviour, Kart
     public Transform kartNormal;
     public LayerMask layerMask;
 
+    public Animator animator;
 
     float speed, currentSpeed;
-    float rotate, currentRotate;
-
+    float currentRotate;
+    public float rotate;
 
     //Kart Stats
     public float TopSpeed = 60f;
@@ -62,6 +63,7 @@ public class KartScript : MonoBehaviour, Kart
             int dir = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
             float amount = Mathf.Abs((Input.GetAxis("Horizontal")));
             Steer(dir, amount);
+            animator.SetFloat("Direction", rotate);
         }
         
         if (Boostbool)
@@ -85,6 +87,7 @@ public class KartScript : MonoBehaviour, Kart
                 CurrentBoostTime = MaxBoostTime;
             }
         }
+
     }
 
     private void FixedUpdate()
