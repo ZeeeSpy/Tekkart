@@ -13,6 +13,8 @@ public class KartScript : MonoBehaviour, Kart
 
     public Text speedometertext;
 
+    public ParticleSystem boostparticles;
+    public ParticleSystem boostparticles2;
 
     float speed, currentSpeed;
     float currentRotate;
@@ -84,9 +86,15 @@ public class KartScript : MonoBehaviour, Kart
         //Boost Wear Off
         if (Boostbool)
         {
+            var main = boostparticles.main;
+            var main2 = boostparticles2.main;
+            main.startLifetime = 2.5f;
+            main2.startLifetime = 2.5f;
             CurrentBoostTime = CurrentBoostTime - Time.deltaTime;
             if (CurrentBoostTime < 0)
             {
+                main.startLifetime = 0;
+                main2.startLifetime = 0;
                 Boostbool = false;
                 CurrentBoostTime = MaxBoostTime;
             }
