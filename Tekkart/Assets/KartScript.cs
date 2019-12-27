@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KartScript : MonoBehaviour, Kart
 {
@@ -9,6 +10,9 @@ public class KartScript : MonoBehaviour, Kart
     public LayerMask layerMask;
 
     public Animator animator;
+
+    public Text speedometertext;
+
 
     float speed, currentSpeed;
     float currentRotate;
@@ -88,6 +92,8 @@ public class KartScript : MonoBehaviour, Kart
             }
         }
 
+        int Speedoval = (int)currentSpeed;
+        speedometertext.text = Speedoval.ToString();
     }
 
     private void FixedUpdate()
