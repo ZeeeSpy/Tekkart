@@ -12,6 +12,8 @@ public class KartScript : MonoBehaviour, Kart
     public Animator animator;
 
     public Text speedometertext;
+    public Text debug;
+    public Text driftdebug;
 
     public ParticleSystem boostparticles;
     public ParticleSystem boostparticles2;
@@ -25,7 +27,13 @@ public class KartScript : MonoBehaviour, Kart
     public float steering = 15f;
     public float acceleration = 5f;
     public float handling = 4f;
+
+    //Non Kart Stats
+    private bool drifting;
+    private int driftDirection;
     const float gravity = 10f;
+    private float driftPower;
+    float amount;
 
     private bool Boostbool = false;
 
@@ -67,11 +75,53 @@ public class KartScript : MonoBehaviour, Kart
         if (Input.GetAxis("Horizontal") != 0)
         {
             int dir = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
-            float amount = Mathf.Abs((Input.GetAxis("Horizontal")));
+            amount = Mathf.Abs((Input.GetAxis("Horizontal")));
             Steer(dir, amount);
             animator.SetFloat("Direction", rotate);
+        } else
+        {
+            amount = 0;
         }
-        
+
+
+
+        //Drifting 
+        if (Input.GetButtonDown("Jump") && !drifting && Input.GetAxis("Horizontal") != 0)
+        {
+            drifting = true;
+            driftDirection = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
+        }
+
+        if (Input.GetButtonUp("Jump") && drifting)
+        {
+            drifting = false;
+        }
+
+        if (drifting)
+        {
+            float control;
+            //right, left
+            if (driftDirection == 1)
+            {
+                driftdebug.text = "Direction: Right";
+                control = 0.5f + (Input.GetAxis("Horizontal")*0.4f);
+            } else
+            {
+                driftdebug.text = "Direction: Left";
+                control = 0.5f + (Input.GetAxis("Horizontal") * -0.4f);
+            }
+
+            driftdebug.text = driftdebug.text + "\n Control: " + control.ToString();
+
+            debug.text = "Drifting: True";
+            Steer(driftDirection, control);
+        } else
+        {
+            debug.text = "Drifting: False";
+        }
+
+
+        //Rotate and go forward
         if (Boostbool)
         {
             currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * acceleration * 2); speed = 0f;
@@ -79,13 +129,14 @@ public class KartScript : MonoBehaviour, Kart
         {
             currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * acceleration); speed = 0f;
         }
-
-
         currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * handling); rotate = 0f;
 
-        //Boost Wear Off
+
+
+        //Boost 
         if (Boostbool)
         {
+            debug.text = debug.text + "\n Boost: True";
             var main = boostparticles.main;
             var main2 = boostparticles2.main;
             main.startLifetime = 2.5f;
@@ -98,9 +149,14 @@ public class KartScript : MonoBehaviour, Kart
                 Boostbool = false;
                 CurrentBoostTime = MaxBoostTime;
             }
+        } else
+        {
+            debug.text = debug.text + "\n Boost: False";
         }
 
+        //Hud Stuff
         int Speedoval = (int)currentSpeed;
+        if (Speedoval < 0) { Speedoval = Speedoval * -1; }
         speedometertext.text = Speedoval.ToString();
     }
 
@@ -116,8 +172,7 @@ public class KartScript : MonoBehaviour, Kart
         //Steering
         transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, transform.eulerAngles.y + currentRotate, 0), Time.deltaTime * 5f);
 
-
-
+        //Making the kart follow the road properly
         RaycastHit hitOn;
         RaycastHit hitNear;
 
