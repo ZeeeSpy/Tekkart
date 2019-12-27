@@ -27,6 +27,7 @@ public class KartScript : MonoBehaviour, Kart
     public float steering = 15f;
     public float acceleration = 5f;
     public float handling = 4f;
+    public float driftingability = 0.4f;
 
     //Non Kart Stats
     private bool drifting;
@@ -104,20 +105,24 @@ public class KartScript : MonoBehaviour, Kart
             if (driftDirection == 1)
             {
                 driftdebug.text = "Direction: Right";
-                control = 0.5f + (Input.GetAxis("Horizontal")*0.4f);
+                control = 0.5f + (Input.GetAxis("Horizontal")* driftingability);
             } else
             {
                 driftdebug.text = "Direction: Left";
-                control = 0.5f + (Input.GetAxis("Horizontal") * -0.4f);
+                control = 0.5f + (Input.GetAxis("Horizontal") * -driftingability);
             }
 
-            driftdebug.text = driftdebug.text + "\n Control: " + control.ToString();
+            driftPower = driftPower + Time.deltaTime;
 
+
+            driftdebug.text = driftdebug.text + "\n Control: " + control.ToString();
+            driftdebug.text = driftdebug.text + "\n DriftPower" + driftPower.ToString();
             debug.text = "Drifting: True";
+
             Steer(driftDirection, control);
-        } else
-        {
+        } else {
             debug.text = "Drifting: False";
+            CalculateBoost(driftPower);
         }
 
 
@@ -194,5 +199,34 @@ public class KartScript : MonoBehaviour, Kart
     {
         Boostbool = true;
         CurrentBoostTime = MaxBoostTime;
+    }
+
+    private void CalculateBoost(float boostPower)
+    {
+        if (boostPower > 7)
+        {
+            Boostbool = true;
+            CurrentBoostTime = 1;
+            driftPower = 0;
+            return;
+        }
+
+        else if (boostPower > 5)
+        {
+            Boostbool = true;
+            CurrentBoostTime = 0.5f;
+            driftPower = 0;
+            return;
+        }
+
+        else if (boostPower > 3)
+        {
+            Boostbool = true;
+            CurrentBoostTime = 0.2f;
+            driftPower = 0;
+            return;
+        }
+
+        driftPower = 0;
     }
 }
