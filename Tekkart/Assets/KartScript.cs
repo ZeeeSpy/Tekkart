@@ -15,8 +15,8 @@ public class KartScript : MonoBehaviour, Kart
     public Text debug;
     public Text driftdebug;
 
-    public ParticleSystem boostparticles;
-    public ParticleSystem boostparticles2;
+    public GameObject BoostParticleParent;
+    private ParticleSystem[] BoostParticles;
 
     float speed, currentSpeed;
     float currentRotate;
@@ -41,10 +41,13 @@ public class KartScript : MonoBehaviour, Kart
     const float MaxBoostTime = 1f;
     float CurrentBoostTime = 1f;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        BoostParticles = BoostParticleParent.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem p in BoostParticles)
+        {
+            p.Stop();
+        }
     }
 
     // Update is called once per frame
@@ -83,7 +86,6 @@ public class KartScript : MonoBehaviour, Kart
         {
             amount = 0;
         }
-
 
 
         //Drifting 
@@ -142,15 +144,20 @@ public class KartScript : MonoBehaviour, Kart
         if (Boostbool)
         {
             debug.text = debug.text + "\n Boost: True";
-            var main = boostparticles.main;
-            var main2 = boostparticles2.main;
-            main.startLifetime = 2.5f;
-            main2.startLifetime = 2.5f;
+
+            foreach (ParticleSystem p in BoostParticles)
+            {
+                if (!p.isPlaying) { p.Play(); }
+            }
+
             CurrentBoostTime = CurrentBoostTime - Time.deltaTime;
             if (CurrentBoostTime < 0)
             {
-                main.startLifetime = 0;
-                main2.startLifetime = 0;
+                foreach (ParticleSystem p in BoostParticles)
+                {
+                    if (p.isPlaying) { p.Stop(); }
+                   
+                }
                 Boostbool = false;
                 CurrentBoostTime = MaxBoostTime;
             }

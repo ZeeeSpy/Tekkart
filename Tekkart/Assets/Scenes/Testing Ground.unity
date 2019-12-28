@@ -16718,8 +16718,7 @@ MonoBehaviour:
   speedometertext: {fileID: 1251072167}
   debug: {fileID: 174455844}
   driftdebug: {fileID: 1099096771}
-  boostparticles: {fileID: 739346277}
-  boostparticles2: {fileID: 1398880123}
+  BoostParticleParent: {fileID: 1168955822}
   rotate: 0
   TopSpeed: 60
   steering: 15
@@ -16765,7 +16764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168955823}
   m_Layer: 0
-  m_Name: Particle Parent
+  m_Name: BoostPartcleParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
