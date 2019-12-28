@@ -6260,6 +6260,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f908d05dd3316d40a691247cb7183c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotate: 0
+  TopSpeed: 60
+  steering: 15
+  acceleration: 5
+  handling: 4
+  driftingability: 0.4
   KartSphere: {fileID: 1333709648}
   kartNormal: {fileID: 1986299727}
   layerMask:
@@ -6669,13 +6675,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739346274}
-  m_LocalRotation: {x: 0, y: 0.98408735, z: 0.17768589, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.065, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1168955823}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -20.47, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!199 &739346276
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -6747,13 +6753,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739346274}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -6822,7 +6828,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.0001
+      scalar: 2.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -16463,7 +16469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1044020575
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17339,13 +17345,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398880120}
-  m_LocalRotation: {x: 0, y: 0.98408735, z: 0.17768589, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.051, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1168955823}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -20.47, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!199 &1398880122
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -17417,13 +17423,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398880120}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -17492,7 +17498,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.0001
+      scalar: 2.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
