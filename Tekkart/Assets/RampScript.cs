@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class RampScript : MonoBehaviour
 {
-    private KartScript ThisKart;
     private void OnTriggerEnter(Collider other)
     {
-        ThisKart = other.gameObject.GetComponent<KartScript>();
+        Kart ThisKart = other.gameObject.GetComponent<Kart>();
 
 
         if (ThisKart != null)

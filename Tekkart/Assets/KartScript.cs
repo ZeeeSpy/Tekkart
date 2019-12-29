@@ -155,8 +155,7 @@ public class KartScript : MonoBehaviour, Kart
             {
                 foreach (ParticleSystem p in BoostParticles)
                 {
-                    if (p.isPlaying) { p.Stop(); }
-                   
+                   p.Stop();
                 }
                 Boostbool = false;
                 CurrentBoostTime = MaxBoostTime;

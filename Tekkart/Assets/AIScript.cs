@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIScript : MonoBehaviour
+public class AIScript : MonoBehaviour, Kart
 {
     //Kart Stuff
     float speed, currentSpeed;
     float currentRotate;
     public float rotate;
 
-
+    //Kart Stats
     public float TopSpeed = 60f;
     public float steering = 15f;
     public float acceleration = 5f;
@@ -18,23 +18,38 @@ public class AIScript : MonoBehaviour
 
     const float gravity = 10f;
 
+    private bool Boostbool = false;
+    const float MaxBoostTime = 1f;
+    float CurrentBoostTime = 1f;
 
     public Rigidbody KartSphere;
     public Transform kartNormal;
     public LayerMask layerMask;
-
+    public Animator animator;
+    public GameObject BoostParticleParent;
+    private ParticleSystem[] BoostParticles;
 
     //AI Stuff
     private int NumberOfCheckpoints;
-    private int TargetCheckpoint = 1;
+    private int TargetCheckpoint = 2;
+    private const int DefaultTurnMax = 1;
     public GameObject CheckPointParent;
     private Transform[] CheckpointLocationArray;
     private float AngleToTarget;
 
+    private Transform nextposition;
+
     private void Awake()
     {
+        BoostParticles = BoostParticleParent.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem p in BoostParticles)
+        {
+            p.Stop();
+        }
+
         CheckpointLocationArray = CheckPointParent.GetComponentsInChildren<Transform>();
         NumberOfCheckpoints = CheckpointLocationArray.Length;
+        CheckPointReached();
     }
 
     // Update is called once per frame
@@ -44,21 +59,70 @@ public class AIScript : MonoBehaviour
 
 
         //Go Foward
-        speed = TopSpeed;
+        if (!Boostbool)
+        {
+            speed = TopSpeed;
+        }
+        else
+        {
+            speed = TopSpeed + TopSpeed * 1.5f;
+        }
 
         //Steering
-        Vector3 TargetDirection = CheckpointLocationArray[TargetCheckpoint].position - transform.position;
-        AngleToTarget = Vector3.SignedAngle(TargetDirection, transform.forward,Vector3.up);
+
+        //Find Angle of next checkpoint
+        Vector3 TargetDirection = nextposition.position - transform.position;
+        AngleToTarget = Vector3.SignedAngle(TargetDirection, transform.forward, Vector3.up);
+
+        //Decide if that's a left turn or a right turn
         int dir = AngleToTarget > 0 ? -1 : 1;
-        Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint].position);
-        if(AngleToTarget < 0){AngleToTarget = AngleToTarget * -1;}
-        float amount = AngleToTarget / 90;
-        if (amount > 1) { amount = 1; };
+
+        //Caluclate how hard to turn relative to angle
+        if (AngleToTarget < 0) { AngleToTarget = AngleToTarget * -1; }
+        float amount = AngleToTarget / 45;
+        //if (amount > TurnMax) { amount = TurnMax; };
         Steer(dir, amount);
+        animator.SetFloat("Direction", rotate);
 
 
-        currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * acceleration * 2); speed = 0f;
+        Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position, Color.green);
+
+        Debug.DrawLine(transform.position, nextposition.position, Color.red);
+
+        if (Vector3.Distance(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position) < 10)
+        {
+            CheckPointReached();
+        }
+
+        if (Boostbool)
+        {
+            currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * acceleration * 2); speed = 0f;
+        }
+        else
+        {
+            currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * acceleration); speed = 0f;
+        }
         currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * handling); rotate = 0f;
+
+        //Boost 
+        if (Boostbool)
+        {
+            foreach (ParticleSystem p in BoostParticles)
+            {
+                if (!p.isPlaying) { p.Play(); }
+            }
+
+            CurrentBoostTime = CurrentBoostTime - Time.deltaTime;
+            if (CurrentBoostTime < 0)
+            {
+                Boostbool = false;
+                CurrentBoostTime = MaxBoostTime;
+                foreach (ParticleSystem p in BoostParticles)
+                {
+                    p.Stop();
+                }
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -89,12 +153,20 @@ public class AIScript : MonoBehaviour
         TargetCheckpoint++;
         if (TargetCheckpoint == NumberOfCheckpoints-1)
         {
-            TargetCheckpoint = 0;
+            TargetCheckpoint = 2;
         }
+
+        nextposition = CheckpointLocationArray[TargetCheckpoint];
     }
 
     private void Steer(int direction, float amount)
     {
         rotate = (steering * direction) * amount;
+    }
+
+    public void Boost()
+    {
+        Boostbool = true;
+        CurrentBoostTime = MaxBoostTime;
     }
 }

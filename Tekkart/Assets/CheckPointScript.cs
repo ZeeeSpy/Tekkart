@@ -26,6 +26,7 @@ public class CheckPointScript : MonoBehaviour
             return;
         }
 
+        /*
         AIKart = other.gameObject.GetComponent<AIScript>();
 
         if (AIKart != null)
@@ -33,5 +34,6 @@ public class CheckPointScript : MonoBehaviour
             Debug.Log("Got To Here");
             AIKart.CheckPointReached();
         }
+        */
     }
 }
