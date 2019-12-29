@@ -28,6 +28,7 @@ public class AIScript : MonoBehaviour, Kart
     public Animator animator;
     public GameObject BoostParticleParent;
     private ParticleSystem[] BoostParticles;
+    private bool currentlyboosting = false;
 
     //AI Stuff
     private int NumberOfCheckpoints;
@@ -37,7 +38,8 @@ public class AIScript : MonoBehaviour, Kart
     private Transform[] CheckpointLocationArray;
     private float AngleToTarget;
 
-    private Transform nextposition;
+    private Vector3 nextposition;
+    private float RandomRange = 5.0f;
 
     private void Awake()
     {
@@ -71,7 +73,7 @@ public class AIScript : MonoBehaviour, Kart
         //Steering
 
         //Find Angle of next checkpoint
-        Vector3 TargetDirection = nextposition.position - transform.position;
+        Vector3 TargetDirection = nextposition - transform.position;
         AngleToTarget = Vector3.SignedAngle(TargetDirection, transform.forward, Vector3.up);
 
         //Decide if that's a left turn or a right turn
@@ -87,7 +89,7 @@ public class AIScript : MonoBehaviour, Kart
 
         Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position, Color.green);
 
-        Debug.DrawLine(transform.position, nextposition.position, Color.red);
+        Debug.DrawLine(transform.position, nextposition, Color.red);
 
         if (Vector3.Distance(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position) < 10)
         {
@@ -107,9 +109,13 @@ public class AIScript : MonoBehaviour, Kart
         //Boost 
         if (Boostbool)
         {
-            foreach (ParticleSystem p in BoostParticles)
+            if (!currentlyboosting)
             {
-                if (!p.isPlaying) { p.Play(); }
+                foreach (ParticleSystem p in BoostParticles)
+                {
+                   p.Play();
+                }
+                currentlyboosting = true;
             }
 
             CurrentBoostTime = CurrentBoostTime - Time.deltaTime;
@@ -121,6 +127,7 @@ public class AIScript : MonoBehaviour, Kart
                 {
                     p.Stop();
                 }
+                currentlyboosting = false;
             }
         }
     }
@@ -156,7 +163,8 @@ public class AIScript : MonoBehaviour, Kart
             TargetCheckpoint = 2;
         }
 
-        nextposition = CheckpointLocationArray[TargetCheckpoint];
+        nextposition = CheckpointLocationArray[TargetCheckpoint].position;
+        nextposition = nextposition + new Vector3(Random.Range(-RandomRange, RandomRange), 0, Random.Range(-RandomRange, RandomRange));
     }
 
     private void Steer(int direction, float amount)

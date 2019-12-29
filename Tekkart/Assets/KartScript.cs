@@ -21,6 +21,7 @@ public class KartScript : MonoBehaviour, Kart
     float speed, currentSpeed;
     float currentRotate;
     public float rotate;
+    private bool currentlyboosting = false;
 
     //Kart Stats
     public float TopSpeed = 60f;
@@ -144,10 +145,13 @@ public class KartScript : MonoBehaviour, Kart
         if (Boostbool)
         {
             debug.text = debug.text + "\n Boost: True";
-
-            foreach (ParticleSystem p in BoostParticles)
+            if (!currentlyboosting)
             {
-                if (!p.isPlaying) { p.Play(); }
+                foreach (ParticleSystem p in BoostParticles)
+                {
+                    p.Play();
+                }
+                currentlyboosting = true;
             }
 
             CurrentBoostTime = CurrentBoostTime - Time.deltaTime;
@@ -155,8 +159,9 @@ public class KartScript : MonoBehaviour, Kart
             {
                 foreach (ParticleSystem p in BoostParticles)
                 {
-                   p.Stop();
+                    p.Stop();
                 }
+                currentlyboosting = false;
                 Boostbool = false;
                 CurrentBoostTime = MaxBoostTime;
             }
