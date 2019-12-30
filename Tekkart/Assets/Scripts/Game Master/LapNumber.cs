@@ -10,8 +10,6 @@ public class LapNumber : MonoBehaviour
     public Text PositionDebug;
 
     private int NumberOfCheckpoints = -1;
-    private bool newlap = false;
-
     private GameObject[] Players;
     private Dictionary<string, float> PlayerPositions =  new Dictionary<string, float>();
 
