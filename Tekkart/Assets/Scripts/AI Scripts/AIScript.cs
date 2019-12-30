@@ -21,6 +21,7 @@ public class AIScript : MonoBehaviour, Kart
     private bool Boostbool = false;
     const float MaxBoostTime = 1f;
     float CurrentBoostTime = 1f;
+    private float driftPower = 0f;
 
     public Rigidbody KartSphere;
     public Transform kartNormal;
@@ -39,7 +40,7 @@ public class AIScript : MonoBehaviour, Kart
     private float AngleToTarget;
 
     private Vector3 nextposition;
-    private float RandomRange = 5.0f;
+    private const float RandomRange = 5.0f;
 
     private void Awake()
     {
@@ -81,8 +82,12 @@ public class AIScript : MonoBehaviour, Kart
 
         //Caluclate how hard to turn relative to angle
         if (AngleToTarget < 0) { AngleToTarget = AngleToTarget * -1; }
-        float amount = AngleToTarget / 45;
-        //if (amount > TurnMax) { amount = TurnMax; };
+
+
+        float amount = AngleToTarget / 20; //I love magic numbers don't you?
+        if (amount > 1) { amount = 1; };
+
+
         Steer(dir, amount);
         animator.SetFloat("Direction", rotate);
 
@@ -176,5 +181,51 @@ public class AIScript : MonoBehaviour, Kart
     {
         Boostbool = true;
         CurrentBoostTime = MaxBoostTime;
+    }
+
+    public void EnterDriftZone(float DriftSize)
+    {
+        if (Random.value < .5)
+        {
+            Debug.Log("AI Drifting");
+            driftPower = 3 + Random.Range(0f, DriftSize);
+        }
+    }
+
+    public void ExitDriftZone()
+    {
+        if (driftPower > 0)
+        {
+            CalculateBoost();
+        }
+    }
+
+      private void CalculateBoost()
+    {
+        if (driftPower > 7)
+        {
+            Boostbool = true;
+            CurrentBoostTime = 1;
+            driftPower = 0;
+            return;
+        }
+
+        else if (driftPower > 5)
+        {
+            Boostbool = true;
+            CurrentBoostTime = 0.5f;
+            driftPower = 0;
+            return;
+        }
+
+        else if (driftPower > 3)
+        {
+            Boostbool = true;
+            CurrentBoostTime = 0.2f;
+            driftPower = 0;
+            return;
+        }
+
+        driftPower = 0;
     }
 }
