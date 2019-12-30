@@ -187,7 +187,6 @@ public class AIScript : MonoBehaviour, Kart
     {
         if (Random.value < .5)
         {
-            Debug.Log("AI Drifting");
             driftPower = 3 + Random.Range(0f, DriftSize);
         }
     }
