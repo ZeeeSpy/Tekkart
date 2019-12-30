@@ -37,7 +37,7 @@ public class LapNumber : MonoBehaviour
         if (inccheckpoint == ThisKart.GetTargetCheckPoint())
         {
             ThisKart.SetTargetCheckPoint(inccheckpoint + 1);
-            ThisKart.SetCheckPointValue(0.01f);
+            ThisKart.SetCheckPointValue(0.001f);
             ThisKart.SetCurrentCheckpoint(inccheckpoint);
 
             if (ThisKart.GetIsNewLap())
@@ -57,11 +57,25 @@ public class LapNumber : MonoBehaviour
             }
         }
 
+        //Naive Position Finder.
+
+        /*
         PlayerPositions[ThisKart.GetName()] = ThisKart.GetCheckPointValue();
         if (ThisKart.GetName() == "Player")
         {
+            List<string> PlayerList = new List<string>();
 
+            foreach (var item in PlayerPositions.OrderByDescending(r => r.Value).Take(5))
+            {
+                PlayerList.Add(item.Key);
+            }
+            PositionDebug.text = "1st: " + PlayerList[0]
+                + "\n2nd: " + PlayerList[1]
+                + "\n3rd: " + PlayerList[2]
+                + "\n4th: " + PlayerList[3]
+                + "\n5th: " + PlayerList[4];
         }
+        */
     }
 
     private void Update()
