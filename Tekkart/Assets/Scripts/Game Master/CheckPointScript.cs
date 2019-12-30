@@ -6,8 +6,7 @@ public class CheckPointScript : MonoBehaviour
 {
     private LapNumber LapParent;
     private int position = -1;
-    private KartScript ThisKart;
-    private AIScript AIKart;
+    private Kart ThisKart;
 
     public void SetUpPosition(int masterposition, LapNumber IncLapParent)
     {
@@ -17,23 +16,12 @@ public class CheckPointScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ThisKart = other.gameObject.GetComponent<KartScript>();
+        ThisKart = other.gameObject.GetComponent<Kart>();
 
 
         if (ThisKart != null)
         {
-            LapParent.CheckIn(position);
-            return;
+            LapParent.CheckIn(position, ThisKart);
         }
-
-        /*
-        AIKart = other.gameObject.GetComponent<AIScript>();
-
-        if (AIKart != null)
-        {
-            Debug.Log("Got To Here");
-            AIKart.CheckPointReached();
-        }
-        */
     }
 }

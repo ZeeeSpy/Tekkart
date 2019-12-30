@@ -24,6 +24,7 @@ public class KartScript : MonoBehaviour, Kart
     private bool currentlyboosting = false;
 
     //Kart Stats
+    public string Name;
     public float TopSpeed = 60f;
     public float steering = 15f;
     public float acceleration = 5f;
@@ -36,6 +37,17 @@ public class KartScript : MonoBehaviour, Kart
     const float gravity = 10f;
     private float driftPower;
     float amount;
+
+
+    [Header("CheckPoint Logic")]
+    [SerializeField]
+    private int TargetCheckPoint = 0;
+    [SerializeField]
+    private int CurrentCheckPoint = -1;
+    [SerializeField]
+    private float CheckPointValue = 1;
+    [SerializeField]
+    private bool IsNewLap = false;
 
     private bool Boostbool = false;
 
@@ -59,20 +71,20 @@ public class KartScript : MonoBehaviour, Kart
         //make kart follow sphere
 
         //Go Forward
-        if (Input.GetButton("Fire1"))
+        if (Input.GetAxis("Vertical") != 0)
         {
-            speed = TopSpeed;
-            if (Boostbool)
+            int forward = Input.GetAxis("Vertical") > 0 ? 1 : -1;
+            if (forward == 1)
             {
-                speed = TopSpeed + TopSpeed * 1.5f;
+                speed = TopSpeed;
+                if (Boostbool)
+                {
+                    speed = TopSpeed + TopSpeed * 1.5f;
+                }
+            } else
+            {
+                speed = TopSpeed * -0.25f;
             }
-        }
-
-
-        //Break
-        if (Input.GetButton("Fire3"))
-        {
-            speed = TopSpeed * -0.25f;
         }
 
 
@@ -239,5 +251,57 @@ public class KartScript : MonoBehaviour, Kart
         }
 
         driftPower = 0;
+    }
+
+
+
+
+    /*
+    /   Figuring Out Who's Where
+    */
+
+    public int GetTargetCheckPoint()
+    {
+        return TargetCheckPoint;
+    }
+
+    public void SetTargetCheckPoint(int IncVal)
+    {
+        TargetCheckPoint = IncVal;
+    }
+
+    public int GetCurrentCheckpoint()
+    {
+        return CurrentCheckPoint;
+    }
+
+    public void SetCurrentCheckpoint(int IncVal)
+    {
+        CurrentCheckPoint = IncVal;
+    }
+
+    public float GetCheckPointValue()
+    {
+        return CheckPointValue;
+    }
+
+    public void SetCheckPointValue(float IncVal)
+    {
+        CheckPointValue = CheckPointValue + IncVal;
+    }
+
+    public string GetName()
+    {
+        return Name;
+    }
+
+    public bool GetIsNewLap()
+    {
+        return IsNewLap;
+    }
+
+    public void SetIsNewLap(bool YesNo)
+    {
+        IsNewLap = YesNo;
     }
 }

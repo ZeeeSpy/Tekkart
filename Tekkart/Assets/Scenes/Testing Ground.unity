@@ -850,7 +850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &174455843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7718,6 +7718,91 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.85
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &986251129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986251130}
+  - component: {fileID: 986251132}
+  - component: {fileID: 986251131}
+  m_Layer: 5
+  m_Name: Positions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &986251130
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986251129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1044020575}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -575.3, y: 361.2}
+  m_SizeDelta: {x: 602.6, y: 398.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &986251131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986251129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '1st: Dark Wario
+
+    2nd: Green Wario
+
+    3rd: Blue Wario
+
+    4th: Red Wario
+
+    5th: Player'
+--- !u!222 &986251132
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986251129}
+  m_CullTransparentMesh: 0
 --- !u!1 &1020484255
 GameObject:
   m_ObjectHideFlags: 0
@@ -7846,7 +7931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1044020575
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7860,6 +7945,7 @@ RectTransform:
   m_Children:
   - {fileID: 174455843}
   - {fileID: 1099096770}
+  - {fileID: 986251130}
   m_Father: {fileID: 311306384}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7880,10 +7966,20 @@ PrefabInstance:
       propertyPath: CheckPointParent
       value: 
       objectReference: {fileID: 579393175}
+    - target: {fileID: 7636894861407982275, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: Name
+      value: Blue Wario
+      objectReference: {fileID: 0}
     - target: {fileID: 7636894862111927000, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
       propertyPath: m_Name
       value: Blue Wario
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636894862111927000, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Characters
       objectReference: {fileID: 0}
     - target: {fileID: 7636894862111927003, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
@@ -8083,7 +8179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1099096770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8156,7 +8252,7 @@ GameObject:
   - component: {fileID: 1131409900}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Characters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8235,11 +8331,16 @@ MonoBehaviour:
   driftdebug: {fileID: 1099096771}
   BoostParticleParent: {fileID: 1168955822}
   rotate: 0
+  Name: Player
   TopSpeed: 60
   steering: 15
   acceleration: 5
   handling: 4
   driftingability: 0.4
+  TargetCheckPoint: 0
+  CurrentCheckPoint: -1
+  CheckPointValue: 1
+  IsNewLap: 0
 --- !u!65 &1145234594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8487,6 +8588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LapNumberUI: {fileID: 226598378}
+  PositionDebug: {fileID: 986251131}
 --- !u!1001 &1193428723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8609,10 +8711,20 @@ PrefabInstance:
       propertyPath: CheckPointParent
       value: 
       objectReference: {fileID: 579393175}
+    - target: {fileID: 7636894861407982275, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: Name
+      value: Red Wario
+      objectReference: {fileID: 0}
     - target: {fileID: 7636894862111927000, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
       propertyPath: m_Name
       value: Red Wario
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636894862111927000, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Characters
       objectReference: {fileID: 0}
     - target: {fileID: 7636894862111927003, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
@@ -14638,10 +14750,20 @@ PrefabInstance:
       propertyPath: CheckPointParent
       value: 
       objectReference: {fileID: 579393175}
+    - target: {fileID: 7636894861407982275, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: Name
+      value: Green Wario
+      objectReference: {fileID: 0}
     - target: {fileID: 7636894862111927000, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
       propertyPath: m_Name
       value: Green Wario
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636894862111927000, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Characters
       objectReference: {fileID: 0}
     - target: {fileID: 7636894862111927003, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
@@ -16035,10 +16157,20 @@ PrefabInstance:
       propertyPath: CheckPointParent
       value: 
       objectReference: {fileID: 579393175}
+    - target: {fileID: 7636894861407982275, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: Name
+      value: Dark Wario
+      objectReference: {fileID: 0}
     - target: {fileID: 7636894862111927000, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
       propertyPath: m_Name
       value: Dark Wario
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636894862111927000, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Characters
       objectReference: {fileID: 0}
     - target: {fileID: 7636894862111927003, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}

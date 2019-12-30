@@ -10,6 +10,7 @@ public class AIScript : MonoBehaviour, Kart
     public float rotate;
 
     //Kart Stats
+    public string Name;
     public float TopSpeed = 60f;
     public float steering = 15f;
     public float acceleration = 5f;
@@ -40,6 +41,13 @@ public class AIScript : MonoBehaviour, Kart
     private float AngleToTarget;
 
     private Vector3 nextposition;
+
+    private int TargetCheckPoint = 0;
+    private int CurrentCheckPoint = -1;
+    private float CheckPointValue = 1;
+    private bool IsNewLap = false;
+
+
     private const float RandomRange = 5.0f;
 
     private void Awake()
@@ -91,10 +99,9 @@ public class AIScript : MonoBehaviour, Kart
         Steer(dir, amount);
         animator.SetFloat("Direction", rotate);
 
-
-        Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position, Color.green);
-
-        Debug.DrawLine(transform.position, nextposition, Color.red);
+        //AI Driving Logic
+        //Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position, Color.green);
+        //Debug.DrawLine(transform.position, nextposition, Color.red);
 
         if (Vector3.Distance(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position) < 10)
         {
@@ -226,5 +233,58 @@ public class AIScript : MonoBehaviour, Kart
         }
 
         driftPower = 0;
+    }
+
+
+
+
+    /*
+    /   Figuring Out Who's Where
+    */
+
+
+    public int GetTargetCheckPoint()
+    {
+        return TargetCheckPoint;
+    }
+
+    public void SetTargetCheckPoint(int IncVal)
+    {
+        TargetCheckPoint = IncVal;
+    }
+
+    public int GetCurrentCheckpoint()
+    {
+        return CurrentCheckPoint;
+    }
+
+    public void SetCurrentCheckpoint(int IncVal)
+    {
+        CurrentCheckPoint = IncVal;
+    }
+
+    public float GetCheckPointValue()
+    {
+        return CheckPointValue;
+    }
+
+    public void SetCheckPointValue(float IncVal)
+    {
+        CheckPointValue = CheckPointValue + IncVal;
+    }
+
+    public string GetName()
+    {
+        return Name;
+    }
+
+    public bool GetIsNewLap()
+    {
+        return IsNewLap;
+    }
+
+    public void SetIsNewLap(bool YesNo)
+    {
+        IsNewLap = YesNo;
     }
 }

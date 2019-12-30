@@ -2,18 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class LapNumber : MonoBehaviour
 {
-    public Text LapNumberUI; 
+    public Text LapNumberUI;
+    public Text PositionDebug;
 
-    private int TargetCheckpoint = 0;
     private int NumberOfCheckpoints = -1;
     private bool newlap = false;
-    private int lapnumber = 1;
+
+    private GameObject[] Players;
+    private Dictionary<string, float> PlayerPositions =  new Dictionary<string, float>();
 
     private void Awake()
     {
+        Players = GameObject.FindGameObjectsWithTag("Characters");
+
+        foreach (GameObject p in Players)
+        {
+            PlayerPositions.Add(p.name, 0);
+        }
+
         CheckPointScript[] CheckpointArray = GetComponentsInChildren<CheckPointScript>();
         NumberOfCheckpoints = CheckpointArray.Length;
         int i = 0;
@@ -24,24 +34,40 @@ public class LapNumber : MonoBehaviour
         }
     }
 
-    public void CheckIn(int inccheckpoint)
+    public void CheckIn(int inccheckpoint, Kart ThisKart)
     {
-        if (inccheckpoint == TargetCheckpoint)
+        if (inccheckpoint == ThisKart.GetTargetCheckPoint())
         {
-            TargetCheckpoint++;
+            ThisKart.SetTargetCheckPoint(inccheckpoint + 1);
+            ThisKart.SetCheckPointValue(0.01f);
+            ThisKart.SetCurrentCheckpoint(inccheckpoint);
 
-            if (newlap)
+            if (ThisKart.GetIsNewLap())
             {
-                newlap = false;
-                lapnumber++;
-                LapNumberUI.text = "Lap " + lapnumber.ToString() + "/∞";
+                ThisKart.SetIsNewLap(false);
+                ThisKart.SetCheckPointValue(1);
+                if (ThisKart.GetName() == "Player")
+                {
+                    LapNumberUI.text = "Lap " + ((int)ThisKart.GetCheckPointValue()).ToString() + "/∞";
+                }
             }
 
-            if (TargetCheckpoint == NumberOfCheckpoints)
+            if (ThisKart.GetTargetCheckPoint() == NumberOfCheckpoints)
             {
-                TargetCheckpoint = 0;
-                newlap = true;
+                ThisKart.SetTargetCheckPoint(0);
+                ThisKart.SetIsNewLap(true);
             }
         }
+
+        PlayerPositions[ThisKart.GetName()] = ThisKart.GetCheckPointValue();
+        if (ThisKart.GetName() == "Player")
+        {
+
+        }
+    }
+
+    private void Update()
+    {
+        
     }
 }
