@@ -108,7 +108,6 @@ public class LapNumber : MonoBehaviour
         if (KartsToCheck.Count > 0) //If there are Karts that have same CPValue as Player
             //This part doesn't work
         {
-
             //Find out the Offset clump of like values
             //Eg. Say CPValue list is (0.9, 0.6 , 0.5 , 0.5 , 0.5)
             //Then the offset for like values is 2 (index 1 + 1).
@@ -147,19 +146,19 @@ public class LapNumber : MonoBehaviour
                 PlayerDistance = Vector3.Distance(PCKart.GetPosition(), CheckPointLocations[PCKart.GetTargetCheckPoint()]);
             }
 
-            //Sort and reverse distance array of other karts
+            //Sort distance array of other karts
             System.Array.Sort(Distance);
-            //System.Array.Reverse(Distance);
-
+            
 
             //Find out players distance relative to other Karts
             int relativeoffset = -5;
 
             for (int o = 0; o < Distance.Length; o++)
             {
-                if (PlayerDistance <= Distance[o])
+                if (PlayerDistance < Distance[o])
                 {
                     relativeoffset = o;
+                    break;
                 }
             } if (relativeoffset == -5)
             {
@@ -170,7 +169,8 @@ public class LapNumber : MonoBehaviour
 
             int PostCalculationPlayerPosition = offset + relativeoffset;
             //Display position on screen;
-            //PositionDebug.text = PostCalculationPlayerPosition.ToString();
+
+            PositionDebug.text = PostCalculationPlayerPosition.ToString();
         }
         else //There are no Karts with same CP value as player. 
         { //BEST CASE SCENARIO (works)

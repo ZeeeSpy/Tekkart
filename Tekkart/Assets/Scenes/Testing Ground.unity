@@ -7775,7 +7775,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -7786,15 +7786,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1st: Dark Wario
-
-    2nd: Green Wario
-
-    3rd: Blue Wario
-
-    4th: Red Wario
-
-    5th: Player'
+  m_Text: 1
 --- !u!222 &986251132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8594,6 +8586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LapNumberUI: {fileID: 226598378}
   PositionDebug: {fileID: 986251131}
+  LapLength: 100
 --- !u!1001 &1193428723
 PrefabInstance:
   m_ObjectHideFlags: 0
