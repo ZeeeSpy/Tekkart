@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIScript : MonoBehaviour, Kart
+public class AIScript : MonoBehaviour, Kart, AiKart
 {
     //Kart Stuff
     float speed, currentSpeed;
@@ -48,7 +48,8 @@ public class AIScript : MonoBehaviour, Kart
     private bool IsNewLap = false;
 
 
-    private const float RandomRange = 5.0f;
+    private float RandomRange = 5.0f;
+    private float AIPathingMinDistance = 10f;
 
     private void Awake()
     {
@@ -103,7 +104,7 @@ public class AIScript : MonoBehaviour, Kart
         //Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position, Color.green);
         //Debug.DrawLine(transform.position, nextposition, Color.red);
 
-        if (Vector3.Distance(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position) < 10)
+        if (Vector3.Distance(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position) < AIPathingMinDistance)
         {
             CheckPointReached();
         }
@@ -291,5 +292,15 @@ public class AIScript : MonoBehaviour, Kart
     public Vector3 GetPosition()
     {
         return transform.position;
+    }
+
+    public void SetUpAIPathing(float IncRandomRange, float IncMinDistance)
+    {
+        if (IncRandomRange == 0 || IncMinDistance == 0)
+        {
+            return;
+        }
+        RandomRange = IncRandomRange;
+        AIPathingMinDistance = IncMinDistance;
     }
 }
