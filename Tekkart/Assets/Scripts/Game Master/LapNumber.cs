@@ -112,7 +112,15 @@ public class LapNumber : MonoBehaviour
             //Find out the Offset clump of like values
             //Eg. Say CPValue list is (0.9, 0.6 , 0.5 , 0.5 , 0.5)
             //Then the offset for like values is 2 (index 1 + 1).
-
+            int offset = 0;
+            for (int p = 0; p < CPValueList.Count; p++)
+            {
+                if (CPValueList[p] == PCValue)
+                {
+                    offset = p + 1;
+                    break;
+                }
+            }
 
             float[] Distance = new float[KartsToCheck.Count];
             float PlayerDistance = -100;
@@ -158,15 +166,7 @@ public class LapNumber : MonoBehaviour
                 //If players distance is larger than all distances it's last in the clump
                 relativeoffset = Distance.Length;
             }
-            int offset = 0;
-            for (int p = 0; p < CPValueList.Count; p++)
-            {
-                if (CPValueList[p] == PCValue)
-                {
-                     offset = p + 1;
-                    break;
-                }
-            }
+
 
             int PostCalculationPlayerPosition = offset + relativeoffset;
             //Display position on screen;
