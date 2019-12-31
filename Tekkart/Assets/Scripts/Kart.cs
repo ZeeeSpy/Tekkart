@@ -18,4 +18,6 @@ public interface Kart{
     void SetIsNewLap(bool YesNo);
 
     string GetName();
+
+    Vector3 GetPosition();
 }

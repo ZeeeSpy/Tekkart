@@ -7961,6 +7961,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7636894861407982273, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Kart
+      objectReference: {fileID: 0}
     - target: {fileID: 7636894861407982275, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
       propertyPath: CheckPointParent
@@ -8287,7 +8292,7 @@ GameObject:
   - component: {fileID: 1145234595}
   m_Layer: 0
   m_Name: Kart
-  m_TagString: Untagged
+  m_TagString: Kart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8706,6 +8711,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7636894861407982273, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Kart
+      objectReference: {fileID: 0}
     - target: {fileID: 7636894861407982275, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
       propertyPath: CheckPointParent
@@ -14745,6 +14755,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7636894861407982273, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Kart
+      objectReference: {fileID: 0}
     - target: {fileID: 7636894861407982275, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
       propertyPath: CheckPointParent
@@ -16152,6 +16167,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7636894861407982273, guid: 8ab18273faf9d304ebedebeea60add9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Kart
+      objectReference: {fileID: 0}
     - target: {fileID: 7636894861407982275, guid: 8ab18273faf9d304ebedebeea60add9b,
         type: 3}
       propertyPath: CheckPointParent

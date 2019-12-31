@@ -287,4 +287,9 @@ public class AIScript : MonoBehaviour, Kart
     {
         IsNewLap = YesNo;
     }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
 }

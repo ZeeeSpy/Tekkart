@@ -304,4 +304,9 @@ public class KartScript : MonoBehaviour, Kart
     {
         IsNewLap = YesNo;
     }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
 }
