@@ -8,6 +8,6 @@ public class AiPathfindingGizmo : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 15f);
+        Gizmos.DrawSphere(transform.position, 10f);
     }
 }
