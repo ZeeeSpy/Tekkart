@@ -10,6 +10,7 @@ Tekkart/[Bb]uilds/
 Tekkart/[Ll]ogs/
 Tekkart/[Mm]emoryCaptures/
 Tekkart/Assets/KennyRacingKit
+Tekkart/Assets/TerrainTexturesPackFree
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
