@@ -15,11 +15,12 @@ public class PickUpCrate : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Kart ThisKart = other.gameObject.GetComponent<Kart>();
+        Pickupable ThisKart = other.gameObject.GetComponent<Pickupable>();
 
         if (ThisKart != null)
         {
             StartCoroutine("Reset");
+            ThisKart.GetPickUp();
         }
     }
 

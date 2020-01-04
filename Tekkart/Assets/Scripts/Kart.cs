@@ -10,7 +10,6 @@ public interface Kart{
     void SetTargetCheckPoint(int IncVal);
     int GetCurrentCheckpoint();
     void SetCurrentCheckpoint(int IncVal);
-
     float GetCheckPointValue();
     void SetCheckPointValue(float IncVal);
 
@@ -18,6 +17,8 @@ public interface Kart{
     void SetIsNewLap(bool YesNo);
 
     string GetName();
+
+    void BecomeStunned();
 
     Vector3 GetPosition();
 }

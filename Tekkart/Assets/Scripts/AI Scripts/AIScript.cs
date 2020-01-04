@@ -23,6 +23,7 @@ public class AIScript : MonoBehaviour, Kart, AiKart
     const float MaxBoostTime = 1f;
     float CurrentBoostTime = 1f;
     private float driftPower = 0f;
+    private bool Stunned = false;
 
     public Rigidbody KartSphere;
     public Transform kartNormal;
@@ -71,13 +72,16 @@ public class AIScript : MonoBehaviour, Kart, AiKart
 
 
         //Go Foward
-        if (!Boostbool)
+        if (!Stunned)
         {
-            speed = TopSpeed;
-        }
-        else
-        {
-            speed = TopSpeed + TopSpeed * 1.5f;
+            if (!Boostbool)
+            {
+                speed = TopSpeed;
+            }
+            else
+            {
+                speed = TopSpeed + TopSpeed * 1.5f;
+            }
         }
 
         //Steering
@@ -302,5 +306,20 @@ public class AIScript : MonoBehaviour, Kart, AiKart
         }
         RandomRange = IncRandomRange;
         AIPathingMinDistance = IncMinDistance;
+    }
+
+    public void BecomeStunned()
+    {
+        if (!Stunned)
+        {
+            StartCoroutine("StunnedCoroutine");
+        }
+        Stunned = true;
+    }
+
+    IEnumerator StunnedCoroutine()
+    {
+        yield return new WaitForSeconds(2.5f);
+        Stunned = false;
     }
 }

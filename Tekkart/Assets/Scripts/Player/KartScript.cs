@@ -37,7 +37,7 @@ public class KartScript : MonoBehaviour, Kart
     const float gravity = 10f;
     private float driftPower;
     float amount;
-
+    private bool Stunned = false;
 
     [Header("CheckPoint Logic")]
     [SerializeField]
@@ -73,17 +73,21 @@ public class KartScript : MonoBehaviour, Kart
         //Go Forward
         if (Input.GetAxis("Vertical") != 0)
         {
-            int forward = Input.GetAxis("Vertical") > 0 ? 1 : -1;
-            if (forward == 1)
+            if (!Stunned)
             {
-                speed = TopSpeed;
-                if (Boostbool)
+                int forward = Input.GetAxis("Vertical") > 0 ? 1 : -1;
+                if (forward == 1)
                 {
-                    speed = TopSpeed + TopSpeed * 1.5f;
+                    speed = TopSpeed;
+                    if (Boostbool)
+                    {
+                        speed = TopSpeed + TopSpeed * 1.5f;
+                    }
                 }
-            } else
-            {
-                speed = TopSpeed * -0.25f;
+                else
+                {
+                    speed = TopSpeed * -0.25f;
+                }
             }
         }
 
@@ -308,5 +312,20 @@ public class KartScript : MonoBehaviour, Kart
     public Vector3 GetPosition()
     {
         return transform.position;
+    }
+
+    public void BecomeStunned()
+    {
+        if (!Stunned)
+        {
+            StartCoroutine("StunnedCoroutine");
+        }
+        Stunned = true;
+    }
+
+    IEnumerator StunnedCoroutine()
+    {
+        yield return new WaitForSeconds(2.5f);
+        Stunned = false;
     }
 }
