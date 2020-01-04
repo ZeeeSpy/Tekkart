@@ -7,10 +7,14 @@ public class PlayerPickup : MonoBehaviour, Pickupable
     private bool HasPickUp = false;
     private string[] ItemArray;
     private int ItemNumb = -1;
+    private KartScript ThisKart;
+    private ItemParent ItemList;
 
     private void Awake()
     {
-        ItemArray = new string[3] { "Boost", "Airstrike", "Trap" };    
+        ItemArray = new string[3] { "Boost", "Airstrike", "Trap" };
+        ThisKart = GetComponent<KartScript>();
+        ItemList = GameObject.FindGameObjectWithTag("ItemParent").GetComponent<ItemParent>();
     }
 
     public void GetPickUp()
@@ -22,13 +26,10 @@ public class PlayerPickup : MonoBehaviour, Pickupable
             switch (numb)
             {
                 case 0:
-                    Debug.Log("Got Boost");
                     break;
                 case 1:
-                    Debug.Log("Got Airstrike");
                     break;
                 case 2:
-                    Debug.Log("Got Trap");
                     break;
             }
             ItemNumb = numb;
@@ -39,10 +40,24 @@ public class PlayerPickup : MonoBehaviour, Pickupable
     private void Update()
     {
         if (Input.GetButtonDown("UseItem") && HasPickUp)
-        {
-            Debug.Log(ItemArray[ItemNumb]);
-
+            switch (ItemNumb)
+            {
+                case 0:
+                    ThisKart.Boost();
+                    break;
+                case 1:
+                    CallInAirStrike();
+                    break;
+                case 2:
+                    Instantiate(ItemList.GetTrap(), transform.position + new Vector3(0, 2, -2.5f), Quaternion.identity);
+                    break;
+            }
             HasPickUp = false;
-        }
+    }
+
+    private void CallInAirStrike()
+    {
+
     }
 }
+

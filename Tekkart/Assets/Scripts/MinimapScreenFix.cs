@@ -6,8 +6,8 @@ public class MinimapScreenFix : MonoBehaviour
 {
     private void Awake()
     {
-        Debug.Log(Screen.width);
-        Debug.Log(Screen.height);
+        //Debug.Log(Screen.width);
+        //Debug.Log(Screen.height);
         //1.77 350
     }
     // float nWidth = desiredWidth / Screen.width;

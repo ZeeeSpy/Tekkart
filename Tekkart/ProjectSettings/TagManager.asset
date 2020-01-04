@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Characters
   - Kart
+  - ItemParent
   layers:
   - Default
   - TransparentFX

@@ -6,15 +6,20 @@ public class AirStrikeScript : MonoBehaviour
 {
     public Transform target;
     private Rigidbody rb;
+    private float timetaken;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
+    public void SetTarget(Transform newtarget)
+    {
+        target = newtarget;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HitSomething");
         Kart HitKart = other.gameObject.GetComponent<Kart>();
 
         if (HitKart != null)
@@ -31,5 +36,7 @@ public class AirStrikeScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        timetaken = timetaken + Time.deltaTime;
     }
 }
