@@ -9,6 +9,9 @@ public class KartScript : MonoBehaviour, Kart
     public Transform kartNormal;
     public LayerMask layerMask;
 
+    public Camera MainCamera;
+    public Camera BackCamera;
+
     public Animator animator;
 
     public Text speedometertext;
@@ -190,6 +193,14 @@ public class KartScript : MonoBehaviour, Kart
         int Speedoval = (int)currentSpeed;
         if (Speedoval < 0) { Speedoval = Speedoval * -1; }
         speedometertext.text = Speedoval.ToString();
+
+        //Rear Camera Stuff
+        if (Input.GetButtonUp("Camera"))
+        {
+            MainCamera.enabled = !MainCamera.isActiveAndEnabled;
+            BackCamera.enabled = !BackCamera.isActiveAndEnabled;
+        }
+
     }
 
     private void FixedUpdate()

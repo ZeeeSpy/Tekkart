@@ -23,6 +23,8 @@ public class PlayerPickup : MonoBehaviour, Pickupable
         {
             int numb = Random.Range(0, 3);
 
+            Debug.Log("Got: " + ItemArray[numb]);
+            //TODO update ui 
             switch (numb)
             {
                 case 0:
@@ -32,6 +34,7 @@ public class PlayerPickup : MonoBehaviour, Pickupable
                 case 2:
                     break;
             }
+
             ItemNumb = numb;
             HasPickUp = true;
         }
@@ -40,6 +43,9 @@ public class PlayerPickup : MonoBehaviour, Pickupable
     private void Update()
     {
         if (Input.GetButtonDown("UseItem") && HasPickUp)
+        { 
+            Debug.Log("Item used");
+            HasPickUp = false;
             switch (ItemNumb)
             {
                 case 0:
@@ -52,7 +58,7 @@ public class PlayerPickup : MonoBehaviour, Pickupable
                     Instantiate(ItemList.GetTrap(), transform.position + new Vector3(0, 2, -2.5f), Quaternion.identity);
                     break;
             }
-            HasPickUp = false;
+        }
     }
 
     private void CallInAirStrike()
