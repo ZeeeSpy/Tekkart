@@ -9,10 +9,11 @@ public class PlayerPickup : MonoBehaviour, Pickupable
     private int ItemNumb = -1;
     private KartScript ThisKart;
     private ItemParent ItemList;
+    public GameObject Normal;
 
     private void Awake()
     {
-        ItemArray = new string[3] { "Boost", "Airstrike", "Trap" };
+        ItemArray = new string[4] { "Boost", "Airstrike", "Trap", "UnguidedMissile" };
         ThisKart = GetComponent<KartScript>();
         ItemList = GameObject.FindGameObjectWithTag("ItemParent").GetComponent<ItemParent>();
     }
@@ -21,10 +22,11 @@ public class PlayerPickup : MonoBehaviour, Pickupable
     {
         if (!HasPickUp)
         {
-            int numb = Random.Range(0, 3);
-
+            int numb = Random.Range(0, 4);
+            
             Debug.Log("Got: " + ItemArray[numb]);
             //TODO update ui 
+            /*
             switch (numb)
             {
                 case 0:
@@ -34,9 +36,12 @@ public class PlayerPickup : MonoBehaviour, Pickupable
                 case 2:
                     break;
             }
-
+            */
             ItemNumb = numb;
             HasPickUp = true;
+
+            //Debug :)
+            //ItemNumb = 3;
         }
     }
 
@@ -55,7 +60,13 @@ public class PlayerPickup : MonoBehaviour, Pickupable
                     CallInAirStrike();
                     break;
                 case 2:
-                    Instantiate(ItemList.GetTrap(), transform.position + new Vector3(0, 2, -2.5f), Quaternion.identity);
+                    Instantiate(ItemList.GetTrap(), transform.position + new Vector3(0, 2, -2.5f), Normal.transform.rotation);
+                    break;
+                case 3:
+                    Vector3 rot = Normal.transform.eulerAngles;
+                    rot = new Vector3(rot.x *-1, rot.y + 180, rot.z);
+                    var MissileRot = Quaternion.Euler(rot);
+                    Instantiate(ItemList.GetUnguidedMissile(), transform.position + new Vector3(0, 1, 2), MissileRot);
                     break;
             }
         }
@@ -63,7 +74,12 @@ public class PlayerPickup : MonoBehaviour, Pickupable
 
     private void CallInAirStrike()
     {
-
+        /*
+         * attack only first place
+         * 
+         * 
+         * 
+         */
     }
 }
 

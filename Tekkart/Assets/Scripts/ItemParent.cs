@@ -6,6 +6,7 @@ public class ItemParent : MonoBehaviour
 {
     public GameObject AirStrike;
     public GameObject Trap;
+    public GameObject UnguidedMissile;
 
 
     public GameObject GetAirStrike()
@@ -16,5 +17,10 @@ public class ItemParent : MonoBehaviour
     public GameObject GetTrap()
     {
         return Trap;
+    }
+
+    public GameObject GetUnguidedMissile()
+    {
+        return UnguidedMissile;
     }
 }

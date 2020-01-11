@@ -7,6 +7,7 @@ public class AirStrikeScript : MonoBehaviour
     public Transform target;
     private Rigidbody rb;
     private float timetaken;
+    public GameObject Lazer;
 
     private void Awake()
     {
@@ -36,7 +37,5 @@ public class AirStrikeScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        timetaken = timetaken + Time.deltaTime;
     }
 }

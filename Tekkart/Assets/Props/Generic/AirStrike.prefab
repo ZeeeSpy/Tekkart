@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  Lazer: {fileID: 0}
 --- !u!54 &930962748305443840
 Rigidbody:
   m_ObjectHideFlags: 0
