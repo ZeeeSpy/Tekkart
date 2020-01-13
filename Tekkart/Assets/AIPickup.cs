@@ -6,14 +6,14 @@ public class AIPickup : MonoBehaviour, Pickupable
 {
     private bool HasPickUp = false;
     private int ItemNumb = -1;
-    private KartScript ThisKart;
+    private AIScript ThisKart;
     private ItemParent ItemList;
     public GameObject Normal;
     private bool CoroutineRunning = false;
 
     private void Awake()
     {
-        ThisKart = GetComponent<KartScript>();
+        ThisKart = GetComponent<AIScript>();
         ItemList = GameObject.FindGameObjectWithTag("ItemParent").GetComponent<ItemParent>();
     }
 
@@ -24,16 +24,11 @@ public class AIPickup : MonoBehaviour, Pickupable
             int numb = Random.Range(0, 3);
             ItemNumb = numb;
             HasPickUp = true;
-            Debug.Log("Got Item:" + numb);
         }
     }
 
     private void Update()
     {
-        Vector3 forward = Normal.transform.TransformDirection(Vector3.forward) * 10 + new Vector3(0,2,0);
-        Debug.DrawRay(Normal.transform.position + new Vector3(0, 2, 0), forward, Color.green);
-        
-
         if (HasPickUp && !CoroutineRunning)
         {
             switch (ItemNumb)
@@ -46,23 +41,17 @@ public class AIPickup : MonoBehaviour, Pickupable
                     StartCoroutine("TrapCoroutine");
                     break;
                 case 2:
-
-                    /*
-                    Ray ray = new Ray(transform.position, transform.forward);
+                    Ray ray = new Ray(Normal.transform.position + new Vector3(0, 2, 0), Normal.transform.forward);
+                    //Debug.DrawRay(Normal.transform.position + new Vector3(0, 2, 0), Normal.transform.forward * 75, Color.green);
                     RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit, 30f))
+                    if (Physics.Raycast(ray, out hit, 70f))
                     {
-                        if (hit.transform.tag == "Characters")
+                        if (hit.transform.parent.tag == "Characters")
                         {
-                            //Has LOS
-                            Vector3 rot = Normal.transform.eulerAngles;
-                            rot = new Vector3(rot.x * -1, rot.y + 180, rot.z);
-                            var MissileRot = Quaternion.Euler(rot);
-                            Instantiate(ItemList.GetUnguidedMissile(), (transform.position + transform.forward * 2f), MissileRot);
+                            Debug.Log("Hit");
+                            StartCoroutine("UnguidedMissile");
                         }
                     }
-                    */
-
                     break;
             }
         }
@@ -72,7 +61,19 @@ public class AIPickup : MonoBehaviour, Pickupable
     {
         CoroutineRunning = true;
         yield return new WaitForSeconds(Random.Range(5, 16));
-        Instantiate(ItemList.GetTrap(), (transform.position - transform.forward * 2f), Normal.transform.rotation);
+        Instantiate(ItemList.GetTrap(), (transform.position - transform.forward * 4f), Normal.transform.rotation);
+        CoroutineRunning = true;
+        HasPickUp = false;
+    }
+
+    IEnumerator UnguidedMissile()
+    {
+        CoroutineRunning = true;
+        yield return new WaitForSeconds(Random.Range(0.1f, 2.5f));
+        Vector3 rot = Normal.transform.eulerAngles;
+        rot = new Vector3(rot.x * -1, rot.y + 180, rot.z);
+        var MissileRot = Quaternion.Euler(rot);
+        Instantiate(ItemList.GetUnguidedMissile(), (transform.position + transform.forward * 2f), MissileRot);
         CoroutineRunning = true;
         HasPickUp = false;
     }

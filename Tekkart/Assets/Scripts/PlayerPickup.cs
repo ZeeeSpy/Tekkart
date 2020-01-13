@@ -57,7 +57,7 @@ public class PlayerPickup : MonoBehaviour, Pickupable
                     ThisKart.Boost();
                     break;
                 case 1:
-                    Instantiate(ItemList.GetTrap(), (transform.position - transform.forward * 2f), Normal.transform.rotation);
+                    Instantiate(ItemList.GetTrap(), (transform.position - transform.forward * 4f), Normal.transform.rotation);
                     break;
                 case 2:
                     Vector3 rot = Normal.transform.eulerAngles;
