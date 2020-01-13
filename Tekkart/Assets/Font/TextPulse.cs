@@ -7,7 +7,12 @@ public class TextPulse : MonoBehaviour
 {
     public Color ColorA;
     public Color ColorB;
-    public Text TextToPulse;
+    private Image TextToPulse;
+
+    private void Awake()
+    {
+        TextToPulse = GetComponent<Image>();
+    }
 
     // Update is called once per frame
     void Update()
