@@ -48,7 +48,6 @@ public class AIPickup : MonoBehaviour, Pickupable
                     {
                         if (hit.transform.parent.tag == "Characters")
                         {
-                            Debug.Log("Hit");
                             StartCoroutine("UnguidedMissile");
                         }
                     }
