@@ -695,13 +695,14 @@ GameObject:
   - component: {fileID: 1088257692}
   - component: {fileID: 1088257691}
   - component: {fileID: 1088257690}
+  - component: {fileID: 1088257694}
   m_Layer: 5
   m_Name: StartScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1088257690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,6 +787,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1088257694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088257689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b082c606fcaa8f48a1eff376f7ee05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toenable: {fileID: 2002768415}
+  todisable: {fileID: 1088257689}
 --- !u!1 &1135775795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,7 +1423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2002768416
 MonoBehaviour:
   m_ObjectHideFlags: 0
