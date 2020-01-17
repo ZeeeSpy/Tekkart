@@ -8,6 +8,11 @@ public class MainMenuScript : MonoBehaviour
     public AudioClip Highlight;
     public AudioClip Select;
 
+    public GameObject ModeSelectObject;
+    public GameObject TimeTrialsObject;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +37,13 @@ public class MainMenuScript : MonoBehaviour
 
     public void GrandPrix()
     {
-
+        
     }
 
     public void TimeTrials()
     {
-
+        ModeSelectSetFalse();
+        TimeTrialsObject.SetActive(true);
     }
 
     public void VSRace()
@@ -63,5 +69,11 @@ public class MainMenuScript : MonoBehaviour
     public void Options()
     {
 
+    }
+
+    private void ModeSelectSetFalse()
+    {
+
+        ModeSelectObject.SetActive(!ModeSelectObject.activeInHierarchy);
     }
 }

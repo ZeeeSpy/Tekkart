@@ -15,6 +15,10 @@ public class TimeTrialScript : MonoBehaviour, LapManager
     private Dictionary<string, float> PlayerPositions = new Dictionary<string, float>();
     private Vector3[] CheckPointLocations;
 
+    private bool newlap = false;
+    private float currenttime = 0;
+    private bool firstcheckin = true;
+
     private void Awake()
     {
         CheckPointScript[] CheckpointArray = GetComponentsInChildren<CheckPointScript>();
@@ -31,6 +35,12 @@ public class TimeTrialScript : MonoBehaviour, LapManager
 
     public void CheckIn(int inccheckpoint, Kart ThisKart)
     {
+        if (firstcheckin)
+        {
+            firstcheckin = false;
+            //Do stuff pre first lap
+        }
+
         if (inccheckpoint == ThisKart.GetTargetCheckPoint())
         {
             ThisKart.SetTargetCheckPoint(inccheckpoint + 1);
@@ -54,5 +64,10 @@ public class TimeTrialScript : MonoBehaviour, LapManager
             }
         }
         PlayerPositions[ThisKart.GetName()] = ThisKart.GetCheckPointValue();
+    }
+
+    void Update()
+    {
+        //count time to finish lap
     }
 }
