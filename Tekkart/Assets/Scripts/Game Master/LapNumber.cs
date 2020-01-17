@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class LapNumber : MonoBehaviour
+public class LapNumber : MonoBehaviour, LapManager
 {
     public Text LapNumberUI;
     public Text PositionDebug;

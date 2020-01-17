@@ -14469,12 +14469,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1190938722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0398ef26ce3fde4384f52fbab0b77a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 75e607e086ee4644b877cafe894a1962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LapNumberUI: {fileID: 2088928077}
-  PositionDebug: {fileID: 1015593524}
-  LapLength: 100
+  LapLength: 3
 --- !u!1001 &1193428723
 PrefabInstance:
   m_ObjectHideFlags: 0
