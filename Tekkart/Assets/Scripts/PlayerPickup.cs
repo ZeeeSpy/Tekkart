@@ -47,13 +47,13 @@ public class PlayerPickup : MonoBehaviour, Pickupable
 
     private void Update()
     {
-        Debug.Log(transform.position);
+        /*
         if (Input.GetButtonDown("UseItem"))
         {
             
             Instantiate(ItemList.GetTrap(), (transform.position - transform.forward * 4f), Normal.transform.rotation);
         }
-        /*
+        */
         if (Input.GetButtonDown("UseItem") && HasPickUp)
         { 
             Debug.Log("Item used");
@@ -74,7 +74,6 @@ public class PlayerPickup : MonoBehaviour, Pickupable
                     break;
             }
         }
-        */
     }
 
     private void CallInAirStrike()
