@@ -29,4 +29,39 @@ public class MainMenuScript : MonoBehaviour
     {
         SFX.PlayOneShot(Select);
     }
+
+    public void GrandPrix()
+    {
+
+    }
+
+    public void TimeTrials()
+    {
+
+    }
+
+    public void VSRace()
+    {
+
+    }
+
+    public void Battle()
+    {
+
+    }
+
+    public void Profile()
+    {
+
+    }
+
+    public void Info()
+    {
+
+    }
+
+    public void Options()
+    {
+
+    }
 }
