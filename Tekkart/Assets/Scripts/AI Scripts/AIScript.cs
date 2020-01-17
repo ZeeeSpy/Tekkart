@@ -54,12 +54,22 @@ public class AIScript : MonoBehaviour, Kart, AiKart
 
     private void Awake()
     {
+        //If checkpointparent isn't set, set it with Tag
+        if (CheckPointParent == null)
+        {
+            CheckPointParent = GameObject.FindGameObjectWithTag("CheckpointParent");
+        }
+
+
+        //Set up boost particles
         BoostParticles = BoostParticleParent.GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem p in BoostParticles)
         {
             p.Stop();
         }
 
+
+        //Set Up Checkpoints
         CheckpointLocationArray = CheckPointParent.GetComponentsInChildren<Transform>();
         NumberOfCheckpoints = CheckpointLocationArray.Length;
         CheckPointReached();
