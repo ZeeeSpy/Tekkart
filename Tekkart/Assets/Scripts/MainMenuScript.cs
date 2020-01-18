@@ -42,8 +42,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void TimeTrials()
     {
-        ModeSelectSetFalse();
-        TimeTrialsObject.SetActive(true);
+        ToggleMenu(TimeTrialsObject);
     }
 
     public void VSRace()
@@ -71,9 +70,10 @@ public class MainMenuScript : MonoBehaviour
 
     }
 
-    private void ModeSelectSetFalse()
+    private void ToggleMenu(GameObject menutotoggle)
     {
-
+        menutotoggle.SetActive(!menutotoggle.activeInHierarchy);
         ModeSelectObject.SetActive(!ModeSelectObject.activeInHierarchy);
     }
+
 }
