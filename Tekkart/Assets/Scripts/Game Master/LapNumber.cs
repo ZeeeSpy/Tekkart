@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System;
+using System.Text.RegularExpressions;
 
 public class LapNumber : MonoBehaviour, LapManager
 {
     public Text LapNumberUI;
     public Text PositionDebug;
-    public int LapLength = 100;
+    public int LapLength = 3;
 
     private int NumberOfCheckpoints = -1;
     private Kart[] Players;
@@ -16,6 +18,15 @@ public class LapNumber : MonoBehaviour, LapManager
     private List<Kart> KartsToCheck = new List<Kart>();
     private Dictionary<string, float> PlayerPositions = new Dictionary<string, float>();
     private Vector3[] CheckPointLocations;
+
+    private string[] FinalPositions;
+    private int FinalPositionCount = 0;
+    private bool racefinished = false;
+
+    public GameObject MainCam;
+    public GameObject RearCam;
+    public GameObject SpinCam;
+    public KartScript PlayerKartScript;
 
     private void Awake()
     {
@@ -45,38 +56,55 @@ public class LapNumber : MonoBehaviour, LapManager
             CheckPointLocations[i] = Checkpoint.gameObject.transform.position;
             i++;
         }
+
+        FinalPositions = new string [KartsList.Length];
+        for (int k = 0; k < FinalPositions.Length; k++)
+        {
+            FinalPositions[k] = "NA";
+        }
     }
 
     public void CheckIn(int inccheckpoint, Kart ThisKart)
     {
-        if (inccheckpoint == ThisKart.GetTargetCheckPoint())
+        if (!racefinished)
         {
-            ThisKart.SetTargetCheckPoint(inccheckpoint + 1);
-            ThisKart.SetCheckPointValue(0.001f);
-            ThisKart.SetCurrentCheckpoint(inccheckpoint);
-
-            if (ThisKart.GetIsNewLap())
+            if (inccheckpoint == ThisKart.GetTargetCheckPoint())
             {
-                ThisKart.SetIsNewLap(false);
-                ThisKart.SetCheckPointValue(1);
-                if (ThisKart.GetName() == "Player")
+                ThisKart.SetTargetCheckPoint(inccheckpoint + 1);
+                ThisKart.SetCheckPointValue(0.001f);
+                ThisKart.SetCurrentCheckpoint(inccheckpoint);
+
+                if (ThisKart.GetIsNewLap())
                 {
-                    LapNumberUI.text = "Lap " + ((int)ThisKart.GetCheckPointValue()).ToString() + "/" + LapLength;
+                    ThisKart.SetIsNewLap(false);
+                    ThisKart.SetCheckPointValue(1);
+                    if (ThisKart.GetName() == "Player")
+                    {
+                        LapNumberUI.text = "Lap " + ((int)ThisKart.GetCheckPointValue()).ToString() + "/" + LapLength;
+                        if (ThisKart.GetCheckPointValue() >= LapLength + 1)
+                        {
+                            FinalPositions[FinalPositionCount] = ThisKart.GetName();
+                            FinalPositionCount = FinalPositionCount + 1;
+                            EndRace();
+                        }
+                    }
+
+                    if (ThisKart.GetCheckPointValue() >= LapLength + 1)
+                    {
+                        FinalPositions[FinalPositionCount] = ThisKart.GetName();
+                        FinalPositionCount = FinalPositionCount + 1;
+                    }
+                }
+
+                if (ThisKart.GetTargetCheckPoint() == NumberOfCheckpoints)
+                {
+                    ThisKart.SetTargetCheckPoint(0);
+                    ThisKart.SetIsNewLap(true);
                 }
             }
-
-            if (ThisKart.GetTargetCheckPoint() == NumberOfCheckpoints)
-            {
-                ThisKart.SetTargetCheckPoint(0);
-                ThisKart.SetIsNewLap(true);
-            }
+            PlayerPositions[ThisKart.GetName()] = ThisKart.GetCheckPointValue();
         }
-        PlayerPositions[ThisKart.GetName()] = ThisKart.GetCheckPointValue();
     }
-
-
-
-
 
     private void Update()
     {
@@ -106,7 +134,6 @@ public class LapNumber : MonoBehaviour, LapManager
 
 
         if (KartsToCheck.Count > 0) //If there are Karts that have same CPValue as Player
-            //This part doesn't work
         {
             //Find out the Offset clump of like values
             //Eg. Say CPValue list is (0.9, 0.6 , 0.5 , 0.5 , 0.5)
@@ -185,4 +212,70 @@ public class LapNumber : MonoBehaviour, LapManager
         }
     }
 
+    private void EndRace()
+    {
+        racefinished = true;
+        Debug.Log("End Race Called");
+        string[] order = PositionSnapShot();
+        int numberoffinish = -1;
+        if (FinalPositions[0] == "Player") //Player is first
+        {
+            //position snapshot should just work?
+        } else //Player isn't first
+        {
+            
+            for (int i = 0; i < FinalPositions.Length; i++)
+            {
+                if (FinalPositions[i] == "NA")
+                {
+                    numberoffinish = i;
+                    break;
+                } 
+            }
+        }
+
+        if (numberoffinish == -1) { numberoffinish = 1; }
+
+        for (int j = numberoffinish; j < FinalPositions.Length; j++)
+        {
+            FinalPositions[j] = order[j];
+        }
+
+        string[] RaceFinishPosition = new string[FinalPositions.Length];
+
+        for (int q = 0; q < FinalPositions.Length; q++)
+        {
+            RaceFinishPosition[q] = Regex.Replace(FinalPositions[q], "[0-9]", "");
+        }
+
+        string output = "";
+        foreach (string position in RaceFinishPosition)
+        {
+            output = output + position + " : ";
+        }
+        Debug.Log(output);
+
+
+        MainCam.SetActive(false);
+        RearCam.SetActive(false);
+        SpinCam.SetActive(true);
+    }
+
+    private string[] PositionSnapShot()
+    {
+        string[] outputA = new string[Players.Length];
+        for (int i = 0; i < Players.Length; i++)
+        {
+            outputA[i] = Players[i].GetCheckPointValue() + " " + Players[i].GetName();
+        }
+
+        string[] outputB = outputA.OrderBy(x => x).ToArray();
+        Array.Reverse(outputB);
+
+        for (int j = 0; j < outputB.Length; j++)
+        {
+            outputB[j] = Regex.Replace(outputB[j], "[^A-Za-z0-9 _]", "");
+        }
+        return outputB;
+    }
 }

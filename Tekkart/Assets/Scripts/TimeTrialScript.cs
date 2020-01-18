@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TimeTrialScript : MonoBehaviour, LapManager
 {
     public Text LapNumberUI;
+    public Text PositionUI;
     public int LapLength = 3;
 
     private int NumberOfCheckpoints = -1;
@@ -15,13 +16,15 @@ public class TimeTrialScript : MonoBehaviour, LapManager
     private Dictionary<string, float> PlayerPositions = new Dictionary<string, float>();
     private Vector3[] CheckPointLocations;
 
-    private bool newlap = false;
     private float currenttime = 0;
     private bool firstcheckin = false;
     private bool newlaptimer = false;
     private int currentlap = 0;
 
-    private double[] TimeList = new double[3];
+    private decimal[] TimeList;
+    public GameObject MainCamera;
+    public GameObject SpinCamera;
+    public KartScript PlayerKartScript;
 
     private void Awake()
     {
@@ -34,6 +37,12 @@ public class TimeTrialScript : MonoBehaviour, LapManager
             Checkpoint.SetUpPosition(i, this);
             CheckPointLocations[i] = Checkpoint.gameObject.transform.position;
             i++;
+        }
+
+        TimeList = new decimal[LapLength];
+        for (int j = 0; j < LapLength; j ++)
+        {
+            TimeList[j] = (decimal)0.00f;
         }
     }
 
@@ -78,16 +87,24 @@ public class TimeTrialScript : MonoBehaviour, LapManager
             if (newlaptimer)
             {
                 newlaptimer = false;
-                Debug.Log(currenttime);
-                TimeList[currentlap] = (double)currenttime;
+                TimeList[currentlap] = decimal.Round((decimal)currenttime,2);
                 currentlap = currentlap + 1;
                 currenttime = 0;
-                if (currentlap == 4)
+
+                string laptimestoshow = "";
+                for (int i = 0; i < TimeList.Length; i++)
                 {
-                    foreach (double n in TimeList)
-                    {
-                        Debug.Log(n);
-                    }
+                    laptimestoshow = laptimestoshow + "Lap " + (i+1).ToString() + ": " + TimeList[i].ToString() + "\n";
+                }
+                PositionUI.text = laptimestoshow;
+
+                if (currentlap == 1)
+                {
+                    MainCamera.SetActive(false);
+                    SpinCamera.SetActive(true);
+                    firstcheckin = false;
+
+                    //Start Corutine that sends player to menu
                 }
             }
         }
