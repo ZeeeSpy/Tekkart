@@ -10,7 +10,16 @@ Tekkart/[Bb]uilds/
 Tekkart/[Ll]ogs/
 Tekkart/[Mm]emoryCaptures/
 Tekkart/Assets/KennyRacingKit
+#Kenny Racing Kit is someone elses stuff don't want to upload it again
 Tekkart/Assets/TerrainTexturesPackFree
+#Large texture files (not even used)
+Tekkart/Assets/MiniMap
+#Art assets
+Tekkart/Assets/Props
+#Models
+Tekkart/Assets/MenuStuff
+#More art assets
+
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
