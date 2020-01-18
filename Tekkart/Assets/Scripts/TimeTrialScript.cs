@@ -17,7 +17,11 @@ public class TimeTrialScript : MonoBehaviour, LapManager
 
     private bool newlap = false;
     private float currenttime = 0;
-    private bool firstcheckin = true;
+    private bool firstcheckin = false;
+    private bool newlaptimer = false;
+    private int currentlap = 0;
+
+    private double[] TimeList = new double[3];
 
     private void Awake()
     {
@@ -35,10 +39,9 @@ public class TimeTrialScript : MonoBehaviour, LapManager
 
     public void CheckIn(int inccheckpoint, Kart ThisKart)
     {
-        if (firstcheckin)
+        if (!firstcheckin)
         {
-            firstcheckin = false;
-            //Do stuff pre first lap
+            firstcheckin = true;
         }
 
         if (inccheckpoint == ThisKart.GetTargetCheckPoint())
@@ -51,6 +54,7 @@ public class TimeTrialScript : MonoBehaviour, LapManager
             {
                 ThisKart.SetIsNewLap(false);
                 ThisKart.SetCheckPointValue(1);
+                newlaptimer = true;
                 if (ThisKart.GetName() == "Player")
                 {
                     LapNumberUI.text = "Lap " + ((int)ThisKart.GetCheckPointValue()).ToString() + "/" + LapLength;
@@ -68,6 +72,24 @@ public class TimeTrialScript : MonoBehaviour, LapManager
 
     void Update()
     {
-        //count time to finish lap
+       if (firstcheckin)
+        {
+            currenttime = currenttime + Time.deltaTime;
+            if (newlaptimer)
+            {
+                newlaptimer = false;
+                Debug.Log(currenttime);
+                TimeList[currentlap] = (double)currenttime;
+                currentlap = currentlap + 1;
+                currenttime = 0;
+                if (currentlap == 4)
+                {
+                    foreach (double n in TimeList)
+                    {
+                        Debug.Log(n);
+                    }
+                }
+            }
+        }
     }
 }
