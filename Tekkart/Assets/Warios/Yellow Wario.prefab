@@ -9917,6 +9917,7 @@ GameObject:
   - component: {fileID: 9205427925290204607}
   - component: {fileID: 9205427925290204600}
   - component: {fileID: 9205427925290204601}
+  - component: {fileID: 1788190248}
   m_Layer: 0
   m_Name: Kart
   m_TagString: Kart
@@ -9996,3 +9997,17 @@ MonoBehaviour:
   animator: {fileID: 9205427923579674403}
   BoostParticleParent: {fileID: 9205427923536509774}
   CheckPointParent: {fileID: 0}
+--- !u!114 &1788190248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9205427925290204603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05f7ab5d8c68274cab346aa8e8d2a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Normal: {fileID: 9205427923842055861}
+  Sphere: {fileID: 9205427923992670901}

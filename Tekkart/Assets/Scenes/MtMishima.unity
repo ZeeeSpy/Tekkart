@@ -541,6 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 338671397}
+  Sphere: {fileID: 811880366}
 --- !u!54 &32316952
 Rigidbody:
   m_ObjectHideFlags: 0

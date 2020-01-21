@@ -10,6 +10,7 @@ public class AIPickup : MonoBehaviour, Pickupable
     private ItemParent ItemList;
     public GameObject Normal;
     private bool CoroutineRunning = false;
+    public GameObject Sphere;
 
     private void Awake()
     {
@@ -41,7 +42,7 @@ public class AIPickup : MonoBehaviour, Pickupable
                     StartCoroutine("TrapCoroutine");
                     break;
                 case 2:
-                    Ray ray = new Ray(Normal.transform.position + new Vector3(0, 2, 0), Normal.transform.forward);
+                    Ray ray = new Ray(Sphere.transform.position + new Vector3(0, 2, 0), Normal.transform.forward);
                     //Debug.DrawRay(Normal.transform.position + new Vector3(0, 2, 0), Normal.transform.forward * 75, Color.green);
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit, 70f))
@@ -60,7 +61,7 @@ public class AIPickup : MonoBehaviour, Pickupable
     {
         CoroutineRunning = true;
         yield return new WaitForSeconds(Random.Range(5, 16));
-        Instantiate(ItemList.GetTrap(), (transform.position - transform.forward * 4f), Normal.transform.rotation);
+        Instantiate(ItemList.GetTrap(), (Sphere.transform.position - transform.forward * 4f), Normal.transform.rotation);
         CoroutineRunning = true;
         HasPickUp = false;
     }
@@ -72,7 +73,7 @@ public class AIPickup : MonoBehaviour, Pickupable
         Vector3 rot = Normal.transform.eulerAngles;
         rot = new Vector3(rot.x * -1, rot.y + 180, rot.z);
         var MissileRot = Quaternion.Euler(rot);
-        Instantiate(ItemList.GetUnguidedMissile(), (transform.position + transform.forward * 2f), MissileRot);
+        Instantiate(ItemList.GetUnguidedMissile(), (Sphere.transform.position + transform.forward * 2f), MissileRot);
         CoroutineRunning = true;
         HasPickUp = false;
     }

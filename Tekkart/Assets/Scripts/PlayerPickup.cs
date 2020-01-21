@@ -10,6 +10,7 @@ public class PlayerPickup : MonoBehaviour, Pickupable
     private KartScript ThisKart;
     private ItemParent ItemList;
     public GameObject Normal;
+    public Transform Sphere;
 
     private void Awake()
     {
@@ -47,13 +48,6 @@ public class PlayerPickup : MonoBehaviour, Pickupable
 
     private void Update()
     {
-        /*
-        if (Input.GetButtonDown("UseItem"))
-        {
-            
-            Instantiate(ItemList.GetTrap(), (transform.position - transform.forward * 4f), Normal.transform.rotation);
-        }
-        */
         if (Input.GetButtonDown("UseItem") && HasPickUp)
         { 
             Debug.Log("Item used");
@@ -64,13 +58,13 @@ public class PlayerPickup : MonoBehaviour, Pickupable
                     ThisKart.Boost();
                     break;
                 case 1:
-                    Instantiate(ItemList.GetTrap(), (transform.position - transform.forward * 4f), Normal.transform.rotation);
+                    Instantiate(ItemList.GetTrap(), (Sphere.transform.position - transform.forward * 4f), Normal.transform.rotation);
                     break;
                 case 2:
                     Vector3 rot = Normal.transform.eulerAngles;
                     rot = new Vector3(rot.x *-1, rot.y + 180, rot.z);
                     var MissileRot = Quaternion.Euler(rot);
-                    Instantiate(ItemList.GetUnguidedMissile(), (transform.position + transform.forward * 2f), MissileRot);
+                    Instantiate(ItemList.GetUnguidedMissile(), (Sphere.transform.position + transform.forward * 2f), MissileRot);
                     break;
             }
         }
