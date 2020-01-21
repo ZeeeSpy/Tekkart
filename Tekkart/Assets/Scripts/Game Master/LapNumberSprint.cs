@@ -27,9 +27,19 @@ public class LapNumberSprint : MonoBehaviour, LapManager
     public GameObject RearCam;
     public GameObject SpinCam;
     public KartScript PlayerKartScript;
+    public PlayerPointScript PlayerPoints;
+
+    public string SceneToLoad = "PressStart";
 
     private void Awake()
     {
+        try
+        {
+            PlayerPoints = GameObject.FindGameObjectWithTag("PlayerPoints").GetComponent<PlayerPointScript>();
+        } catch
+        {
+            Debug.Log("Level Played Out Of Order");
+        }
         GameObject[] KartsList = GameObject.FindGameObjectsWithTag("Kart");
         Players = new Kart[KartsList.Length];
         for (int j = 0; j < KartsList.Length; j++)
@@ -230,6 +240,15 @@ public class LapNumberSprint : MonoBehaviour, LapManager
             }
             Debug.Log(outputa);
 
+            try
+            {
+                PlayerPoints.UpdateScores(FinalPositions, SceneToLoad);
+            }
+            catch
+            {
+                Debug.Log("No Point Manager Found, No Level Will Be Loaded");
+            }
+
 
             MainCam.SetActive(false);
             RearCam.SetActive(false);
@@ -271,6 +290,13 @@ public class LapNumberSprint : MonoBehaviour, LapManager
         }
         Debug.Log(output);
 
+        try
+        {
+            PlayerPoints.UpdateScores(RaceFinishPosition, SceneToLoad);
+        } catch
+        {
+            Debug.Log("No Point Manager Found, No Level Will Be Loaded");
+        }
 
         MainCam.SetActive(false);
         RearCam.SetActive(false);

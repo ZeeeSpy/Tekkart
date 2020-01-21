@@ -8,6 +8,7 @@ TagManager:
   - Kart
   - ItemParent
   - CheckpointParent
+  - PlayerPoints
   layers:
   - Default
   - TransparentFX

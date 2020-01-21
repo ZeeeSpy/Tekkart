@@ -24342,11 +24342,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LapNumberUI: {fileID: 226598378}
   PositionDebug: {fileID: 986251131}
-  LapLength: 3
+  LapLength: 1
   MainCam: {fileID: 2110786093}
   RearCam: {fileID: 637837646}
   SpinCam: {fileID: 1395233684}
   PlayerKartScript: {fileID: 1145234593}
+  PlayerPoints: {fileID: 0}
+  SceneToLoad: MtMishima
 --- !u!1001 &1192021734
 PrefabInstance:
   m_ObjectHideFlags: 0

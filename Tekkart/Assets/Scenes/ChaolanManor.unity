@@ -6920,6 +6920,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d8ba02a159cf941bcde975ffa582cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &394612359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394612361}
+  - component: {fileID: 394612360}
+  m_Layer: 0
+  m_Name: PlayerPoints
+  m_TagString: PlayerPoints
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &394612360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394612359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff31c107284c68a42855ebbaadfe24fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &394612361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394612359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397308748
 GameObject:
   m_ObjectHideFlags: 0
@@ -7155,6 +7198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 438931572}
+  Sphere: {fileID: 0}
 --- !u!1 &452183098
 GameObject:
   m_ObjectHideFlags: 0
@@ -13099,6 +13143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 692304803}
+  Sphere: {fileID: 0}
 --- !u!1001 &695685362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13204,6 +13249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 695685364}
+  Sphere: {fileID: 0}
 --- !u!1 &699563879
 GameObject:
   m_ObjectHideFlags: 0
@@ -14086,6 +14132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 866087488}
+  Sphere: {fileID: 0}
 --- !u!1001 &873971614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14938,11 +14985,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LapNumberUI: {fileID: 2088928077}
   PositionDebug: {fileID: 1015593524}
-  LapLength: 5
+  LapLength: 1
   MainCam: {fileID: 1524712343}
   RearCam: {fileID: 518488664}
   SpinCam: {fileID: 397308748}
   PlayerKartScript: {fileID: 1461170860}
+  PlayerPoints: {fileID: 0}
+  SceneToLoad: WolvesDen
 --- !u!1001 &1193428723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16116,6 +16165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1406545693}
+  Sphere: {fileID: 0}
 --- !u!1 &1409031337
 GameObject:
   m_ObjectHideFlags: 0
@@ -16269,6 +16319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1429389202}
+  Sphere: {fileID: 0}
 --- !u!1 &1436866511
 GameObject:
   m_ObjectHideFlags: 0
@@ -16459,6 +16510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 80419483}
+  Sphere: {fileID: 0}
 --- !u!54 &1461170858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17478,6 +17530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1660540326}
+  Sphere: {fileID: 0}
 --- !u!1001 &1669636579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17875,6 +17928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1714097537}
+  Sphere: {fileID: 0}
 --- !u!1 &1735668677
 GameObject:
   m_ObjectHideFlags: 0
