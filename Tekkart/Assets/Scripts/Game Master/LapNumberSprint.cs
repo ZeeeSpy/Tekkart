@@ -6,11 +6,11 @@ using System.Linq;
 using System;
 using System.Text.RegularExpressions;
 
-public class LapNumber : MonoBehaviour, LapManager
+public class LapNumberSprint : MonoBehaviour, LapManager
 {
     public Text LapNumberUI;
     public Text PositionDebug;
-    public int LapLength = 3;
+    public int LapLength = 1;
 
     private int NumberOfCheckpoints = -1;
     private Kart[] Players;
@@ -86,6 +86,7 @@ public class LapNumber : MonoBehaviour, LapManager
                             FinalPositions[FinalPositionCount] = ThisKart.GetName();
                             FinalPositionCount = FinalPositionCount + 1;
                             EndRace();
+                            return;
                         }
                     }
 
@@ -96,9 +97,8 @@ public class LapNumber : MonoBehaviour, LapManager
                     }
                 }
 
-                if (ThisKart.GetTargetCheckPoint() == NumberOfCheckpoints)
+                if (ThisKart.GetTargetCheckPoint() == NumberOfCheckpoints-2)
                 {
-                    ThisKart.SetTargetCheckPoint(0);
                     ThisKart.SetIsNewLap(true);
                 }
             }
@@ -221,9 +221,8 @@ public class LapNumber : MonoBehaviour, LapManager
         if (FinalPositions[0] == "Player") //Player is first
         {
             //position snapshot should just work?
-        }
-        else if (FinalPositions[FinalPositions.Length - 1] == "Player")
-        { //player is last no need to do a snapshot
+        } else if (FinalPositions[FinalPositions.Length-1] == "Player")
+        { //player is last
             string outputa = "";
             foreach (string position in FinalPositions)
             {
@@ -237,6 +236,7 @@ public class LapNumber : MonoBehaviour, LapManager
             SpinCam.SetActive(true);
             return;
         }
+
         else //Player isn't first
         {
             
