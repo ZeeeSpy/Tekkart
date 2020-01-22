@@ -52,6 +52,8 @@ public class AIScript : MonoBehaviour, Kart, AiKart
     private float RandomRange = 5.0f;
     private float AIPathingMinDistance = 10f;
 
+    private bool RaceStarted = false;
+
     private void Awake()
     {
         //If checkpointparent isn't set, set it with Tag
@@ -81,42 +83,47 @@ public class AIScript : MonoBehaviour, Kart, AiKart
         transform.position = KartSphere.transform.position - new Vector3(0f, 0.8f, 0);
 
 
-        //Go Foward
-        if (!Stunned)
+
+        if (RaceStarted)
         {
-            if (!Boostbool)
+            //Go Foward
+            if (!Stunned)
             {
-                speed = TopSpeed;
+                if (!Boostbool)
+                {
+                    speed = TopSpeed;
+                }
+                else
+                {
+                    speed = TopSpeed + TopSpeed * 1.5f;
+                }
             }
-            else
-            {
-                speed = TopSpeed + TopSpeed * 1.5f;
-            }
+
+            //Steering
+
+            //Find Angle of next checkpoint
+            Vector3 TargetDirection = nextposition - transform.position;
+            AngleToTarget = Vector3.SignedAngle(TargetDirection, transform.forward, Vector3.up);
+
+            //Decide if that's a left turn or a right turn
+            int dir = AngleToTarget > 0 ? -1 : 1;
+
+            //Caluclate how hard to turn relative to angle
+            if (AngleToTarget < 0) { AngleToTarget = AngleToTarget * -1; }
+
+
+            float amount = AngleToTarget / 20; //I love magic numbers don't you?
+            if (amount > 1) { amount = 1; };
+
+
+            Steer(dir, amount);
+            animator.SetFloat("Direction", rotate);
+
+            //AI Driving Logic
+            //Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position, Color.green);
+            //Debug.DrawLine(transform.position, nextposition, Color.red);
         }
 
-        //Steering
-
-        //Find Angle of next checkpoint
-        Vector3 TargetDirection = nextposition - transform.position;
-        AngleToTarget = Vector3.SignedAngle(TargetDirection, transform.forward, Vector3.up);
-
-        //Decide if that's a left turn or a right turn
-        int dir = AngleToTarget > 0 ? -1 : 1;
-
-        //Caluclate how hard to turn relative to angle
-        if (AngleToTarget < 0) { AngleToTarget = AngleToTarget * -1; }
-
-
-        float amount = AngleToTarget / 20; //I love magic numbers don't you?
-        if (amount > 1) { amount = 1; };
-
-
-        Steer(dir, amount);
-        animator.SetFloat("Direction", rotate);
-
-        //AI Driving Logic
-        //Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position, Color.green);
-        //Debug.DrawLine(transform.position, nextposition, Color.red);
 
         if (Vector3.Distance(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position) < AIPathingMinDistance)
         {
@@ -331,5 +338,10 @@ public class AIScript : MonoBehaviour, Kart, AiKart
     {
         yield return new WaitForSeconds(2.5f);
         Stunned = false;
+    }
+
+    public void SetReadyGo()
+    {
+        RaceStarted = true;
     }
 }

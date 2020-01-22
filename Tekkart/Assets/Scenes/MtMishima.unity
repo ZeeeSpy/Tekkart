@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 338671397}
-  Sphere: {fileID: 811880366}
+  Sphere: {fileID: 811880369}
 --- !u!54 &32316952
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1801,6 +1801,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba8f00f5dfbcf934d9bf4035abd7d0d1, type: 3}
+--- !u!1 &111777928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111777929}
+  - component: {fileID: 111777930}
+  m_Layer: 0
+  m_Name: 321Go
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &111777929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111777928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1490902180}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &111777930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111777928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9c9536264342843abc772887acab97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &115268838
 GameObject:
   m_ObjectHideFlags: 0
@@ -17889,6 +17932,8 @@ MonoBehaviour:
   RearCam: {fileID: 1045699432}
   SpinCam: {fileID: 122166092}
   PlayerKartScript: {fileID: 32316954}
+  PlayerPoints: {fileID: 0}
+  SceneToLoad: PressStart
 --- !u!1 &559453141
 GameObject:
   m_ObjectHideFlags: 0
@@ -18695,6 +18740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 586630680}
+  Sphere: {fileID: 0}
 --- !u!1 &588864473
 GameObject:
   m_ObjectHideFlags: 0
@@ -19490,6 +19536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 646054547}
+  Sphere: {fileID: 0}
 --- !u!1 &652898288
 GameObject:
   m_ObjectHideFlags: 0
@@ -26709,6 +26756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1203939088}
+  Sphere: {fileID: 0}
 --- !u!1001 &1205226492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26898,6 +26946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1207922151}
+  Sphere: {fileID: 0}
 --- !u!1 &1210722020
 GameObject:
   m_ObjectHideFlags: 0
@@ -29583,6 +29632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1410191110}
+  Sphere: {fileID: 0}
 --- !u!1 &1421715240
 GameObject:
   m_ObjectHideFlags: 0
@@ -31026,6 +31076,7 @@ Transform:
   - {fileID: 559453142}
   - {fileID: 653443128}
   - {fileID: 888525206}
+  - {fileID: 111777929}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47396,6 +47447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1921269494}
+  Sphere: {fileID: 0}
 --- !u!1001 &1926192025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47798,6 +47850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1943760964}
+  Sphere: {fileID: 0}
 --- !u!1 &1956065031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ba8f00f5dfbcf934d9bf4035abd7d0d1,
@@ -48050,6 +48103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {fileID: 1964954361}
+  Sphere: {fileID: 0}
 --- !u!1 &1965241471
 GameObject:
   m_ObjectHideFlags: 0

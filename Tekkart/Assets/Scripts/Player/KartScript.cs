@@ -57,6 +57,8 @@ public class KartScript : MonoBehaviour, Kart
     const float MaxBoostTime = 1f;
     float CurrentBoostTime = 1f;
 
+    private bool RaceStarted = false;
+
     void Awake()
     {
         BoostParticles = BoostParticleParent.GetComponentsInChildren<ParticleSystem>();
@@ -73,47 +75,51 @@ public class KartScript : MonoBehaviour, Kart
         transform.position = KartSphere.transform.position - new Vector3(0f, 0.8f, 0);
         //make kart follow sphere
 
-        //Go Forward
-        if (Input.GetAxis("Vertical") != 0)
-        {
-            if (!Stunned)
+        //If after countdown
+        if (RaceStarted){
+            //Go Forward
+            if (Input.GetAxis("Vertical") != 0)
             {
-                int forward = Input.GetAxis("Vertical") > 0 ? 1 : -1;
-                if (forward == 1)
+                if (!Stunned)
                 {
-                    speed = TopSpeed;
-                    if (Boostbool)
+                    int forward = Input.GetAxis("Vertical") > 0 ? 1 : -1;
+                    if (forward == 1)
                     {
-                        speed = TopSpeed + TopSpeed * 1.5f;
+                        speed = TopSpeed;
+                        if (Boostbool)
+                        {
+                            speed = TopSpeed + TopSpeed * 1.5f;
+                        }
+                    }
+                    else
+                    {
+                        speed = TopSpeed * -0.25f;
                     }
                 }
-                else
-                {
-                    speed = TopSpeed * -0.25f;
-                }
             }
-        }
 
 
-        //Left Right
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            int dir = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
-            amount = Mathf.Abs((Input.GetAxis("Horizontal")));
-            Steer(dir, amount);
-            animator.SetFloat("Direction", rotate);
-        } else
-        {
-            amount = 0;
-        }
+            //Left Right
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                int dir = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
+                amount = Mathf.Abs((Input.GetAxis("Horizontal")));
+                Steer(dir, amount);
+                animator.SetFloat("Direction", rotate);
+            }
+            else
+            {
+                amount = 0;
+            }
 
 
-        //Drifting 
-        if (Input.GetButtonDown("Jump") && !drifting && Input.GetAxis("Horizontal") != 0)
-        {
-            drifting = true;
-            driftDirection = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
-        }
+            //Drifting 
+            if (Input.GetButtonDown("Jump") && !drifting && Input.GetAxis("Horizontal") != 0)
+            {
+                drifting = true;
+                driftDirection = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
+            }
+        } 
 
         if (Input.GetButtonUp("Jump") && drifting)
         {
@@ -338,5 +344,10 @@ public class KartScript : MonoBehaviour, Kart
     {
         yield return new WaitForSeconds(2.5f);
         Stunned = false;
+    }
+
+    public void SetReadyGo()
+    {
+        RaceStarted = true;
     }
 }
