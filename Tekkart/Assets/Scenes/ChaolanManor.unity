@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 55083286}
   m_Layer: 5
   m_Name: 321
-  m_TagString: Untagged
+  m_TagString: ThreeTwoOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -354,7 +354,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55083281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fc09ccb1ced771e4da08f1b9c0e38da1, type: 2}
   m_CullingMode: 0

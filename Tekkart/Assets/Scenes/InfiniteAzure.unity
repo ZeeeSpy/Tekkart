@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 55083286}
   m_Layer: 5
   m_Name: 321
-  m_TagString: Untagged
+  m_TagString: ThreeTwoOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +223,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55083281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fc09ccb1ced771e4da08f1b9c0e38da1, type: 2}
   m_CullingMode: 0
@@ -12734,7 +12734,7 @@ MonoBehaviour:
   SpinCam: {fileID: 397308748}
   PlayerKartScript: {fileID: 1461170860}
   PlayerPoints: {fileID: 0}
-  SceneToLoad: WolvesDen
+  SceneToLoad: MtMishima
 --- !u!1 &1203830781
 GameObject:
   m_ObjectHideFlags: 0

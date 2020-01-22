@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/WolvesDen.unity
     guid: c5ba32b6de43275468b8c3909c660bd9
   - enabled: 1
-    path: Assets/Scenes/TimeTrials/ChaolanManorTT.unity
-    guid: 8620f703c14361742ac6c4f185d1f6cd
+    path: Assets/Scenes/InfiniteAzure.unity
+    guid: dc4664df010d5304a8829f662df5f288
   - enabled: 1
     path: Assets/Scenes/MtMishima.unity
     guid: b787693f30966aa4d8407aade91520f1

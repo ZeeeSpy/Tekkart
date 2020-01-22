@@ -7,6 +7,6 @@ public class TimeTrialMenuScript : MonoBehaviour
 {
     public void ChaolanManor()
     {
-        SceneManager.LoadScene("ChaolanManorTT");
+        GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen("ChaloanManor");
     }
 }

@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerPointScript : MonoBehaviour
 {
     private string[,] PlayerPoints;
     private bool firstrace = true;
     private int[] Scores = new int[] { 15, 12, 10, 9, 8, 7, 6, 5, 4 };
-    private int racenumber = 0;
+    private int racenumber = 1;
 
     // Start is called before the first frame update
     void Awake()
     {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("PlayerPoints");
+
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -49,8 +55,8 @@ public class PlayerPointScript : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         racenumber++;
-        SceneManager.LoadScene(SceneName);
         Bubblesort();
+        GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen(SceneName);
     }
 
     private void Bubblesort()

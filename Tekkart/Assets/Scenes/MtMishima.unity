@@ -17891,7 +17891,7 @@ MonoBehaviour:
   SpinCam: {fileID: 122166092}
   PlayerKartScript: {fileID: 32316954}
   PlayerPoints: {fileID: 0}
-  SceneToLoad: PressStart
+  SceneToLoad: CupFinish
 --- !u!1 &559453141
 GameObject:
   m_ObjectHideFlags: 0
@@ -31138,7 +31138,7 @@ GameObject:
   - component: {fileID: 1504266566}
   m_Layer: 5
   m_Name: 321
-  m_TagString: Untagged
+  m_TagString: ThreeTwoOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31182,7 +31182,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504266564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fc09ccb1ced771e4da08f1b9c0e38da1, type: 2}
   m_CullingMode: 0

@@ -15,11 +15,16 @@ public class CountdownGo : MonoBehaviour
         {
             Players[j] = KartsList[j].gameObject.GetComponent<Kart>();
         }
+    }
+
+    public void StartCountDown()
+    {
         StartCoroutine(ReadySetGo());
     }
 
     IEnumerator ReadySetGo()
     {
+        GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(3);
         StartKarts();
         yield return new WaitForSeconds(1);
