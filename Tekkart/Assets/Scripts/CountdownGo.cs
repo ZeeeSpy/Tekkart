@@ -15,7 +15,14 @@ public class CountdownGo : MonoBehaviour
         {
             Players[j] = KartsList[j].gameObject.GetComponent<Kart>();
         }
+
+        if (GameObject.FindGameObjectsWithTag("LoadingScreen").Length == 0)
+        { //In Editor
+            StartCountDown();
+        }
+
     }
+
 
     public void StartCountDown()
     {
