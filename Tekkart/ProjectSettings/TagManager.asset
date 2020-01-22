@@ -9,6 +9,7 @@ TagManager:
   - ItemParent
   - CheckpointParent
   - PlayerPoints
+  - ThreeTwoOne
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class CountdownGo : MonoBehaviour
 {
@@ -19,15 +20,10 @@ public class CountdownGo : MonoBehaviour
 
     IEnumerator ReadySetGo()
     {
-        //TODO replace waitforseconds with actual UI stuff
-        yield return new WaitForSeconds(1);
-        Debug.Log("Ready");
-        yield return new WaitForSeconds(1);
-        Debug.Log("Set");
-        yield return new WaitForSeconds(1);
-        Debug.Log("Go!");
-
+        yield return new WaitForSeconds(3);
         StartKarts();
+        yield return new WaitForSeconds(1);
+        this.gameObject.SetActive(false);
     }
 
     private void StartKarts()
@@ -36,5 +32,6 @@ public class CountdownGo : MonoBehaviour
         {
             actor.SetReadyGo();
         }
+       
     }
 }

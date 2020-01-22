@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimeTrials/ChaolanManorTT.unity
     guid: 8620f703c14361742ac6c4f185d1f6cd
+  - enabled: 1
+    path: Assets/Scenes/MtMishima.unity
+    guid: b787693f30966aa4d8407aade91520f1
   m_configObjects: {}

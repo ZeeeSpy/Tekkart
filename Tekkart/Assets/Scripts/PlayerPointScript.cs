@@ -8,6 +8,7 @@ public class PlayerPointScript : MonoBehaviour
     private string[,] PlayerPoints;
     private bool firstrace = true;
     private int[] Scores = new int[] { 15, 12, 10, 9, 8, 7, 6, 5, 4 };
+    private int racenumber = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -47,7 +48,41 @@ public class PlayerPointScript : MonoBehaviour
     IEnumerator NextLevel(string SceneName)
     {
         yield return new WaitForSeconds(5f);
+        racenumber++;
         SceneManager.LoadScene(SceneName);
+        Bubblesort();
+    }
+
+    private void Bubblesort()
+    {
+        string tempi;
+        string temps;
+
+        for (int j = 0; j <= PlayerPoints.GetLength(0)-2; j++)
+        {
+            for (int q = 0; q <= PlayerPoints.GetLength(0)-2; q++)
+            {
+                if (int.Parse(PlayerPoints[q, 1]) > int.Parse(PlayerPoints[q + 1, 1]))
+                {
+                    tempi = PlayerPoints[q + 1, 1];
+                    temps = PlayerPoints[q + 1, 0];
+
+                    PlayerPoints[q + 1, 1] = PlayerPoints[q, 1];
+                    PlayerPoints[q + 1, 0] = PlayerPoints[q, 0];
+
+                    PlayerPoints[q, 0] = temps;
+                    PlayerPoints[q, 1] = tempi;
+                }
+            }
+        }
+
+
+        string toprint = "";
+        for (int i = 0; i < PlayerPoints.GetLength(0); i++)
+        {
+            toprint = toprint + PlayerPoints[i, 0] + "," + PlayerPoints[i, 1] + ". ";
+        }
+        Debug.Log(toprint);
     }
 
     /*
