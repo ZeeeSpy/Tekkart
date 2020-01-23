@@ -56,6 +56,9 @@ public class PlayerPointScript : MonoBehaviour
         yield return new WaitForSeconds(5f);
         racenumber++;
         Bubblesort();
+        
+        //Wait for player pressing any button and show player placements
+
         GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen(SceneName);
     }
 

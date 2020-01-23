@@ -4898,7 +4898,7 @@ GameObject:
   - component: {fileID: 3237365966176479064}
   m_Layer: 0
   m_Name: SpinCamera
-  m_TagString: Untagged
+  m_TagString: CameraA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4943,7 +4943,7 @@ GameObject:
   - component: {fileID: 3237365966290196044}
   m_Layer: 0
   m_Name: RearCamera
-  m_TagString: Untagged
+  m_TagString: CameraD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10310,7 +10310,7 @@ GameObject:
   - component: {fileID: 3237365967296944012}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: CameraD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10382,7 +10382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3237365967315010361}
   m_Layer: 0
-  m_Name: Player (Wario)
+  m_Name: Player2.0
   m_TagString: Characters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

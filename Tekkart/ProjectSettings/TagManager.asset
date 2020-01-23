@@ -12,6 +12,8 @@ TagManager:
   - LoadingScreen
   - ThreeTwoOne
   - AudioManager
+  - CameraD
+  - CameraA
   layers:
   - Default
   - TransparentFX

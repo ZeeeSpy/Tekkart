@@ -23,9 +23,6 @@ public class LapNumber : MonoBehaviour, LapManager
     private int FinalPositionCount = 0;
     private bool racefinished = false;
 
-    public GameObject MainCam;
-    public GameObject RearCam;
-    public GameObject SpinCam;
     public KartScript PlayerKartScript;
     public PlayerPointScript PlayerPoints;
 
@@ -261,9 +258,15 @@ public class LapNumber : MonoBehaviour, LapManager
                 Debug.Log("No Point Manager Found, No Level Will Be Loaded");
             }
 
-            MainCam.SetActive(false);
-            RearCam.SetActive(false);
-            SpinCam.SetActive(true);
+            //Camera Stuff
+            GameObject[] CamerasToDeactT = GameObject.FindGameObjectsWithTag("CameraD");
+
+            foreach (GameObject CO in CamerasToDeactT)
+            {
+                CO.SetActive(false);
+            }
+
+            GameObject.FindGameObjectWithTag("CameraA").SetActive(true);
             return;
         }
         else //Player isn't first
@@ -309,9 +312,17 @@ public class LapNumber : MonoBehaviour, LapManager
             Debug.Log("No Point Manager Found, No Level Will Be Loaded");
         }
 
-        MainCam.SetActive(false);
-        RearCam.SetActive(false);
-        SpinCam.SetActive(true);
+
+
+        //Camera Stuff
+        GameObject[] CamerasToDeact = GameObject.FindGameObjectsWithTag("CameraD");
+
+        foreach (GameObject CO in CamerasToDeact)
+        {
+            CO.SetActive(false);
+        }
+
+        GameObject.FindGameObjectWithTag("CameraA").SetActive(true);
     }
 
     private string[] PositionSnapShot()

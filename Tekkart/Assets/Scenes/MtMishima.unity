@@ -34818,17 +34818,17 @@ PrefabInstance:
         type: 3}
       propertyPath: speedometertext
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2054902680}
     - target: {fileID: 3237365967241258682, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: debug
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 137144696}
     - target: {fileID: 3237365967241258682, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: driftdebug
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1961956012}
     - target: {fileID: 3237365967315010360, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: m_Name

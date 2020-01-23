@@ -953,7 +953,7 @@ PrefabInstance:
     - target: {fileID: 7562513168834735646, guid: 17921056781899d429baeec3bde55f73,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.5
+      value: 7.85
       objectReference: {fileID: 0}
     - target: {fileID: 7562513168834735646, guid: 17921056781899d429baeec3bde55f73,
         type: 3}
@@ -2672,7 +2672,7 @@ PrefabInstance:
     - target: {fileID: 7562513168834735646, guid: 17921056781899d429baeec3bde55f73,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.61
+      value: 6.96
       objectReference: {fileID: 0}
     - target: {fileID: 7562513168834735646, guid: 17921056781899d429baeec3bde55f73,
         type: 3}
@@ -7539,17 +7539,17 @@ PrefabInstance:
         type: 3}
       propertyPath: speedometertext
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1994310010}
     - target: {fileID: 3237365967241258682, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: debug
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1398573446}
     - target: {fileID: 3237365967241258682, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: driftdebug
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 539854567}
     - target: {fileID: 3237365967315010360, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: m_Name

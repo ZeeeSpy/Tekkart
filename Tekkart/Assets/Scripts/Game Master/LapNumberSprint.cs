@@ -23,11 +23,9 @@ public class LapNumberSprint : MonoBehaviour, LapManager
     private int FinalPositionCount = 0;
     private bool racefinished = false;
 
-    public GameObject MainCam;
-    public GameObject RearCam;
-    public GameObject SpinCam;
     public KartScript PlayerKartScript;
     public PlayerPointScript PlayerPoints;
+    private int FrameCount = 0;
 
     public string SceneToLoad = "PressStart";
 
@@ -118,7 +116,10 @@ public class LapNumberSprint : MonoBehaviour, LapManager
 
     private void Update()
     {
-        List<float> CPValueList = new List<float>();
+        FrameCount++;
+        if (FrameCount == 10)
+        {
+            List<float> CPValueList = new List<float>();
         KartsToCheck.Clear();
         float PCValue = PCKart.GetCheckPointValue();
 
@@ -220,6 +221,8 @@ public class LapNumberSprint : MonoBehaviour, LapManager
                 }
             }
         }
+        FrameCount = 0;
+        }
     }
 
     private void EndRace()
@@ -250,9 +253,16 @@ public class LapNumberSprint : MonoBehaviour, LapManager
             }
 
 
-            MainCam.SetActive(false);
-            RearCam.SetActive(false);
-            SpinCam.SetActive(true);
+            //Camera Stuff
+            GameObject[] CamerasToDeactT = GameObject.FindGameObjectsWithTag("CameraD");
+
+            foreach (GameObject CO in CamerasToDeactT)
+            {
+                CO.SetActive(false);
+            }
+
+            GameObject.FindGameObjectWithTag("CameraA").SetActive(true);
+
             return;
         }
 
@@ -298,9 +308,15 @@ public class LapNumberSprint : MonoBehaviour, LapManager
             Debug.Log("No Point Manager Found, No Level Will Be Loaded");
         }
 
-        MainCam.SetActive(false);
-        RearCam.SetActive(false);
-        SpinCam.SetActive(true);
+        //Camera Stuff
+        GameObject[] CamerasToDeact = GameObject.FindGameObjectsWithTag("CameraD");
+
+        foreach (GameObject CO in CamerasToDeact)
+        {
+            CO.SetActive(false);
+        }
+
+        GameObject.FindGameObjectWithTag("CameraA").SetActive(true);
     }
 
     private string[] PositionSnapShot()

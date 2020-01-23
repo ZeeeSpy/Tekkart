@@ -2174,12 +2174,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &397308748 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3237365966176479066, guid: db53d4850d895654aa1bbd20c0c4fd47,
-    type: 3}
-  m_PrefabInstance: {fileID: 3237365966384731158}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &428435731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,12 +2534,6 @@ Transform:
   m_Father: {fileID: 1686107071}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &518488664 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3237365966290196046, guid: db53d4850d895654aa1bbd20c0c4fd47,
-    type: 3}
-  m_PrefabInstance: {fileID: 3237365966384731158}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &539854565
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,9 +5278,6 @@ MonoBehaviour:
   LapNumberUI: {fileID: 2088928077}
   PositionDebug: {fileID: 1015593524}
   LapLength: 5
-  MainCam: {fileID: 1524712343}
-  RearCam: {fileID: 518488664}
-  SpinCam: {fileID: 397308748}
   PlayerKartScript: {fileID: 1461170860}
   PlayerPoints: {fileID: 0}
   SceneToLoad: WolvesDen
@@ -7062,12 +7047,6 @@ Transform:
   m_Father: {fileID: 44417655}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1524712343 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3237365967296944001, guid: db53d4850d895654aa1bbd20c0c4fd47,
-    type: 3}
-  m_PrefabInstance: {fileID: 3237365966384731158}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1556506569
 PrefabInstance:
   m_ObjectHideFlags: 0
