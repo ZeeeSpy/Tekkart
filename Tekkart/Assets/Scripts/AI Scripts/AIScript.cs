@@ -54,6 +54,15 @@ public class AIScript : MonoBehaviour, Kart, AiKart
 
     private bool RaceStarted = false;
 
+    //Audio Stuff
+    private AudioSource KartEngineSounds;
+    private float PitchKartIdle = 0.75f;
+    private float PitchKartAcc = 1.5f;
+    private float PitchKartBoost = 2f;
+    private float PitchKartRate = 0.9f;
+
+
+
     private void Awake()
     {
         //If checkpointparent isn't set, set it with Tag
@@ -75,6 +84,9 @@ public class AIScript : MonoBehaviour, Kart, AiKart
         CheckpointLocationArray = CheckPointParent.GetComponentsInChildren<Transform>();
         NumberOfCheckpoints = CheckpointLocationArray.Length;
         CheckPointReached();
+
+        //Set up Audio
+        KartEngineSounds = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -92,11 +104,16 @@ public class AIScript : MonoBehaviour, Kart, AiKart
                 if (!Boostbool)
                 {
                     speed = TopSpeed;
+                    KartEngineSounds.pitch = Mathf.Lerp(KartEngineSounds.pitch, PitchKartAcc, PitchKartRate * Time.deltaTime);
                 }
                 else
                 {
                     speed = TopSpeed + TopSpeed * 1.5f;
+                    KartEngineSounds.pitch = Mathf.Lerp(KartEngineSounds.pitch, PitchKartBoost, PitchKartRate * 2 * Time.deltaTime);
                 }
+            } else
+            {
+                KartEngineSounds.pitch = Mathf.Lerp(KartEngineSounds.pitch, PitchKartIdle, PitchKartRate * Time.deltaTime);
             }
 
             //Steering
