@@ -13,6 +13,7 @@ public class KartScript : MonoBehaviour, Kart
     public Camera BackCamera;
 
     public Animator animator;
+    public Animator animatorf;
 
     public Text speedometertext;
     public Text debug;
@@ -124,6 +125,13 @@ public class KartScript : MonoBehaviour, Kart
                 amount = Mathf.Abs((Input.GetAxis("Horizontal")));
                 Steer(dir, amount);
                 animator.SetFloat("Direction", rotate);
+                try
+                {
+                    animatorf.SetFloat("Direction", rotate);
+                } catch
+                {
+                    //not all Karts have a front animator
+                }
             }
             else
             {

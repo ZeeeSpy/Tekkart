@@ -266,7 +266,7 @@ public class LapNumber : MonoBehaviour, LapManager
                 CO.SetActive(false);
             }
 
-            GameObject.FindGameObjectWithTag("CameraA").SetActive(true);
+            GameObject.FindGameObjectWithTag("CameraA").GetComponent<Camera>().enabled = true;
             return;
         }
         else //Player isn't first
@@ -321,8 +321,7 @@ public class LapNumber : MonoBehaviour, LapManager
         {
             CO.SetActive(false);
         }
-
-        GameObject.FindGameObjectWithTag("CameraA").SetActive(true);
+        GameObject.FindGameObjectWithTag("CameraA").GetComponent<Camera>().enabled = true;
     }
 
     private string[] PositionSnapShot()
