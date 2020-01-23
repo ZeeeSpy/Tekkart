@@ -29,6 +29,8 @@ public class LapNumber : MonoBehaviour, LapManager
     public KartScript PlayerKartScript;
     public PlayerPointScript PlayerPoints;
 
+    private int FrameCount = 0;
+
     public string SceneToLoad = "PressStart";
 
     private void Awake()
@@ -120,107 +122,113 @@ public class LapNumber : MonoBehaviour, LapManager
 
     private void Update()
     {
-        List<float> CPValueList = new List<float>();
-        KartsToCheck.Clear();
-        float PCValue = PCKart.GetCheckPointValue();
-
-
-        //Go through all players and get CPValues
-        for (int i = 0; i < Players.Length; i++)
+        FrameCount++;
+        if (FrameCount == 10)
         {
-            CPValueList.Add(Players[i].GetCheckPointValue());
-            if (Players[i].GetCheckPointValue() == PCValue)
+            List<float> CPValueList = new List<float>();
+            KartsToCheck.Clear();
+            float PCValue = PCKart.GetCheckPointValue();
+
+
+            //Go through all players and get CPValues
+            for (int i = 0; i < Players.Length; i++)
             {
-                if (Players[i].GetName() != PCKart.GetName())
+                CPValueList.Add(Players[i].GetCheckPointValue());
+                if (Players[i].GetCheckPointValue() == PCValue)
                 {
-                    //If CPValue is same as player but not player add to KartsToCheck
-                    KartsToCheck.Add(Players[i]);
-                }
-            }
-        }
-
-        CPValueList.Sort();
-        CPValueList.Reverse();
-        //Sort CPValue list and reverse it so it's decending
-     
-
-
-        if (KartsToCheck.Count > 0) //If there are Karts that have same CPValue as Player
-        {
-            //Find out the Offset clump of like values
-            //Eg. Say CPValue list is (0.9, 0.6 , 0.5 , 0.5 , 0.5)
-            //Then the offset for like values is 2 (index 1 + 1).
-            int offset = 0;
-            for (int p = 0; p < CPValueList.Count; p++)
-            {
-                if (CPValueList[p] == PCValue)
-                {
-                    offset = p + 1;
-                    break;
+                    if (Players[i].GetName() != PCKart.GetName())
+                    {
+                        //If CPValue is same as player but not player add to KartsToCheck
+                        KartsToCheck.Add(Players[i]);
+                    }
                 }
             }
 
-            float[] Distance = new float[KartsToCheck.Count];
-            float PlayerDistance = -100;
+            CPValueList.Sort();
+            CPValueList.Reverse();
+            //Sort CPValue list and reverse it so it's decending
 
-            //Find Distances
-            //If at last checkpoint, check distance between karts and firstcheckpoint
-            if (PCKart.GetTargetCheckPoint() == NumberOfCheckpoints-1)
+
+
+            if (KartsToCheck.Count > 0) //If there are Karts that have same CPValue as Player
             {
-                for (int i = 0; i < KartsToCheck.Count; i++)
+                //Find out the Offset clump of like values
+                //Eg. Say CPValue list is (0.9, 0.6 , 0.5 , 0.5 , 0.5)
+                //Then the offset for like values is 2 (index 1 + 1).
+                int offset = 0;
+                for (int p = 0; p < CPValueList.Count; p++)
                 {
-                    Kart CurrentKart = KartsToCheck[i];
-                    Distance[i] = Vector3.Distance(CurrentKart.GetPosition(), CheckPointLocations[0]);
+                    if (CPValueList[p] == PCValue)
+                    {
+                        offset = p + 1;
+                        break;
+                    }
                 }
-                PlayerDistance = Vector3.Distance(PCKart.GetPosition(), CheckPointLocations[0]);
-            }
 
-            else //If not at last checkpoint, check distance between karts and Targetcheckpoint of playerKart
-            {
-                for (int i = 0; i < KartsToCheck.Count; i++)
+                float[] Distance = new float[KartsToCheck.Count];
+                float PlayerDistance = -100;
+
+                //Find Distances
+                //If at last checkpoint, check distance between karts and firstcheckpoint
+                if (PCKart.GetTargetCheckPoint() == NumberOfCheckpoints - 1)
                 {
-                    Kart CurrentKart = KartsToCheck[i];
-                    Distance[i] = Vector3.Distance(CurrentKart.GetPosition(), CheckPointLocations[PCKart.GetTargetCheckPoint()]);
+                    for (int i = 0; i < KartsToCheck.Count; i++)
+                    {
+                        Kart CurrentKart = KartsToCheck[i];
+                        Distance[i] = Vector3.Distance(CurrentKart.GetPosition(), CheckPointLocations[0]);
+                    }
+                    PlayerDistance = Vector3.Distance(PCKart.GetPosition(), CheckPointLocations[0]);
                 }
-                PlayerDistance = Vector3.Distance(PCKart.GetPosition(), CheckPointLocations[PCKart.GetTargetCheckPoint()]);
-            }
 
-            //Sort distance array of other karts
-            System.Array.Sort(Distance);
-            
-
-            //Find out players distance relative to other Karts
-            int relativeoffset = -5;
-
-            for (int o = 0; o < Distance.Length; o++)
-            {
-                if (PlayerDistance < Distance[o])
+                else //If not at last checkpoint, check distance between karts and Targetcheckpoint of playerKart
                 {
-                    relativeoffset = o;
-                    break;
+                    for (int i = 0; i < KartsToCheck.Count; i++)
+                    {
+                        Kart CurrentKart = KartsToCheck[i];
+                        Distance[i] = Vector3.Distance(CurrentKart.GetPosition(), CheckPointLocations[PCKart.GetTargetCheckPoint()]);
+                    }
+                    PlayerDistance = Vector3.Distance(PCKart.GetPosition(), CheckPointLocations[PCKart.GetTargetCheckPoint()]);
                 }
-            } if (relativeoffset == -5)
-            {
-                //If players distance is larger than all distances it's last in the clump
-                relativeoffset = Distance.Length;
-            }
+
+                //Sort distance array of other karts
+                System.Array.Sort(Distance);
 
 
-            int PostCalculationPlayerPosition = offset + relativeoffset;
-            //Display position on screen;
+                //Find out players distance relative to other Karts
+                int relativeoffset = -5;
 
-            PositionDebug.text = PostCalculationPlayerPosition.ToString();
-        }
-        else //There are no Karts with same CP value as player. 
-        { //BEST CASE SCENARIO (works)
-            for (int p = 0; p < CPValueList.Count; p++)
-            {
-                if (CPValueList[p] == PCValue)
+                for (int o = 0; o < Distance.Length; o++)
                 {
-                    int outval = p + 1;
-                    //PositionDebug.text = outval.ToString();
+                    if (PlayerDistance < Distance[o])
+                    {
+                        relativeoffset = o;
+                        break;
+                    }
+                }
+                if (relativeoffset == -5)
+                {
+                    //If players distance is larger than all distances it's last in the clump
+                    relativeoffset = Distance.Length;
+                }
+
+
+                int PostCalculationPlayerPosition = offset + relativeoffset;
+                //Display position on screen;
+
+                PositionDebug.text = PostCalculationPlayerPosition.ToString();
+            }
+            else //There are no Karts with same CP value as player. 
+            { //BEST CASE SCENARIO (works)
+                for (int p = 0; p < CPValueList.Count; p++)
+                {
+                    if (CPValueList[p] == PCValue)
+                    {
+                        int outval = p + 1;
+                        //PositionDebug.text = outval.ToString();
+                    }
                 }
             }
+            FrameCount = 0;
         }
     }
 

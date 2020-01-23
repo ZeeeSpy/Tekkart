@@ -108,6 +108,7 @@ public class KartScript : MonoBehaviour, Kart
                     else
                     {
                         speed = TopSpeed * -0.25f;
+                        KartEngineSounds.pitch = Mathf.Lerp(KartEngineSounds.pitch, PitchKartIdle, PitchKartRate * Time.deltaTime);
                     }
                 }
             }

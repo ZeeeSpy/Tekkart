@@ -31,6 +31,7 @@ public class CountdownGo : MonoBehaviour
 
     IEnumerator ReadySetGo()
     {
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioSource>().enabled = true;
         GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(3);
         StartKarts();

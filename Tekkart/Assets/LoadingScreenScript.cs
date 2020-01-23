@@ -51,9 +51,7 @@ public class LoadingScreenScript : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(lowrange, highrange));
         //Fake loading screen LUL
 
-        
-        Holder.SetActive(false);
-        GameStarter.StartCountDown();
+        IfInRace();
     }
 
     IEnumerator LoadIndex(int SceneIndex)
@@ -68,23 +66,21 @@ public class LoadingScreenScript : MonoBehaviour
         }
         //In new scene
 
-
         yield return new WaitForSeconds(Random.Range(lowrange, highrange));
         //Fake loading screen LUL
 
         IfInRace();
-        
     }
 
     private void IfInRace()
     {
-        try
+        try //Game Start
         {
             GameStarter = GameObject.FindGameObjectWithTag("ThreeTwoOne").GetComponent<CountdownGo>();
             GameStarter.StartCountDown();
         } catch
         {
-            //Destroy Player points when appropirate :)
+            //Destroy Player points when appropirate
         }
         Holder.SetActive(false);
     }

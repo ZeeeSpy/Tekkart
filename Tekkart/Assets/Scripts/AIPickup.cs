@@ -47,9 +47,12 @@ public class AIPickup : MonoBehaviour, Pickupable
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit, 70f))
                     {
-                        if (hit.transform.parent.tag == "Characters")
+                        if (hit.transform.parent != null)
                         {
-                            StartCoroutine("UnguidedMissile");
+                            if (hit.transform.parent.tag == "Characters")
+                            {
+                                StartCoroutine("UnguidedMissile");
+                            }
                         }
                     }
                     break;
