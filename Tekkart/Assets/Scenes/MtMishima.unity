@@ -17406,9 +17406,6 @@ MonoBehaviour:
   LapNumberUI: {fileID: 1566688024}
   PositionDebug: {fileID: 277773892}
   LapLength: 1
-  MainCam: {fileID: 0}
-  RearCam: {fileID: 0}
-  SpinCam: {fileID: 0}
   PlayerKartScript: {fileID: 0}
   PlayerPoints: {fileID: 0}
   SceneToLoad: CupFinish
@@ -21123,6 +21120,7 @@ MonoBehaviour:
   MainCamera: {fileID: 1303660744}
   BackCamera: {fileID: 825187583}
   animator: {fileID: 1505133492}
+  animatorf: {fileID: 0}
   speedometertext: {fileID: 2054902680}
   debug: {fileID: 137144696}
   driftdebug: {fileID: 1961956012}
@@ -30867,7 +30865,7 @@ SpriteRenderer:
   m_Size: {x: 0.33, y: 0.42}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1511266095

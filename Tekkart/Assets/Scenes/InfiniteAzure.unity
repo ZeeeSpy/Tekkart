@@ -5634,7 +5634,7 @@ MonoBehaviour:
   LapNumberUI: {fileID: 2088928077}
   PositionDebug: {fileID: 1015593524}
   LapLength: 3
-  PlayerKartScript: {fileID: 0}
+  PlayerKartScript: {fileID: 1379931455}
   PlayerPoints: {fileID: 0}
   SceneToLoad: MtMishima
 --- !u!1 &1203830781
@@ -6440,6 +6440,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dc86b8fb74263147b446038cb50d469, type: 3}
+--- !u!114 &1379931455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3237365967241258682, guid: db53d4850d895654aa1bbd20c0c4fd47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1612619835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26e80323d90252459c121195c167030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1395015015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7749,7 +7761,7 @@ PrefabInstance:
     - target: {fileID: 3237365967315010360, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3237365967315010361, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
@@ -11294,7 +11306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1451642534097534053
 Camera:
   m_ObjectHideFlags: 0

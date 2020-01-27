@@ -1243,6 +1243,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1071970658}
   - {fileID: 3214422444354275926}
   - {fileID: 269624189}
   - {fileID: 1585274073}
@@ -1583,11 +1584,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61494384}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -19, y: -0, z: 49}
-  m_LocalScale: {x: 106, y: 106, z: 1}
+  m_LocalPosition: {x: -154.92015, y: -171.71754, z: 46.76154}
+  m_LocalScale: {x: 101.15761, y: 101.15773, z: 0.95431805}
   m_Children: []
-  m_Father: {fileID: 562767796}
-  m_RootOrder: 2
+  m_Father: {fileID: 1071970658}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &63444360 stripped
 GameObject:
@@ -5089,7 +5090,7 @@ Transform:
   - {fileID: 1934174437}
   - {fileID: 1042539752}
   m_Father: {fileID: 44417655}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &282265807
 PrefabInstance:
@@ -5896,7 +5897,7 @@ RectTransform:
   - {fileID: 1251072166}
   - {fileID: 1079137402}
   - {fileID: 1044020575}
-  - {fileID: 562767796}
+  - {fileID: 2054176464}
   - {fileID: 50582888}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -6000,11 +6001,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315390065}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 14.004977, y: 650.9369, z: 38.198723}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -123.42296, y: 449.48267, z: 36.453693}
+  m_LocalScale: {x: 0.9543171, y: 0.95431805, z: 0.95431805}
   m_Children: []
-  m_Father: {fileID: 562767796}
-  m_RootOrder: 1
+  m_Father: {fileID: 1071970658}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &315390068
 MonoBehaviour:
@@ -9865,39 +9866,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5000001, y: 2.8, z: 10.000002}
   m_Center: {x: 0.25000006, y: 1.4, z: 5.000001}
---- !u!1 &562767795
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 562767796}
-  m_Layer: 0
-  m_Name: MiniMapParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &562767796
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562767795}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -916.05585, y: -515.38104, z: 0}
-  m_LocalScale: {x: 1.5931407, y: 1.5931407, z: 1.5931407}
-  m_Children:
-  - {fileID: 2054176464}
-  - {fileID: 315390067}
-  - {fileID: 61494386}
-  m_Father: {fileID: 311306384}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &575957684
 GameObject:
   m_ObjectHideFlags: 0
@@ -16664,6 +16632,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d8ba02a159cf941bcde975ffa582cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1071970657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071970658}
+  m_Layer: 0
+  m_Name: Minimap Stuff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1071970658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071970657}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 163.05583, y: 186.49596, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 315390067}
+  - {fileID: 61494386}
+  m_Father: {fileID: 44417655}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072570722
 GameObject:
   m_ObjectHideFlags: 0
@@ -18579,7 +18579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 44417655}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -182.7, z: 0}
 --- !u!1 &1190938722
 GameObject:
@@ -18643,9 +18643,6 @@ MonoBehaviour:
   LapNumberUI: {fileID: 226598378}
   PositionDebug: {fileID: 986251131}
   LapLength: 3
-  MainCam: {fileID: 0}
-  RearCam: {fileID: 0}
-  SpinCam: {fileID: 0}
   PlayerKartScript: {fileID: 0}
   PlayerPoints: {fileID: 0}
   SceneToLoad: InfiniteAzure
@@ -25378,7 +25375,7 @@ Transform:
   m_Children:
   - {fileID: 1013507081}
   m_Father: {fileID: 44417655}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1591158484 stripped
 GameObject:
@@ -29088,7 +29085,7 @@ Transform:
   - {fileID: 750284666}
   - {fileID: 434554301}
   m_Father: {fileID: 44417655}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1830202113
 PrefabInstance:
@@ -33229,14 +33226,14 @@ RectTransform:
   m_GameObject: {fileID: 2054176463}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6276909, y: 0.6276909, z: 0.6276909}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 562767796}
-  m_RootOrder: 0
+  m_Father: {fileID: 311306384}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 143, y: 180}
+  m_AnchoredPosition: {x: 266.29, y: 270.4}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054176465
@@ -35466,7 +35463,7 @@ PrefabInstance:
     - target: {fileID: 4096805778719835318, guid: 820326d03a011f846a036195a7b6fe07,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4096805778719835318, guid: 820326d03a011f846a036195a7b6fe07,
         type: 3}
