@@ -232,7 +232,6 @@ public class LapNumber : MonoBehaviour, LapManager
     private void EndRace()
     {
         racefinished = true;
-        Debug.Log("End Race Called");
         string[] order = PositionSnapShot();
         int numberoffinish = -1;
         if (FinalPositions[0] == "Player") //Player is first

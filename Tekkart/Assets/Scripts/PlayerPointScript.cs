@@ -8,6 +8,7 @@ public class PlayerPointScript : MonoBehaviour
     private bool firstrace = true;
     private int[] Scores = new int[] { 15, 12, 10, 9, 8, 7, 6, 5, 4 };
     private int racenumber = 1;
+    private string SceneName;
 
     // Start is called before the first frame update
     void Awake()
@@ -48,18 +49,16 @@ public class PlayerPointScript : MonoBehaviour
                 }
             }
         }
-        StartCoroutine(NextLevel(SceneName));
+        NextLevel(SceneName);
     }
 
-    IEnumerator NextLevel(string SceneName)
+    private void NextLevel(string SceneName)
     {
-        yield return new WaitForSeconds(5f);
+        this.SceneName = SceneName;
         racenumber++;
         Bubblesort();
-        
-        //Wait for player pressing any button and show player placements
-
-        GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen(SceneName);
+        GameObject.Find("UI").SetActive(false);
+        GameObject.FindGameObjectWithTag("PRP").GetComponent<PositionBarParent>().ChangeBarValues(PlayerPoints, this);
     }
 
     private void Bubblesort()
@@ -85,15 +84,26 @@ public class PlayerPointScript : MonoBehaviour
             }
         }
 
-
+        /*
         string toprint = "";
         for (int i = 0; i < PlayerPoints.GetLength(0); i++)
         {
             toprint = toprint + PlayerPoints[i, 0] + "," + PlayerPoints[i, 1] + ". ";
         }
         Debug.Log(toprint);
+        */
     }
 
+    public void LoadNext()
+    {
+        try
+        {
+            GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen(SceneName);
+        } catch
+        {
+            Debug.Log("Level Played Out Of Order");
+        }
+    }
     /*
      * Position : Score
      * 
