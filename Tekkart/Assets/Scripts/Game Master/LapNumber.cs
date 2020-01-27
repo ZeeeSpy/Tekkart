@@ -295,13 +295,6 @@ public class LapNumber : MonoBehaviour, LapManager
             RaceFinishPosition[q] = Regex.Replace(FinalPositions[q], "[0-9]", "");
         }
 
-        string output = "";
-        foreach (string position in RaceFinishPosition)
-        {
-            output = output + position + " : ";
-        }
-        Debug.Log(output);
-
         try
         {
             PlayerPoints.UpdateScores(RaceFinishPosition, SceneToLoad);

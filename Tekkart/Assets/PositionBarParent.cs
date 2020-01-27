@@ -34,20 +34,15 @@ public class PositionBarParent : MonoBehaviour
             //Simplest solution to the problem is two ints 
         }
         ParentCanvas.enabled = true;
-        StartCoroutine(WaitForTheWait());
-    }
-
-    IEnumerator WaitForTheWait()
-    {
-        yield return new WaitForSeconds(5);
         Waiting = true;
     }
+
 
     private void Update()
     {
         if (Waiting)
         {
-            if (Input.anyKey)
+            if (Input.GetButtonDown("Submit"))
             {
                 ParentCanvas.enabled = false;
                 PPS.LoadNext();
