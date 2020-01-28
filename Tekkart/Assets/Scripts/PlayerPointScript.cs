@@ -7,6 +7,19 @@ public class PlayerPointScript : MonoBehaviour
     private string[,] PlayerPoints;
     private bool firstrace = true;
     private int[] Scores = new int[] { 15, 12, 10, 9, 8, 7, 6, 5, 4 };
+     /*
+     * Position : Score
+     * 
+     * 1: 15
+     * 2: 12
+     * 3: 10
+     * 4: 9
+     * 5: 8
+     * 6: 7
+     * 7: 6
+     * 8: 5
+     * 9: 4
+     */
     private int racenumber = 1;
     private string SceneName;
 
@@ -85,6 +98,8 @@ public class PlayerPointScript : MonoBehaviour
         }
 
         /*
+        print out playerpoints 
+        
         string toprint = "";
         for (int i = 0; i < PlayerPoints.GetLength(0); i++)
         {
@@ -104,17 +119,21 @@ public class PlayerPointScript : MonoBehaviour
             Debug.Log("Level Played Out Of Order");
         }
     }
-    /*
-     * Position : Score
-     * 
-     * 1: 15
-     * 2: 12
-     * 3: 10
-     * 4: 9
-     * 5: 8
-     * 6: 7
-     * 7: 6
-     * 8: 5
-     * 9: 4
-     */
+
+    public string[] GetStartLinePositions()
+    {
+        if (firstrace)
+        {
+            return null;
+        }
+        else
+        {
+            string[] ret = new string[PlayerPoints.GetLength(0)];
+            for (int i = 0; i < PlayerPoints.GetLength(0); i++)
+            {
+                ret[i] = PlayerPoints[i, 0];
+            }
+            return ret;
+        }
+    }
 }

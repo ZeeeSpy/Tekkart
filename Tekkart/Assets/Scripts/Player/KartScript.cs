@@ -15,9 +15,9 @@ public class KartScript : MonoBehaviour, Kart
     public Animator animator;
     public Animator animatorf;
 
-    public Text speedometertext;
-    public Text debug;
-    public Text driftdebug;
+    private Text speedometertext;
+    //public Text debug;
+    //public Text driftdebug;
 
     public GameObject BoostParticleParent;
     private ParticleSystem[] BoostParticles;
@@ -79,6 +79,8 @@ public class KartScript : MonoBehaviour, Kart
         }
 
         KartEngineSounds = GetComponent<AudioSource>();
+
+        speedometertext = GameObject.Find("Speedometer").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -158,24 +160,24 @@ public class KartScript : MonoBehaviour, Kart
             //right, left
             if (driftDirection == 1)
             {
-                driftdebug.text = "Direction: Right";
+                //driftdebug.text = "Direction: Right";
                 control = 0.5f + (Input.GetAxis("Horizontal")* driftingability);
             } else
             {
-                driftdebug.text = "Direction: Left";
+                //driftdebug.text = "Direction: Left";
                 control = 0.5f + (Input.GetAxis("Horizontal") * -driftingability);
             }
 
             driftPower = driftPower + Time.deltaTime;
 
 
-            driftdebug.text = driftdebug.text + "\n Control: " + control.ToString();
-            driftdebug.text = driftdebug.text + "\n DriftPower" + driftPower.ToString();
-            debug.text = "Drifting: True";
+            //driftdebug.text = driftdebug.text + "\n Control: " + control.ToString();
+            //driftdebug.text = driftdebug.text + "\n DriftPower" + driftPower.ToString();
+            //debug.text = "Drifting: True";
 
             Steer(driftDirection, control);
         } else {
-            debug.text = "Drifting: False";
+            //debug.text = "Drifting: False";
             CalculateBoost(driftPower);
         }
 
@@ -195,7 +197,7 @@ public class KartScript : MonoBehaviour, Kart
         //Boost 
         if (Boostbool)
         {
-            debug.text = debug.text + "\n Boost: True";
+            //debug.text = debug.text + "\n Boost: True";
             if (!currentlyboosting)
             {
                 foreach (ParticleSystem p in BoostParticles)
@@ -218,7 +220,7 @@ public class KartScript : MonoBehaviour, Kart
             }
         } else
         {
-            debug.text = debug.text + "\n Boost: False";
+            //debug.text = debug.text + "\n Boost: False";
         }
 
         //Hud Stuff

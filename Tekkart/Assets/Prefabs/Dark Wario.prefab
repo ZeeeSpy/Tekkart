@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4531657027822025295
+--- !u!1 &7034883105992256463
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531657027822025280}
-  - component: {fileID: 4531657027822025282}
-  - component: {fileID: 4531657027822025281}
+  - component: {fileID: 7034883105992256448}
+  - component: {fileID: 7034883105992256450}
+  - component: {fileID: 7034883105992256449}
   m_Layer: 0
   m_Name: LeftBoost
   m_TagString: Untagged
@@ -18,27 +18,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531657027822025280
+--- !u!4 &7034883105992256448
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657027822025295}
+  m_GameObject: {fileID: 7034883105992256463}
   m_LocalRotation: {x: 0, y: 0.98408735, z: 0.17768589, w: 0}
   m_LocalPosition: {x: -0.065, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4531657028516990270}
+  m_Father: {fileID: 7034883106754731198}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -20.47, y: 180, z: 0}
---- !u!198 &4531657027822025282
+--- !u!198 &7034883105992256450
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657027822025295}
+  m_GameObject: {fileID: 7034883105992256463}
   serializedVersion: 6
   lengthInSec: 5
   simulationSpeed: 1
@@ -4690,14 +4690,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &4531657027822025281
+--- !u!199 &7034883105992256449
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657027822025295}
+  m_GameObject: {fileID: 7034883105992256463}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -4753,7 +4753,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!1 &4531657028052038905
+--- !u!1 &7034883106290722169
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4761,9 +4761,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531657028052038906}
-  - component: {fileID: 4531657028052038908}
-  - component: {fileID: 4531657028052038907}
+  - component: {fileID: 7034883106290722170}
+  - component: {fileID: 7034883106290722172}
+  - component: {fileID: 7034883106290722171}
   m_Layer: 0
   m_Name: RightBoost
   m_TagString: Untagged
@@ -4771,27 +4771,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531657028052038906
+--- !u!4 &7034883106290722170
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028052038905}
+  m_GameObject: {fileID: 7034883106290722169}
   m_LocalRotation: {x: 0, y: 0.98408735, z: 0.17768589, w: 0}
   m_LocalPosition: {x: 0.051, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4531657028516990270}
+  m_Father: {fileID: 7034883106754731198}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -20.47, y: 180, z: 0}
---- !u!198 &4531657028052038908
+--- !u!198 &7034883106290722172
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028052038905}
+  m_GameObject: {fileID: 7034883106290722169}
   serializedVersion: 6
   lengthInSec: 5
   simulationSpeed: 1
@@ -9443,14 +9443,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &4531657028052038907
+--- !u!199 &7034883106290722171
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028052038905}
+  m_GameObject: {fileID: 7034883106290722169}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -9506,7 +9506,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!1 &4531657028356049864
+--- !u!1 &7034883106531957320
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9514,12 +9514,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531657028356049865}
-  - component: {fileID: 4531657028356049868}
-  - component: {fileID: 4531657028356049867}
-  - component: {fileID: 4531657028356049866}
-  - component: {fileID: 614584319}
-  - component: {fileID: 1429389205}
+  - component: {fileID: 7034883106531957321}
+  - component: {fileID: 7034883106531957324}
+  - component: {fileID: 7034883106531957323}
+  - component: {fileID: 7034883106531957322}
+  - component: {fileID: 278102396}
+  - component: {fileID: 1660540329}
   m_Layer: 0
   m_Name: Kart
   m_TagString: Kart
@@ -9527,42 +9527,42 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531657028356049865
+--- !u!4 &7034883106531957321
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028356049864}
+  m_GameObject: {fileID: 7034883106531957320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1773089917713469937}
-  - {fileID: 4531657028730587335}
-  m_Father: {fileID: 4531657028992889810}
+  - {fileID: 4813324496450068745}
+  - {fileID: 7034883106969016647}
+  m_Father: {fileID: 7034883107235734098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4531657028356049868
+--- !u!65 &7034883106531957324
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028356049864}
+  m_GameObject: {fileID: 7034883106531957320}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.75, z: 2}
   m_Center: {x: 0, y: 0.82, z: 0}
---- !u!54 &4531657028356049867
+--- !u!54 &7034883106531957323
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028356049864}
+  m_GameObject: {fileID: 7034883106531957320}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -9572,58 +9572,58 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4531657028356049866
+--- !u!114 &7034883106531957322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028356049864}
+  m_GameObject: {fileID: 7034883106531957320}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f908d05dd3316d40a691247cb7183c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotate: 0
-  Name: Red Wario
+  Name: DarkWario
   TopSpeed: 60
   steering: 15
   acceleration: 5
   handling: 4
   driftingability: 0.4
-  KartSphere: {fileID: 4531657029117920472}
-  kartNormal: {fileID: 4531657028730587335}
+  KartSphere: {fileID: 7034883107355530584}
+  kartNormal: {fileID: 7034883106969016647}
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  animator: {fileID: 4531657028457670992}
-  BoostParticleParent: {fileID: 4531657028516990269}
+  animator: {fileID: 7034883106699245776}
+  BoostParticleParent: {fileID: 7034883106754731197}
   CheckPointParent: {fileID: 0}
---- !u!114 &614584319
+--- !u!114 &278102396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028356049864}
+  m_GameObject: {fileID: 7034883106531957320}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c05f7ab5d8c68274cab346aa8e8d2a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Normal: {fileID: 4531657028730587334}
-  Sphere: {fileID: 4531657029117920454}
---- !u!82 &1429389205
+  Normal: {fileID: 7034883106969016646}
+  Sphere: {fileID: 7034883107355530566}
+--- !u!82 &1660540329
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028356049864}
+  m_GameObject: {fileID: 7034883106531957320}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7a8f974f149ddc548af18db705a3eee3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c4c33d40213645c48aed9b6bdeb4fc9a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.025
   m_Pitch: 0.75
@@ -9709,7 +9709,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &4531657028457671006
+--- !u!1 &7034883106662935141
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9717,9 +9717,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531657028457671007}
-  - component: {fileID: 4531657028457670993}
-  - component: {fileID: 4531657028457670992}
+  - component: {fileID: 7034883106662935142}
+  m_Layer: 0
+  m_Name: Kart Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7034883106662935142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034883106662935141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7034883106699245791}
+  m_Father: {fileID: 7034883106923817024}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7034883106699245790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7034883106699245791}
+  - component: {fileID: 7034883106699245777}
+  - component: {fileID: 7034883106699245776}
   m_Layer: 0
   m_Name: Wario
   m_TagString: Untagged
@@ -9727,28 +9758,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531657028457671007
+--- !u!4 &7034883106699245791
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028457671006}
+  m_GameObject: {fileID: 7034883106699245790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.038000107, y: 0.98, z: 0.0710001}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
-  - {fileID: 4531657028516990270}
-  m_Father: {fileID: 4531657028491361254}
+  - {fileID: 7034883106754731198}
+  m_Father: {fileID: 7034883106662935142}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4531657028457670993
+--- !u!212 &7034883106699245777
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028457671006}
+  m_GameObject: {fileID: 7034883106699245790}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -9781,7 +9812,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 940138871717201956, guid: 652c4caa02b44de4081ec8217e0de267, type: 3}
-  m_Color: {r: 0.6509434, g: 0, b: 0.09209701, a: 1}
+  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9791,14 +9822,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4531657028457670992
+--- !u!95 &7034883106699245776
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028457671006}
+  m_GameObject: {fileID: 7034883106699245790}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7c3b25359796410419f05b64f06d814a, type: 2}
@@ -9810,7 +9841,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &4531657028491361253
+--- !u!1 &7034883106754731197
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9818,38 +9849,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531657028491361254}
-  m_Layer: 0
-  m_Name: Kart Model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4531657028491361254
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028491361253}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4531657028457671007}
-  m_Father: {fileID: 4531657028753193408}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4531657028516990269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4531657028516990270}
+  - component: {fileID: 7034883106754731198}
   m_Layer: 0
   m_Name: Particle Parent
   m_TagString: Untagged
@@ -9857,23 +9857,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531657028516990270
+--- !u!4 &7034883106754731198
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028516990269}
+  m_GameObject: {fileID: 7034883106754731197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.097, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4531657027822025280}
-  - {fileID: 4531657028052038906}
-  m_Father: {fileID: 4531657028457671007}
+  - {fileID: 7034883105992256448}
+  - {fileID: 7034883106290722170}
+  m_Father: {fileID: 7034883106699245791}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4531657028730587334
+--- !u!1 &7034883106923817039
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9881,38 +9881,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531657028730587335}
-  m_Layer: 0
-  m_Name: Normal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4531657028730587335
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028730587334}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4531657028753193408}
-  m_Father: {fileID: 4531657028356049865}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4531657028753193423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4531657028753193408}
+  - component: {fileID: 7034883106923817024}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -9920,22 +9889,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531657028753193408
+--- !u!4 &7034883106923817024
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028753193423}
+  m_GameObject: {fileID: 7034883106923817039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4531657028491361254}
-  m_Father: {fileID: 4531657028730587335}
+  - {fileID: 7034883106662935142}
+  m_Father: {fileID: 7034883106969016647}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4531657028992889809
+--- !u!1 &7034883106969016646
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9943,31 +9912,62 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531657028992889810}
+  - component: {fileID: 7034883106969016647}
   m_Layer: 0
-  m_Name: Red Wario
+  m_Name: Normal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7034883106969016647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034883106969016646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7034883106923817024}
+  m_Father: {fileID: 7034883106531957321}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7034883107235734097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7034883107235734098}
+  m_Layer: 0
+  m_Name: Dark Wario
   m_TagString: Characters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531657028992889810
+--- !u!4 &7034883107235734098
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657028992889809}
+  m_GameObject: {fileID: 7034883107235734097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.12, y: 6.92, z: -13.63}
+  m_LocalPosition: {x: 31.75, y: 6.92, z: -18.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4531657029117920455}
-  - {fileID: 4531657028356049865}
+  - {fileID: 7034883107355530567}
+  - {fileID: 7034883106531957321}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4531657029117920454
+--- !u!1 &7034883107355530566
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9975,9 +9975,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531657029117920455}
-  - component: {fileID: 4531657029117920473}
-  - component: {fileID: 4531657029117920472}
+  - component: {fileID: 7034883107355530567}
+  - component: {fileID: 7034883107355530585}
+  - component: {fileID: 7034883107355530584}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -9985,40 +9985,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531657029117920455
+--- !u!4 &7034883107355530567
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657029117920454}
+  m_GameObject: {fileID: 7034883107355530566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.333, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4531657028992889810}
+  m_Father: {fileID: 7034883107235734098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4531657029117920473
+--- !u!135 &7034883107355530585
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657029117920454}
+  m_GameObject: {fileID: 7034883107355530566}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.85
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &4531657029117920472
+--- !u!54 &7034883107355530584
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531657029117920454}
+  m_GameObject: {fileID: 7034883107355530566}
   serializedVersion: 2
   m_Mass: 300
   m_Drag: 2
@@ -10028,7 +10028,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &9104920466438432365
+--- !u!1 &7612629464229584349
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10036,8 +10036,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1773089917713469937}
-  - component: {fileID: 7762016445467424641}
+  - component: {fileID: 4813324496450068745}
+  - component: {fileID: 6737887516406209511}
   m_Layer: 9
   m_Name: MinimapPlaceHolder
   m_TagString: Untagged
@@ -10045,27 +10045,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1773089917713469937
+--- !u!4 &4813324496450068745
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9104920466438432365}
+  m_GameObject: {fileID: 7612629464229584349}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 25, y: 25.00008, z: 1}
   m_Children: []
-  m_Father: {fileID: 4531657028356049865}
+  m_Father: {fileID: 7034883106531957321}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!212 &7762016445467424641
+--- !u!212 &6737887516406209511
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9104920466438432365}
+  m_GameObject: {fileID: 7612629464229584349}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -10098,7 +10098,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2b5cb508a6e796e4997714c7941fab85, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
