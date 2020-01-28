@@ -23,7 +23,6 @@ public class RaceStartLineScript : MonoBehaviour
         PlayerPointScript PPS = temp.GetComponent<PlayerPointScript>();
         Order = PPS.GetStartLinePositions();
 
-
         if (Order == null)
         {
             UnityEngine.Random R = new UnityEngine.Random();
@@ -37,19 +36,17 @@ public class RaceStartLineScript : MonoBehaviour
             }
         } else
         {
-            /*
-             * Something wrong here, Loop fails to "hit" after Player kart is instantiated.
-             */
             //Karts on line via Order
             Array.Reverse(Order);
             for (int i = 0; i < Order.Length; i++)
             {
                 for (int q = 0; q < KartsToSpawn.Length; q++)
                 {
-                    if (KartsToSpawn[q].transform.GetChild(1).GetComponent<Kart>().GetName() == Order[i])
+                    string kartname = KartsToSpawn[q].transform.GetChild(1).GetComponent<Kart>().GetName();
+                    if (kartname == Order[i].Trim()) //String NEEDS to be trimmed or else a random space will be added at the start?
                     {
-                        Debug.Log("Hit");
-                        Instantiate(KartsToSpawn[q], StartLinePositionsArray[i].position, Quaternion.identity);
+                        var SpawnedKart = Instantiate(KartsToSpawn[q], StartLinePositionsArray[i].position, Quaternion.identity);
+                        SpawnedKart.transform.SetParent(this.transform);
                         break;
                     }
                 }

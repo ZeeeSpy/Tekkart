@@ -100,7 +100,7 @@ public class LapNumber : MonoBehaviour, LapManager
                         }
                     }
 
-                    if (ThisKart.GetCheckPointValue() >= LapLength + 1 && ThisKart.GetName() != "Player")
+                    if (ThisKart.GetCheckPointValue() >= LapLength + 1 && ThisKart.GetName() != "Player" && !racefinished)
                     {
                         FinalPositions[FinalPositionCount] = ThisKart.GetName();
                         FinalPositionCount = FinalPositionCount + 1;

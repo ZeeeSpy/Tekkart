@@ -9984,7 +9984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotate: 0
-  Name: YellowWario
+  Name: Yellow Wario
   TopSpeed: 60
   steering: 15
   acceleration: 5

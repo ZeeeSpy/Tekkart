@@ -4912,7 +4912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotate: 0
-  Name: BlackWario
+  Name: Black Wario
   TopSpeed: 60
   steering: 15
   acceleration: 5

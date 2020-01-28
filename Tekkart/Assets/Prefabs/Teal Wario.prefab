@@ -5151,7 +5151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotate: 0
-  Name: TealWario
+  Name: Teal Wario
   TopSpeed: 60
   steering: 15
   acceleration: 5

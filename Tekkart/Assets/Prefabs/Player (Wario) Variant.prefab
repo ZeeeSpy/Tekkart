@@ -27,6 +27,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3237365966290196047, guid: db53d4850d895654aa1bbd20c0c4fd47,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237365966290196047, guid: db53d4850d895654aa1bbd20c0c4fd47,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.13052616
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237365966290196047, guid: db53d4850d895654aa1bbd20c0c4fd47,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237365966290196047, guid: db53d4850d895654aa1bbd20c0c4fd47,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3237365966650973681, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: m_TagString
@@ -50,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 3237365967315010360, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
       propertyPath: m_Name
-      value: Player (Wario)
+      value: Player (Wario) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3237365967315010360, guid: db53d4850d895654aa1bbd20c0c4fd47,
         type: 3}
