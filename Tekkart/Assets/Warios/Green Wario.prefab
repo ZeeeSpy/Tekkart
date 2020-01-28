@@ -9838,9 +9838,7 @@ GameObject:
   - component: {fileID: 4004405869261258958}
   - component: {fileID: 4004405869261258959}
   - component: {fileID: 1719931035}
-  - component: {fileID: 695685366}
   - component: {fileID: 695685367}
-  - component: {fileID: 3703819246610779422}
   m_Layer: 0
   m_Name: Kart
   m_TagString: Kart
@@ -9934,20 +9932,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Normal: {fileID: 4004405867548869571}
   Sphere: {fileID: 4004405867933323203}
---- !u!114 &695685366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4004405869261258957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05f7ab5d8c68274cab346aa8e8d2a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Normal: {fileID: 4004405867548869571}
-  Sphere: {fileID: 0}
 --- !u!82 &695685367
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9969,7 +9953,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 25
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -10044,20 +10028,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3703819246610779422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4004405869261258957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05f7ab5d8c68274cab346aa8e8d2a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Normal: {fileID: 4004405867548869571}
-  Sphere: {fileID: 0}
 --- !u!1 &5838667631903545692
 GameObject:
   m_ObjectHideFlags: 0
