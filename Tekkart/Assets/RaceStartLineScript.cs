@@ -18,10 +18,12 @@ public class RaceStartLineScript : MonoBehaviour
         }
 
         string[] Order;
-
-        GameObject temp = GameObject.FindGameObjectWithTag("PlayerPoints");
-        PlayerPointScript PPS = temp.GetComponent<PlayerPointScript>();
-        Order = PPS.GetStartLinePositions();
+        try
+        {
+            Order = GameObject.FindGameObjectWithTag("PlayerPoints").GetComponent<PlayerPointScript>().GetStartLinePositions();
+        } catch {
+            Order = null;
+        }
 
         if (Order == null)
         {

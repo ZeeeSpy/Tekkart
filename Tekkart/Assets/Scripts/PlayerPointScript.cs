@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerPointScript : MonoBehaviour
 {
     private string[,] PlayerPoints;
     private bool firstrace = true;
     private int[] Scores = new int[] { 15, 12, 10, 9, 8, 7, 6, 5, 4 };
+    private int[] RacePositionArray = new int[] {-1, -1, -1, -1};
+    private string[] StageNameArray = new string[] { "temp","temp","temp","temp"};
      /*
      * Position : Score
      * 
@@ -20,7 +23,7 @@ public class PlayerPointScript : MonoBehaviour
      * 8: 5
      * 9: 4
      */
-    private int racenumber = 1;
+    private int racenumber = 0;
     private string SceneName;
 
     // Start is called before the first frame update
@@ -68,10 +71,31 @@ public class PlayerPointScript : MonoBehaviour
     private void NextLevel(string SceneName)
     {
         this.SceneName = SceneName;
-        racenumber++;
         Bubblesort();
+        StageNameArray[racenumber] = SceneName;
+
+        for (int q = 8; q < PlayerPoints.GetLength(0); q--)
+        {
+            if (PlayerPoints[q, 0] == "Player")
+            {
+                RacePositionArray[racenumber] = ((q-9)*-1);
+                break;
+            }
+        }
+        racenumber++;
+
         GameObject.Find("UI").SetActive(false);
         GameObject.FindGameObjectWithTag("PRP").GetComponent<PositionBarParent>().ChangeBarValues(PlayerPoints, this);
+    }
+
+    public string [,] GetResults()
+    {
+        return PlayerPoints;
+    }
+
+    public string GetTrackAndPos(int numb)
+    {
+        return (StageNameArray[numb] + ":" +RacePositionArray[numb].ToString());
     }
 
     private void Bubblesort()

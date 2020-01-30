@@ -18717,7 +18717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LapNumberUI: {fileID: 226598378}
   PositionDebug: {fileID: 986251131}
-  LapLength: 3
+  LapLength: 1
   PlayerKartScript: {fileID: 0}
   PlayerPoints: {fileID: 0}
   SceneToLoad: InfiniteAzure

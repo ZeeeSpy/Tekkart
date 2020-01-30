@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MtMishima.unity
     guid: b787693f30966aa4d8407aade91520f1
+  - enabled: 1
+    path: Assets/Scenes/CupFinish.unity
+    guid: 7f041f9bfcefc3e4e9982b9773db075a
   m_configObjects: {}

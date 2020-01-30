@@ -261,7 +261,7 @@ public class LapNumberSprint : MonoBehaviour, LapManager
                 CO.SetActive(false);
             }
 
-            GameObject.FindGameObjectWithTag("CameraA").SetActive(true);
+            GameObject.FindGameObjectWithTag("CameraA").GetComponent<Camera>().enabled = true;
 
             return;
         }
@@ -309,14 +309,14 @@ public class LapNumberSprint : MonoBehaviour, LapManager
         }
 
         //Camera Stuff
-        GameObject[] CamerasToDeact = GameObject.FindGameObjectsWithTag("CameraD");
+        GameObject[] CamerasToDeactT = GameObject.FindGameObjectsWithTag("CameraD");
 
-        foreach (GameObject CO in CamerasToDeact)
+        foreach (GameObject CO in CamerasToDeactT)
         {
             CO.SetActive(false);
         }
 
-        GameObject.FindGameObjectWithTag("CameraA").SetActive(true);
+        GameObject.FindGameObjectWithTag("CameraA").GetComponent<Camera>().enabled = true;
     }
 
     private string[] PositionSnapShot()

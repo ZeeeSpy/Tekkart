@@ -45,12 +45,11 @@ public class LoadingScreenScript : MonoBehaviour
             //we wait
         }
 
-        //In new scene
-        GameStarter = GameObject.FindGameObjectWithTag("ThreeTwoOne").GetComponent<CountdownGo>();
-
+        
         yield return new WaitForSeconds(Random.Range(lowrange, highrange));
         //Fake loading screen LUL
 
+        //In new scene
         IfInRace();
     }
 

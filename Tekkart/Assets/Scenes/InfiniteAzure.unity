@@ -8912,7 +8912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LapNumberUI: {fileID: 2088928077}
   PositionDebug: {fileID: 1015593524}
-  LapLength: 3
+  LapLength: 1
   PlayerKartScript: {fileID: 1379931455}
   PlayerPoints: {fileID: 0}
   SceneToLoad: MtMishima
