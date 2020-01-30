@@ -254,9 +254,9 @@ public class LapNumberSprint : MonoBehaviour, LapManager
 
 
             //Camera Stuff
-            GameObject[] CamerasToDeactT = GameObject.FindGameObjectsWithTag("CameraD");
+            GameObject[] CamerasToDeact = GameObject.FindGameObjectsWithTag("CameraD");
 
-            foreach (GameObject CO in CamerasToDeactT)
+            foreach (GameObject CO in CamerasToDeact)
             {
                 CO.SetActive(false);
             }

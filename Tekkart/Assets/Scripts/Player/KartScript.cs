@@ -22,9 +22,9 @@ public class KartScript : MonoBehaviour, Kart
     public GameObject BoostParticleParent;
     private ParticleSystem[] BoostParticles;
 
-    float speed, currentSpeed;
-    float currentRotate;
-    public float rotate;
+    private float speed, currentSpeed;
+    private float currentRotate;
+    private float rotate;
     private bool currentlyboosting = false;
 
     //Kart Stats
@@ -68,10 +68,10 @@ public class KartScript : MonoBehaviour, Kart
     private float PitchKartBoost = 2f;
     private float PitchKartRate = 0.9f;
 
-
-
     void Awake()
     {
+        Name = PlayerPrefs.GetString("PLAYER_NAME");
+
         BoostParticles = BoostParticleParent.GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem p in BoostParticles)
         {
