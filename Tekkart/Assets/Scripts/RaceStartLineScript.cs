@@ -12,6 +12,11 @@ public class RaceStartLineScript : MonoBehaviour
 
     void Awake()
     {
+        //TODO 
+        /*
+         * Get the generated kart list so that the races are consitent
+         */
+
         for (int i = 0; i < transform.childCount; i++)
         {
             StartLinePositionsArray[i] = transform.GetChild(i);

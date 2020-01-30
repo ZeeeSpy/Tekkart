@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerPointScript : MonoBehaviour
 {
@@ -72,8 +73,7 @@ public class PlayerPointScript : MonoBehaviour
     {
         this.SceneName = SceneName;
         Bubblesort();
-        StageNameArray[racenumber] = SceneName;
-
+        StageNameArray[racenumber] = SceneManager.GetActiveScene().name;
         for (int q = 8; q < PlayerPoints.GetLength(0); q--)
         {
             if (PlayerPoints[q, 0] == "Player")

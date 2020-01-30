@@ -15,6 +15,7 @@ TagManager:
   - CameraD
   - CameraA
   - PRP
+  - KartMasterList
   layers:
   - Default
   - TransparentFX
