@@ -70,7 +70,7 @@ public class KartScript : MonoBehaviour, Kart
 
     void Awake()
     {
-        Name = PlayerPrefs.GetString("PLAYER_NAME");
+        //Name = PlayerPrefs.GetString("PLAYER_NAME");
 
         BoostParticles = BoostParticleParent.GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem p in BoostParticles)

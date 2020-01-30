@@ -11,7 +11,14 @@ public class PositionBarScript : MonoBehaviour
     public void SetUpBar(string Position, string Name, string Points)
     {
         this.Position.text = Position;
-        PlayerName.text = Name;
+        if (Name == "Player")
+        {
+            PlayerName.text = PlayerPrefs.GetString("PLAYER_NAME");
+        }
+        else
+        {
+            PlayerName.text = Name;
+        }
         this.Points.text = Points;
         //TODO change Icon depening on character
     }
