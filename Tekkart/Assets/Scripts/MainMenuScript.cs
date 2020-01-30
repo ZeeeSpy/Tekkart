@@ -11,6 +11,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject ModeSelectObject;
     public GameObject TimeTrialsObject;
     public GameObject GrandPrixObject;
+    public GameObject ProfileObject;
 
 
     // Start is called before the first frame update
@@ -57,7 +58,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void Profile()
     {
-
+        ToggleMenu(ProfileObject);
     }
 
     public void Info()

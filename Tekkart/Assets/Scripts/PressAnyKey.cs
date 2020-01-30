@@ -6,7 +6,7 @@ public class PressAnyKey : MonoBehaviour
 {
     public GameObject toenable;
     public GameObject todisable;
-    // Update is called once per frame
+    public GameObject FirstPlayScene;
     public AudioSource SFX;
     public AudioSource OST;
 
@@ -18,8 +18,15 @@ public class PressAnyKey : MonoBehaviour
         {
             SFX.PlayOneShot(SFXSelect);
             OST.Play();
-            toenable.SetActive(true);
-            todisable.SetActive(false);
+            if (PlayerPrefs.HasKey("PLAYER_NAME")) { 
+                toenable.SetActive(true);
+                todisable.SetActive(false);
+                Debug.Log("Loading " + PlayerPrefs.GetString("PLAYER_NAME") + "'s Profile");
+            } else
+            {
+                FirstPlayScene.SetActive(true);
+                todisable.SetActive(false);
+            }
         }
     }
 }
