@@ -20,15 +20,12 @@ public class KartMasterListScript : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-
+    public void GenerateKartListr(int CharacterNumber)
+    {
+        //TODO generate kart list
+    }
     public GameObject[] GetKartList(int CharacterNumber)
     {
-        if (!KartsGenerated)
-        {
-            //TODO Generate Karts and put in the correct player kart
-            KartsGenerated = true;
-        }
-
         return GeneratedKartList;
     }
 }

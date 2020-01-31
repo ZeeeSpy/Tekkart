@@ -25,6 +25,7 @@ public class PressAnyKey : MonoBehaviour
             } else
             {
                 FirstPlayScene.SetActive(true);
+
                 todisable.SetActive(false);
             }
         }

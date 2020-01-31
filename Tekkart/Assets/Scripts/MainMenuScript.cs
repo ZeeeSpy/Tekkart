@@ -8,23 +8,15 @@ public class MainMenuScript : MonoBehaviour
     public AudioClip Highlight;
     public AudioClip Select;
 
+    public AudioSource OST;
+    public AudioClip CharacterSelect;
+    public AudioClip MenuOST;
+
     public GameObject ModeSelectObject;
     public GameObject TimeTrialsObject;
     public GameObject GrandPrixObject;
+    public GameObject GrandPrixCharacterSelectObject;
     public GameObject ProfileObject;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnButtonHover()
     {
@@ -36,9 +28,27 @@ public class MainMenuScript : MonoBehaviour
         SFX.PlayOneShot(Select);
     }
 
+    public void GrandPrixChar()
+    {
+        ToggleMenu(GrandPrixCharacterSelectObject);
+        OST.Stop();
+        OST.clip = CharacterSelect;
+        OST.Play();
+    }
+
     public void GrandPrix()
     {
-        ToggleMenu(GrandPrixObject);
+        GrandPrixCharacterSelectObject.SetActive(false);
+        GrandPrixObject.SetActive(true);
+    }
+
+    public void GrandPrixExit()
+    {
+        GrandPrixObject.SetActive(false);
+        ModeSelectObject.SetActive(true);
+        OST.Stop();
+        OST.clip = MenuOST;
+        OST.Play();
     }
 
     public void TimeTrials()
@@ -77,4 +87,6 @@ public class MainMenuScript : MonoBehaviour
         ModeSelectObject.SetActive(!ModeSelectObject.activeInHierarchy);
     }
 
+    //https://answers.unity.com/questions/1096174/eventsystemsetselectedgameobject-does-not-highligh.html
+    //potential fix for menu keyboard navigation
 }
