@@ -126,13 +126,20 @@ public class KartScript : MonoBehaviour, Kart
                 int dir = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
                 amount = Mathf.Abs((Input.GetAxis("Horizontal")));
                 Steer(dir, amount);
-                animator.SetFloat("Direction", rotate);
                 try
                 {
-                    animatorf.SetFloat("Direction", rotate);
+                    animator.SetFloat("Direction", rotate);
+                    try
+                    {
+                        animatorf.SetFloat("Direction", rotate);
+                    }
+                    catch
+                    {
+                        //not all Karts have a front animator
+                    }
                 } catch
                 {
-                    //not all Karts have a front animator
+                    //not all Karts have a rear animator
                 }
             }
             else

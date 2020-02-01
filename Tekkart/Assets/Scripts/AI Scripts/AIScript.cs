@@ -29,6 +29,7 @@ public class AIScript : MonoBehaviour, Kart, AiKart
     public Transform kartNormal;
     public LayerMask layerMask;
     public Animator animator;
+    public Animator animatorf;
     public GameObject BoostParticleParent;
     private ParticleSystem[] BoostParticles;
     private bool currentlyboosting = false;
@@ -134,7 +135,22 @@ public class AIScript : MonoBehaviour, Kart, AiKart
 
 
             Steer(dir, amount);
-            animator.SetFloat("Direction", rotate);
+            try
+            {
+                animator.SetFloat("Direction", rotate);
+                try
+                {
+                    animatorf.SetFloat("Direction", rotate);
+                }
+                catch
+                {
+                    //not all Karts have a front animator
+                }
+            }
+            catch
+            {
+                //not all Karts have a rear animator
+            }
 
             //AI Driving Logic
             //Debug.DrawLine(transform.position, CheckpointLocationArray[TargetCheckpoint - 1].position, Color.green);
