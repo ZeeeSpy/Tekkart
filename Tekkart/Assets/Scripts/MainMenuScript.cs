@@ -12,6 +12,8 @@ public class MainMenuScript : MonoBehaviour
     public AudioClip CharacterSelect;
     public AudioClip MenuOST;
 
+    public AudioClip Welcome;
+
     public GameObject ModeSelectObject;
     public GameObject TimeTrialsObject;
     public GameObject GrandPrixObject;
@@ -31,7 +33,15 @@ public class MainMenuScript : MonoBehaviour
     public void GrandPrixChar()
     {
         ToggleMenu(GrandPrixCharacterSelectObject);
+        StartCoroutine("CharacterSelectSounds");
+        
+    }
+
+    IEnumerator CharacterSelectSounds()
+    {
         OST.Stop();
+        SFX.PlayOneShot(Welcome);
+        yield return new WaitForSeconds(0.75f);
         OST.clip = CharacterSelect;
         OST.Play();
     }

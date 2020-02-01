@@ -6532,6 +6532,7 @@ MonoBehaviour:
   OST: {fileID: 379026862}
   CharacterSelect: {fileID: 8300000, guid: edd481a2f6b82e748bc0f24870f788e5, type: 3}
   MenuOST: {fileID: 8300000, guid: c14250f7a616c324fa0254baee7fe3c9, type: 3}
+  Welcome: {fileID: 8300000, guid: 6c269d605473a9b439e5803c399e9bec, type: 3}
   ModeSelectObject: {fileID: 2002768415}
   TimeTrialsObject: {fileID: 851840139}
   GrandPrixObject: {fileID: 1644951766}
@@ -12248,16 +12249,17 @@ MonoBehaviour:
   - {fileID: 5125216789486460035, guid: 8bac1c3c5acbd8543a73344834670d95, type: 3}
   - {fileID: 5125216789486460035, guid: c1256548e0a4c9848a8a09ed9a727882, type: 3}
   - {fileID: 5125216789486460035, guid: 4e7049f480a47114ebf0b2952dc91f45, type: 3}
-  GeneratedKartList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  SFX: {fileID: 978656096}
+  CharacterNameList:
+  - {fileID: 8300000, guid: 575c4d082f5106b48a3c39aecd72a8e9, type: 3}
+  - {fileID: 8300000, guid: 5aea58e360b6d994aaddc10b10b2868f, type: 3}
+  - {fileID: 8300000, guid: a93377e8b55017646bc415bbfb4b7d95, type: 3}
+  - {fileID: 8300000, guid: 2060875c649067744a126b0bedd8a05b, type: 3}
+  - {fileID: 8300000, guid: abc61354f4dbad745b5072954b727e0a, type: 3}
+  - {fileID: 8300000, guid: ebb6b75293f52774db2815c8cacaceea, type: 3}
+  - {fileID: 8300000, guid: f56bdd499de1dc241b43a6644faaafbd, type: 3}
+  - {fileID: 8300000, guid: 3a50c4d0655947f44bb8be7124a2addf, type: 3}
+  - {fileID: 8300000, guid: b2d2c20b09f7c9846a1f0419b4518fdb, type: 3}
 --- !u!4 &1856131504
 Transform:
   m_ObjectHideFlags: 0

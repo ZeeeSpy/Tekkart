@@ -6,7 +6,10 @@ public class KartMasterListScript : MonoBehaviour
 {
     public GameObject[] AIKarts = new GameObject[9];
     public GameObject[] PlayerKarts = new GameObject[9];
-    public GameObject[] GeneratedKartList = new GameObject[9];
+    private GameObject[] GeneratedKartList = new GameObject[9];
+    public AudioSource SFX;
+    public AudioClip [] CharacterNameList = new AudioClip[9];
+
     private bool KartsGenerated = false;
 
     private void Awake()
@@ -22,6 +25,7 @@ public class KartMasterListScript : MonoBehaviour
 
     public void GenerateKartList(int CharacterNumber)
     {
+        SFX.PlayOneShot(CharacterNameList[CharacterNumber]);
         if (CharacterNumber == -1)
         {
             CharacterNumber = Random.Range(0, 9);

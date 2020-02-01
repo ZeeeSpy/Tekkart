@@ -12,13 +12,20 @@ public class RaceStartLineScript : MonoBehaviour
 
     void Awake()
     {
-        KartMasterListScript KML = GameObject.FindGameObjectWithTag("KartMasterList").GetComponent<KartMasterListScript>();
+        try
+        {
+            KartMasterListScript KML = GameObject.FindGameObjectWithTag("KartMasterList").GetComponent<KartMasterListScript>();
 
-        KartsToSpawn = KML.GetKartList();
-
+            KartsToSpawn = KML.GetKartList();
+        }
+        catch
+        {
+            //Played out of order
+        }
         for (int i = 0; i < transform.childCount; i++)
         {
             StartLinePositionsArray[i] = transform.GetChild(i);
+            //TODO spawn karts slightly higher
         }
 
         string[] Order;
