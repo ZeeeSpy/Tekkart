@@ -12,10 +12,9 @@ public class RaceStartLineScript : MonoBehaviour
 
     void Awake()
     {
-        //TODO 
-        /*
-         * Get the generated kart list so that the races are consitent
-         */
+        KartMasterListScript KML = GameObject.FindGameObjectWithTag("KartMasterList").GetComponent<KartMasterListScript>();
+
+        KartsToSpawn = KML.GetKartList();
 
         for (int i = 0; i < transform.childCount; i++)
         {

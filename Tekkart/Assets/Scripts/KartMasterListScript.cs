@@ -6,7 +6,7 @@ public class KartMasterListScript : MonoBehaviour
 {
     public GameObject[] AIKarts = new GameObject[9];
     public GameObject[] PlayerKarts = new GameObject[9];
-    private GameObject[] GeneratedKartList = new GameObject[9];
+    public GameObject[] GeneratedKartList = new GameObject[9];
     private bool KartsGenerated = false;
 
     private void Awake()
@@ -20,11 +20,28 @@ public class KartMasterListScript : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public void GenerateKartListr(int CharacterNumber)
+    public void GenerateKartList(int CharacterNumber)
     {
-        //TODO generate kart list
+        if (CharacterNumber == -1)
+        {
+            CharacterNumber = Random.Range(0, 9);
+        }
+
+        for (int i = 0; i < GeneratedKartList.Length; i++)
+        {
+            if (i == CharacterNumber)
+            {
+                GeneratedKartList[i] = PlayerKarts[CharacterNumber];
+            }
+            else
+            {
+                GeneratedKartList[i] = AIKarts[i];
+            }
+        }
     }
-    public GameObject[] GetKartList(int CharacterNumber)
+
+
+    public GameObject[] GetKartList()
     {
         return GeneratedKartList;
     }

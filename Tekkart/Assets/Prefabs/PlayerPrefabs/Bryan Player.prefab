@@ -4986,7 +4986,7 @@ MonoBehaviour:
   TopSpeed: 60
   steering: 15
   acceleration: 5
-  handling: 4
+  handling: 5
   driftingability: 0.4
   TargetCheckPoint: 0
   CurrentCheckPoint: -1
@@ -5239,7 +5239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5388509564733189071}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.038000107, y: 0.9640002, z: 0.0710001}
+  m_LocalPosition: {x: 0, y: 0.9640002, z: 0.0710001}
   m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_Children: []
   m_Father: {fileID: 5388509565127639988}
@@ -5482,7 +5482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5388509564925142640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.82, y: 5.94, z: -37.05}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5388509564289362300}
@@ -10346,7 +10346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5388509565411833372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.038000107, y: 0.964, z: 0.085}
+  m_LocalPosition: {x: 0, y: 0.964, z: 0.085}
   m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_Children: []
   m_Father: {fileID: 5388509565127639988}

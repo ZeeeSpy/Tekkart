@@ -4959,7 +4959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8416334079314847080}
   m_Layer: 0
-  m_Name: Alisa
+  m_Name: ZZAlisa
   m_TagString: Characters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4973,7 +4973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8416334079314847079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.03, y: 5.85, z: 29.64}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8416334079739152410}
@@ -10125,7 +10125,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8e564146e7e32c74e8c8d4dc36287d90, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 124e6368bb49bf74ca9acb8eeaf4bc6b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.025
   m_Pitch: 0.75
