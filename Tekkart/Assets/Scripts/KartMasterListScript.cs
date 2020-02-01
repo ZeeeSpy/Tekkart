@@ -26,13 +26,13 @@ public class KartMasterListScript : MonoBehaviour
 
     public void GenerateKartList(int CharacterNumber)
     {
-        Announcer.Stop();
-        Announcer.PlayOneShot(CharacterNameList[CharacterNumber]);
         if (CharacterNumber == -1)
         {
             CharacterNumber = Random.Range(0, 9);
         }
 
+        Announcer.Stop();
+        StartCoroutine(CharacterNameRead(CharacterNumber));
         for (int i = 0; i < GeneratedKartList.Length; i++)
         {
             if (i == CharacterNumber)
@@ -46,6 +46,11 @@ public class KartMasterListScript : MonoBehaviour
         }
     }
 
+    IEnumerator CharacterNameRead(int CharacterNumber)
+    {
+        yield return new WaitForSeconds(0.3f);
+        Announcer.PlayOneShot(CharacterNameList[CharacterNumber]);
+    }
 
     public GameObject[] GetKartList()
     {

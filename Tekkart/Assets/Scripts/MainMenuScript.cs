@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -33,9 +34,33 @@ public class MainMenuScript : MonoBehaviour
 
     public void GrandPrixChar()
     {
+        //UltraDumbWorkAround To Fix "Pointer Exit" not happening on click
+        for (int i = 0; i < GrandPrixCharacterSelectObject.transform.childCount; i++)
+        {
+            GameObject Go = GrandPrixCharacterSelectObject.transform.GetChild(i).gameObject;
+            if (Go.name == "CharacterGrid")
+            {
+                for (int j = 0; j < Go.transform.childCount; j++)
+                {
+                    GameObject Char = Go.transform.GetChild(j).gameObject;
+                    for (int q = 0; q < Char.transform.childCount; q++)
+                    {
+                        GameObject Glow = Char.transform.GetChild(q).gameObject;
+                        if (Glow.name == "Glow")
+                        {
+                            Glow.GetComponent<Image>().enabled = false;
+                        }
+                    }
+
+                }
+            } else
+            {
+                continue;
+            }
+        }
+
         ToggleMenu(GrandPrixCharacterSelectObject);
         StartCoroutine("CharacterSelectSounds");
-        
     }
 
     IEnumerator CharacterSelectSounds()
