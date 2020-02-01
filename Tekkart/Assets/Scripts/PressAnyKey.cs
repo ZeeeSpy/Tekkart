@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PressAnyKey : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PressAnyKey : MonoBehaviour
     public GameObject FirstPlayScene;
     public AudioSource SFX;
     public AudioSource OST;
+    public GameObject CurrentlySelected;
 
     public AudioClip SFXSelect;
     
@@ -25,7 +27,6 @@ public class PressAnyKey : MonoBehaviour
             } else
             {
                 FirstPlayScene.SetActive(true);
-
                 todisable.SetActive(false);
             }
         }

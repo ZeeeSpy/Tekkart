@@ -2135,6 +2135,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 928971984}
+          m_MethodName: OnButtonHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &310694820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3867,6 +3882,21 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 928971984}
           m_MethodName: OnButtonClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 928971984}
+          m_MethodName: OnButtonHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5722,6 +5752,21 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 928971984}
           m_MethodName: OnButtonClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 928971984}
+          m_MethodName: OnButtonHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7597,6 +7642,7 @@ MonoBehaviour:
   FirstPlayScene: {fileID: 1136795262}
   SFX: {fileID: 978656096}
   OST: {fileID: 379026862}
+  CurrentlySelected: {fileID: 1247929181}
   SFXSelect: {fileID: 8300000, guid: aba759c6887a4d4488b2902dd1dcc35c, type: 3}
 --- !u!1 &1136795262
 GameObject:
@@ -8796,6 +8842,7 @@ GameObject:
   - component: {fileID: 1247929185}
   - component: {fileID: 1247929184}
   - component: {fileID: 1247929183}
+  - component: {fileID: 1247929187}
   m_Layer: 5
   m_Name: Grand Prix
   m_TagString: Untagged
@@ -8971,6 +9018,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247929181}
   m_CullTransparentMesh: 0
+--- !u!114 &1247929187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247929181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee0928ccf54408488bff479e9b4a47b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1275085630
 GameObject:
   m_ObjectHideFlags: 0
@@ -9044,6 +9103,21 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 928971984}
           m_MethodName: OnButtonClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 928971984}
+          m_MethodName: OnButtonHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -13755,6 +13829,21 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 928971984}
           m_MethodName: OnButtonClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 928971984}
+          m_MethodName: OnButtonHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
