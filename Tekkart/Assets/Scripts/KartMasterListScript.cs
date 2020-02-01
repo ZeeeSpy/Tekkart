@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KartMasterListScript : MonoBehaviour
 {
     public GameObject[] AIKarts = new GameObject[9];
     public GameObject[] PlayerKarts = new GameObject[9];
     private GameObject[] GeneratedKartList = new GameObject[9];
-    public AudioSource SFX;
+    public AudioSource Announcer;
     public AudioClip [] CharacterNameList = new AudioClip[9];
 
     private bool KartsGenerated = false;
@@ -25,7 +26,8 @@ public class KartMasterListScript : MonoBehaviour
 
     public void GenerateKartList(int CharacterNumber)
     {
-        SFX.PlayOneShot(CharacterNameList[CharacterNumber]);
+        Announcer.Stop();
+        Announcer.PlayOneShot(CharacterNameList[CharacterNumber]);
         if (CharacterNumber == -1)
         {
             CharacterNumber = Random.Range(0, 9);

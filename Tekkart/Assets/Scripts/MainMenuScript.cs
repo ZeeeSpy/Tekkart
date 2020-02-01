@@ -12,6 +12,7 @@ public class MainMenuScript : MonoBehaviour
     public AudioClip CharacterSelect;
     public AudioClip MenuOST;
 
+    public AudioSource Announcer;
     public AudioClip Welcome;
 
     public GameObject ModeSelectObject;
@@ -40,7 +41,7 @@ public class MainMenuScript : MonoBehaviour
     IEnumerator CharacterSelectSounds()
     {
         OST.Stop();
-        SFX.PlayOneShot(Welcome);
+        Announcer.PlayOneShot(Welcome);
         yield return new WaitForSeconds(0.75f);
         OST.clip = CharacterSelect;
         OST.Play();
