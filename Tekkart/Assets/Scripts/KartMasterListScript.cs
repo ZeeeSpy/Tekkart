@@ -10,6 +10,7 @@ public class KartMasterListScript : MonoBehaviour
     private GameObject[] GeneratedKartList = new GameObject[9];
     public AudioSource Announcer;
     public AudioClip [] CharacterNameList = new AudioClip[9];
+    public GameObject TimeTrialKart;
 
     private bool KartsGenerated = false;
 
@@ -46,6 +47,18 @@ public class KartMasterListScript : MonoBehaviour
         }
     }
 
+    public void GenerateTimeTrialList(int CharacterNumber)
+    {
+        if (CharacterNumber == -1)
+        {
+            CharacterNumber = Random.Range(0, 9);
+        }
+
+        Announcer.Stop();
+        StartCoroutine(CharacterNameRead(CharacterNumber));
+        TimeTrialKart = PlayerKarts[CharacterNumber];
+    }
+
     IEnumerator CharacterNameRead(int CharacterNumber)
     {
         yield return new WaitForSeconds(0.3f);
@@ -55,5 +68,10 @@ public class KartMasterListScript : MonoBehaviour
     public GameObject[] GetKartList()
     {
         return GeneratedKartList;
+    }
+
+    public GameObject GetTimeTrialKart()
+    {
+        return TimeTrialKart;
     }
 }

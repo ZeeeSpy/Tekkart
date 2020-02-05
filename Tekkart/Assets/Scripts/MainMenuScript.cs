@@ -20,7 +20,9 @@ public class MainMenuScript : MonoBehaviour
     public GameObject TimeTrialsObject;
     public GameObject GrandPrixObject;
     public GameObject GrandPrixCharacterSelectObject;
+    public GameObject StoryCharacterSelectObject;
     public GameObject ProfileObject;
+    public GameObject OptionsObject;
 
     public void OnButtonHover()
     {
@@ -32,12 +34,22 @@ public class MainMenuScript : MonoBehaviour
         SFX.PlayOneShot(Select);
     }
 
+    public void StoryChar()
+    {
+        CharacterSelectScreen(StoryCharacterSelectObject);
+    }
+
     public void GrandPrixChar()
     {
+        CharacterSelectScreen(GrandPrixCharacterSelectObject);
+    }
+
+    private void CharacterSelectScreen(GameObject TargetCharScreen)
+    {
         //UltraDumbWorkAround To Fix "Pointer Exit" not happening on click
-        for (int i = 0; i < GrandPrixCharacterSelectObject.transform.childCount; i++)
+        for (int i = 0; i < TargetCharScreen.transform.childCount; i++)
         {
-            GameObject Go = GrandPrixCharacterSelectObject.transform.GetChild(i).gameObject;
+            GameObject Go = TargetCharScreen.transform.GetChild(i).gameObject;
             if (Go.name == "CharacterGrid")
             {
                 for (int j = 0; j < Go.transform.childCount; j++)
@@ -53,13 +65,14 @@ public class MainMenuScript : MonoBehaviour
                     }
 
                 }
-            } else
+            }
+            else
             {
                 continue;
             }
         }
 
-        ToggleMenu(GrandPrixCharacterSelectObject);
+        ToggleMenu(TargetCharScreen);
         StartCoroutine("CharacterSelectSounds");
     }
 
@@ -85,6 +98,11 @@ public class MainMenuScript : MonoBehaviour
         OST.Stop();
         OST.clip = MenuOST;
         OST.Play();
+    }
+
+    public void StoryMode(int charnumber)
+    {
+        
     }
 
     public void TimeTrials()
@@ -114,7 +132,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void Options()
     {
-
+        ToggleMenu(OptionsObject);
     }
 
     private void ToggleMenu(GameObject menutotoggle)

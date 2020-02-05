@@ -9,6 +9,7 @@ public class CreateProfileScript : MonoBehaviour
     //Keys
     private const string playernamekey = "PLAYER_NAME";
     private const string playerscore = "PLAYER_POINTS";
+    private const string mastervolume = "MASTER_VOLUME";
     public InputField nameinput;
     public GameObject ProceedObject;
     public Text ProceedTextBox;
@@ -16,6 +17,10 @@ public class CreateProfileScript : MonoBehaviour
     public GameObject todisable;
     public GameObject toenable;
 
+    public void OnEnable()
+    {
+        PlayerPrefs.SetFloat(mastervolume, 0.5f);
+    }
 
     public void AreYouSure()
     {
