@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -102,7 +103,8 @@ public class MainMenuScript : MonoBehaviour
 
     public void StoryMode(int charnumber)
     {
-        
+        string toload = "Story" + charnumber.ToString();
+        SceneManager.LoadScene(toload);
     }
 
     public void TimeTrials()

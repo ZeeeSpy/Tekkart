@@ -44,13 +44,22 @@ public class LoadingScreenScript : MonoBehaviour
             yield return null;
             //we wait
         }
+        AudioSource[] EveryAudioSource = FindObjectsOfType<AudioSource>();
 
-        
+        foreach (AudioSource Audio in EveryAudioSource)
+        {
+            Audio.enabled = false;
+        }
+
         yield return new WaitForSeconds(Random.Range(lowrange, highrange));
         //Fake loading screen LUL
 
         //In new scene
         IfInRace();
+        foreach (AudioSource Audio in EveryAudioSource)
+        {
+            Audio.enabled = true;
+        }
     }
 
     IEnumerator LoadIndex(int SceneIndex)

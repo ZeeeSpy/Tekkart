@@ -62,7 +62,13 @@ public class KartMasterListScript : MonoBehaviour
     IEnumerator CharacterNameRead(int CharacterNumber)
     {
         yield return new WaitForSeconds(0.3f);
-        Announcer.PlayOneShot(CharacterNameList[CharacterNumber]);
+        try
+        {
+            Announcer.PlayOneShot(CharacterNameList[CharacterNumber]);
+        } catch
+        {
+            //Player went through menu too fast
+        }
     }
 
     public GameObject[] GetKartList()
