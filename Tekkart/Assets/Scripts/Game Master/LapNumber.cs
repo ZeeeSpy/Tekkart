@@ -240,13 +240,14 @@ public class LapNumber : MonoBehaviour, LapManager
         }
         else if (FinalPositions[FinalPositions.Length - 1] == "Player")
         { //player is last no need to do a snapshot
+            /*
             string outputa = "";
             foreach (string position in FinalPositions)
             {
                 outputa = outputa + position + " : ";
             }
             Debug.Log(outputa);
-
+            */
 
             try
             {
