@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoryModeScenes/Story1.unity
     guid: 2059ee7ff4d74a04d9f8f68839275313
+  - enabled: 1
+    path: Assets/Scenes/ChaolanManorTT.unity
+    guid: ea4f57704cc6e55488577ff1e5cbc6c1
   m_configObjects: {}

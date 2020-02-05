@@ -23,6 +23,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject GrandPrixCharacterSelectObject;
     public GameObject StoryCharacterSelectObject;
     public GameObject ProfileObject;
+    public GameObject TimeTrialsCharacterSelectObject;
     public GameObject OptionsObject;
 
     public void OnButtonHover()
@@ -107,10 +108,26 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene(toload);
     }
 
+    public void TimeTrialsChar()
+    {
+        CharacterSelectScreen(TimeTrialsCharacterSelectObject);
+    }
+
     public void TimeTrials()
     {
-        ToggleMenu(TimeTrialsObject);
+        TimeTrialsCharacterSelectObject.SetActive(false);
+        TimeTrialsObject.SetActive(true);
     }
+
+    public void TimeTrialsExit()
+    {
+        TimeTrialsObject.SetActive(false);
+        ModeSelectObject.SetActive(true);
+        OST.Stop();
+        OST.clip = MenuOST;
+        OST.Play();
+    }
+
 
     public void VSRace()
     {

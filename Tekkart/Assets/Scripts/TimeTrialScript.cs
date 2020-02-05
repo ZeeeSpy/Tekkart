@@ -67,6 +67,10 @@ public class TimeTrialScript : MonoBehaviour, LapManager
                 if (ThisKart.GetName() == "Player")
                 {
                     LapNumberUI.text = "Lap " + ((int)ThisKart.GetCheckPointValue()).ToString() + "/" + LapLength;
+                    if (ThisKart.GetCheckPointValue() >= LapLength + 1)
+                    {
+                        EndRace();
+                    }
                 }
             }
 
@@ -108,5 +112,17 @@ public class TimeTrialScript : MonoBehaviour, LapManager
                 }
             }
         }
+    }
+
+    private void EndRace()
+    {
+        //Camera Stuff
+        GameObject[] CamerasToDeact = GameObject.FindGameObjectsWithTag("CameraD");
+
+        foreach (GameObject CO in CamerasToDeact)
+        {
+            CO.SetActive(false);
+        }
+        GameObject.FindGameObjectWithTag("CameraA").GetComponent<Camera>().enabled = true;
     }
 }
