@@ -223,9 +223,9 @@ MonoBehaviour:
   StoryTextUI: {fileID: 1746139235}
   MaxPart: 3
   ArtArray:
-  - {fileID: 21300000, guid: 42711b1717fa9e04d96380c569cd297c, type: 3}
-  - {fileID: 21300000, guid: 42711b1717fa9e04d96380c569cd297c, type: 3}
-  - {fileID: 21300000, guid: 42711b1717fa9e04d96380c569cd297c, type: 3}
+  - {fileID: 21300000, guid: e588c7d4cc939e6449e26301cb79fb39, type: 3}
+  - {fileID: 21300000, guid: adb041772b3c8f24b94e3346091444b5, type: 3}
+  - {fileID: 21300000, guid: 45908cde6fa4ac94f8ba7a1ccb452205, type: 3}
   AnnouncerVoice:
   - {fileID: 8300000, guid: c5e52c1b25f96e14998bd784b0ba07ad, type: 3}
   - {fileID: 8300000, guid: 20e303841a09d7048a86b08afcc17419, type: 3}
@@ -287,12 +287,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.509434, g: 0.2811499, b: 0.2811499, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e588c7d4cc939e6449e26301cb79fb39, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -44,6 +44,13 @@ public class TimeTrialScript : MonoBehaviour, LapManager
         {
             TimeList[j] = (decimal)0.00f;
         }
+
+        string laptimestoshow = "";
+        for (int j = 0; j < TimeList.Length; j++)
+        {
+            laptimestoshow = laptimestoshow + "Lap " + (j + 1).ToString() + ": " + TimeList[j].ToString() + "\n";
+        }
+        PositionUI.text = laptimestoshow;
     }
 
     public void CheckIn(int inccheckpoint, Kart ThisKart)
@@ -67,6 +74,7 @@ public class TimeTrialScript : MonoBehaviour, LapManager
                 if (ThisKart.GetName() == "Player")
                 {
                     LapNumberUI.text = "Lap " + ((int)ThisKart.GetCheckPointValue()).ToString() + "/" + LapLength;
+                    newlaptimer = true;
                     if (ThisKart.GetCheckPointValue() >= LapLength + 1)
                     {
                         EndRace();
@@ -101,7 +109,6 @@ public class TimeTrialScript : MonoBehaviour, LapManager
                     laptimestoshow = laptimestoshow + "Lap " + (i+1).ToString() + ": " + TimeList[i].ToString() + "\n";
                 }
                 PositionUI.text = laptimestoshow;
-                Debug.Log(laptimestoshow);
             }
         }
     }
@@ -116,5 +123,7 @@ public class TimeTrialScript : MonoBehaviour, LapManager
             CO.SetActive(false);
         }
         GameObject.FindGameObjectWithTag("CameraA").GetComponent<Camera>().enabled = true;
+        //TODO
+        //Show end screen stuff
     }
 }
