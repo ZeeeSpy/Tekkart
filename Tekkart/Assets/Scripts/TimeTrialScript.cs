@@ -101,15 +101,7 @@ public class TimeTrialScript : MonoBehaviour, LapManager
                     laptimestoshow = laptimestoshow + "Lap " + (i+1).ToString() + ": " + TimeList[i].ToString() + "\n";
                 }
                 PositionUI.text = laptimestoshow;
-
-                if (currentlap == 1)
-                {
-                    MainCamera.SetActive(false);
-                    SpinCamera.SetActive(true);
-                    firstcheckin = false;
-
-                    //Start Corutine that sends player to menu
-                }
+                Debug.Log(laptimestoshow);
             }
         }
     }

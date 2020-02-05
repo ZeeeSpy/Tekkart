@@ -16,7 +16,13 @@ public class PlayerPickup : MonoBehaviour, Pickupable
     {
         ItemArray = new string[3] { "Boost", "Trap", "UnguidedMissile" };
         ThisKart = GetComponent<KartScript>();
-        ItemList = GameObject.FindGameObjectWithTag("ItemParent").GetComponent<ItemParent>();
+        try
+        {
+            ItemList = GameObject.FindGameObjectWithTag("ItemParent").GetComponent<ItemParent>();
+        } catch
+        {
+            //In time trial
+        }
     }
 
     public void GetPickUp()

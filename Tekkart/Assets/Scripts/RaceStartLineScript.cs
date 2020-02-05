@@ -21,14 +21,10 @@ public class RaceStartLineScript : MonoBehaviour
         try
         {
             KartMasterListScript KML = GameObject.FindGameObjectWithTag("KartMasterList").GetComponent<KartMasterListScript>();
-            Debug.Log("KML exists");
             if (KML.GetIsTimeTrial()) //Is Time Trial
             {
-                Debug.Log("1");
                 GameObject TTKart = Instantiate(KML.GetTimeTrialKart(), StartLinePositionsArray[0].position, Quaternion.identity);
-                Debug.Log("2");
                 TTKart.transform.SetParent(transform);
-                Debug.Log("3");
                 return;
             }
             else
