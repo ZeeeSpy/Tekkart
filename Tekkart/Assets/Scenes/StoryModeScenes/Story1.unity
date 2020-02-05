@@ -231,11 +231,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 20e303841a09d7048a86b08afcc17419, type: 3}
   - {fileID: 8300000, guid: 42607e229ec00fb49bcb6389aecd1c64, type: 3}
   StoryText:
-  - After killing his father Heihatchi Mishima, Kazuya returned to the Mishima Dojo
+  - After killing his father Heihachi Mishima, Kazuya returned to the Mishima Dojo
     to destroy any Legacy his father still had.
-  - To his surpize Heihatchi had a secret garage filled with trophies, awards and
-    Go Karts. Kazuya never knew about his fathers prowess.
-  - '"That bastered taunts me even in death, I won''t let him have this" Thought Kazuya.
+  - To his surpize Heihachi had a secret garage filled with trophies, awards and Go
+    Karts. Kazuya never knew about his fathers prowess.
+  - '"That bastard taunts me even in death, I won''t let him have this" Thought Kazuya.
     Kazuya announces the King Of Iron Kart Tournament.'
 --- !u!1 &826848129
 GameObject:
