@@ -56,6 +56,7 @@ public class TimeTrialScript : MonoBehaviour, LapManager
         {
             laptimestoshow = laptimestoshow + "Lap " + (j + 1).ToString() + ": " + TimeList[j].ToString() + "\n";
         }
+        Debug.Log(laptimestoshow);
         PositionUI.text = laptimestoshow;
     }
 
@@ -123,14 +124,6 @@ public class TimeTrialScript : MonoBehaviour, LapManager
 
     private void EndRace()
     {
-
-        Debug.Log("~~~~~~~~~~~~~~~~~~~~~");
-        for (int q = 0; q < TimeList.Length; q++)
-        {
-            Debug.Log(TimeList[q]);
-        }
-        Debug.Log("~~~~~~~~~~~~~~~~~~~~~");
-
         //Camera Stuff
         GameObject[] CamerasToDeact = GameObject.FindGameObjectsWithTag("CameraD");
 
@@ -151,13 +144,11 @@ public class TimeTrialScript : MonoBehaviour, LapManager
         decimal seconds = totaltime - (minutes * 60);
 
 
-        bool NewPB = false;
-        if (!PlayerPrefs.HasKey(StageName + "P") || PlayerPrefs.GetFloat(StageName + "P") < (float)totaltime)
+        if (!PlayerPrefs.HasKey(StageName + "P"))
         {
-            NewPB = true;
             PlayerPrefs.SetFloat(StageName + "P", (float)totaltime);
         }
 
-        GameObject.FindGameObjectWithTag("PRPTT").GetComponent<TimeTrialResults>().SetResults(TimeList, NewPB, StageName);
+        GameObject.FindGameObjectWithTag("PRPTT").GetComponent<TimeTrialResults>().SetResults(TimeList, StageName, totaltime);
     }
 }

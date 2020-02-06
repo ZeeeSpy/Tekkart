@@ -24,6 +24,7 @@ public class CreateProfileScript : MonoBehaviour
 
         //Time Trial Set Up
         PlayerPrefs.SetFloat("CMS", 100.02f);
+        PlayerPrefs.SetFloat("IAS", 200.00f);
     }
 
     public void AreYouSure()

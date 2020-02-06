@@ -9,4 +9,9 @@ public class TimeTrialMenuScript : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen("ChaolanManorTT");
     }
+
+    public void InfiniteAzure()
+    {
+        GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen("InfiniteAzureTT");
+    }
 }

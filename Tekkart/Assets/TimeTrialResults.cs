@@ -15,29 +15,37 @@ public class TimeTrialResults : MonoBehaviour
     public GameObject UI;
 
 
-    public void SetResults(decimal[] LapTimesArr, bool NewPB, string StageName)
+    public void SetResults(decimal[] LapTimesArr, string StageName, decimal trtt)
     {
-        if (NewPB)
-        {
-            Notification.text = "New PB!";
-        } else
-        {
-            Notification.text = "You're not as tough as you talk!";
-        }
-
         //PB calculations
         float totaltime = PlayerPrefs.GetFloat(StageName + "P");
-        int minutes = (int)totaltime / 60;
-        decimal seconds = (decimal)totaltime - (minutes * 60);
-        PersonalBest.text = ("Personal Best: " + minutes + ":" + seconds);
+        Debug.Log("This Time:" + trtt + ": PB: " + totaltime);
+        int minutes = 0;
+        decimal seconds = 0;
+
+
+        if ((float)trtt < totaltime)
+        {
+            Notification.text = "New PB!";
+            PlayerPrefs.SetFloat(StageName + "P", (float)trtt);
+            minutes = (int)trtt / 60;
+            seconds = (decimal)trtt - (minutes * 60);
+            PersonalBest.text = ("Personal Best: " + minutes + ":" + seconds);
+        }
+        else
+        {
+            Notification.text = "You're not as tough as you talk!";
+            minutes = (int)totaltime / 60;
+            seconds = (decimal)totaltime - (minutes * 60);
+            PersonalBest.text = ("Personal Best: " + minutes + ":" + seconds);
+        }
 
         //Calculation of current race time and lap times
         string LapTimeString = "";
         totaltime = 0;
         for (int i = 0; i < LapTimesArr.Length; i++)
         {
-            Debug.Log("Lap" + i + ": " + LapTimesArr[i]);
-            LapTimeString = LapTimeString + "Lap " + i + ":  " + LapTimesArr[i] +"\n";
+            LapTimeString = LapTimeString + "Lap " + i+1 + ":  " + LapTimesArr[i] +"\n";
             totaltime = totaltime + (float)LapTimesArr[i];
         }
         minutes = (int)totaltime / 60;
@@ -48,7 +56,6 @@ public class TimeTrialResults : MonoBehaviour
 
         //Format Heihachi's time
         totaltime = PlayerPrefs.GetFloat(StageName + "S");
-        Debug.Log(totaltime);
         minutes = (int)totaltime / 60;
         seconds = (decimal)totaltime - (minutes * 60);
         SystemBest.text = (minutes + ":" + seconds);
