@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_Children: []
   m_Father: {fileID: 8745376345564999450}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7888217758582353029
 SpriteRenderer:
@@ -4944,6 +4944,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1057525185256503638}
   - {fileID: 8745376346211926022}
   - {fileID: 8745376346061181163}
   - {fileID: 7888217758582353051}
@@ -5187,7 +5188,7 @@ Transform:
   m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_Children: []
   m_Father: {fileID: 8745376345564999450}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8745376346061181161
 SpriteRenderer:
@@ -10041,7 +10042,7 @@ Transform:
   - {fileID: 8745376346073553056}
   - {fileID: 8745376345467837558}
   m_Father: {fileID: 8745376345564999450}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8745376346727191032
 GameObject:
@@ -10192,6 +10193,7 @@ MonoBehaviour:
   acceleration: 5
   handling: 4
   driftingability: 0.4
+  DriftParticleParent: {fileID: 1057525185256503638}
   TargetCheckPoint: 0
   CurrentCheckPoint: -1
   CheckPointValue: 1
@@ -10615,3 +10617,93 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1001 &3558090248349835242
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8745376345564999450}
+    m_Modifications:
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386565217542380572, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_Name
+      value: ZZDriftParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e0caf50370bd854e8cd2002b740fad8, type: 3}
+--- !u!4 &1057525185256503638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3558090248349835242}
+  m_PrefabAsset: {fileID: 0}

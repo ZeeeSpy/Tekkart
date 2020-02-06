@@ -43,6 +43,8 @@ public class KartScript : MonoBehaviour, Kart
     float amount;
     private bool Stunned = false;
 
+    public Transform DriftParticleParent;
+
     [Header("CheckPoint Logic")]
     [SerializeField]
     private int TargetCheckPoint = 0;
@@ -177,15 +179,23 @@ public class KartScript : MonoBehaviour, Kart
 
             driftPower = driftPower + Time.deltaTime;
 
+            foreach (Transform child in DriftParticleParent)
+            {
+                child.gameObject.SetActive(true);
+            }
 
             //driftdebug.text = driftdebug.text + "\n Control: " + control.ToString();
             //driftdebug.text = driftdebug.text + "\n DriftPower" + driftPower.ToString();
             //debug.text = "Drifting: True";
-
             Steer(driftDirection, control);
         } else {
             //debug.text = "Drifting: False";
             CalculateBoost(driftPower);
+
+            foreach (Transform child in DriftParticleParent)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
 
 

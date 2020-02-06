@@ -5075,6 +5075,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3302265707251883388}
   - {fileID: 299101099291074260}
   - {fileID: 299101098551445444}
   - {fileID: 299101099158686154}
@@ -9864,7 +9865,7 @@ Transform:
   m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_Children: []
   m_Father: {fileID: 299101098429968797}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &299101098551445446
 SpriteRenderer:
@@ -10119,7 +10120,7 @@ Transform:
   m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_Children: []
   m_Father: {fileID: 299101098429968797}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &299101099158686164
 SpriteRenderer:
@@ -10252,7 +10253,7 @@ Transform:
   - {fileID: 299101098536486591}
   - {fileID: 299101098323640237}
   m_Father: {fileID: 299101098429968797}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299101099329146990
 GameObject:
@@ -10384,6 +10385,7 @@ MonoBehaviour:
   acceleration: 5
   handling: 4
   driftingability: 0.4
+  DriftParticleParent: {fileID: 3302265707251883388}
   TargetCheckPoint: 0
   CurrentCheckPoint: -1
   CheckPointValue: 1
@@ -10615,3 +10617,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1304342522266500032
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 299101098429968797}
+    m_Modifications:
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386565217542380572, guid: 3e0caf50370bd854e8cd2002b740fad8,
+        type: 3}
+      propertyPath: m_Name
+      value: ZZDriftParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e0caf50370bd854e8cd2002b740fad8, type: 3}
+--- !u!4 &3302265707251883388 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4597600961539761852, guid: 3e0caf50370bd854e8cd2002b740fad8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1304342522266500032}
+  m_PrefabAsset: {fileID: 0}
