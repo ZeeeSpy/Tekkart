@@ -23,8 +23,16 @@ public class CreateProfileScript : MonoBehaviour
         PlayerPrefs.SetFloat(mastervolume, 0.5f);
 
         //Time Trial Set Up
-        PlayerPrefs.SetFloat("CMS", 100.02f);
-        PlayerPrefs.SetFloat("IAS", 200.00f);
+        //Set up loop with arrays instead?
+
+        //Chaolan Manor
+        PlayerPrefs.SetFloat("CMS", 1000.00f);
+        //Infinite Azure
+        PlayerPrefs.SetFloat("IAS", 1000.00f);
+        //Mt Mishima
+        PlayerPrefs.SetFloat("MMS", 1000.00f);
+        //Wolves Den
+        PlayerPrefs.SetFloat("WDS", 1000.00f);
     }
 
     public void AreYouSure()
