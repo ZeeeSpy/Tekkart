@@ -5613,7 +5613,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 28146940}
   m_HandleRect: {fileID: 206288203}
   m_Direction: 0
-  m_MinValue: 0.1
+  m_MinValue: 0.01
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.5

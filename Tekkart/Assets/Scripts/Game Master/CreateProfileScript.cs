@@ -19,7 +19,11 @@ public class CreateProfileScript : MonoBehaviour
 
     public void OnEnable()
     {
+        //Volume Set Up
         PlayerPrefs.SetFloat(mastervolume, 0.5f);
+
+        //Time Trial Set Up
+        PlayerPrefs.SetFloat("CMS", 100.02f);
     }
 
     public void AreYouSure()

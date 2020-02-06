@@ -26,6 +26,12 @@ public class TimeTrialScript : MonoBehaviour, LapManager
     public GameObject SpinCamera;
     public KartScript PlayerKartScript;
 
+    private bool oneway = false;
+
+    public string StageName;
+    //2 chars for stage name 
+    //1 letter for Personal or System
+
     private void Awake()
     {
         CheckPointScript[] CheckpointArray = GetComponentsInChildren<CheckPointScript>();
@@ -75,10 +81,6 @@ public class TimeTrialScript : MonoBehaviour, LapManager
                 {
                     LapNumberUI.text = "Lap " + ((int)ThisKart.GetCheckPointValue()).ToString() + "/" + LapLength;
                     newlaptimer = true;
-                    if (ThisKart.GetCheckPointValue() >= LapLength + 1)
-                    {
-                        EndRace();
-                    }
                 }
             }
 
@@ -109,12 +111,26 @@ public class TimeTrialScript : MonoBehaviour, LapManager
                     laptimestoshow = laptimestoshow + "Lap " + (i+1).ToString() + ": " + TimeList[i].ToString() + "\n";
                 }
                 PositionUI.text = laptimestoshow;
+
+                if (TimeList[LapLength - 1] != 0 && !oneway)
+                {
+                    oneway = true;
+                    EndRace();
+                }
             }
         }
     }
 
     private void EndRace()
     {
+
+        Debug.Log("~~~~~~~~~~~~~~~~~~~~~");
+        for (int q = 0; q < TimeList.Length; q++)
+        {
+            Debug.Log(TimeList[q]);
+        }
+        Debug.Log("~~~~~~~~~~~~~~~~~~~~~");
+
         //Camera Stuff
         GameObject[] CamerasToDeact = GameObject.FindGameObjectsWithTag("CameraD");
 
@@ -125,5 +141,23 @@ public class TimeTrialScript : MonoBehaviour, LapManager
         GameObject.FindGameObjectWithTag("CameraA").GetComponent<Camera>().enabled = true;
         //TODO
         //Show end screen stuff
+
+        //Calculate total time
+        decimal totaltime = 0;
+        for (int i = 0; i < TimeList.Length; i++) {
+            totaltime = totaltime + TimeList[i];
+        }
+        int minutes = (int)totaltime / 60;
+        decimal seconds = totaltime - (minutes * 60);
+
+
+        bool NewPB = false;
+        if (!PlayerPrefs.HasKey(StageName + "P") || PlayerPrefs.GetFloat(StageName + "P") < (float)totaltime)
+        {
+            NewPB = true;
+            PlayerPrefs.SetFloat(StageName + "P", (float)totaltime);
+        }
+
+        GameObject.FindGameObjectWithTag("PRPTT").GetComponent<TimeTrialResults>().SetResults(TimeList, NewPB, StageName);
     }
 }
