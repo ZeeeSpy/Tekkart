@@ -31,4 +31,12 @@ public class PressAnyKey : MonoBehaviour
             }
         }
     }
+
+    public void ToggleMenu()
+    {
+        OST.Stop();
+        OST.Play();
+        toenable.SetActive(true);
+        todisable.SetActive(false);
+    }
 }

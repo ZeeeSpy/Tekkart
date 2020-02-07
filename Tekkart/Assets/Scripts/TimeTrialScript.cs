@@ -56,7 +56,6 @@ public class TimeTrialScript : MonoBehaviour, LapManager
         {
             laptimestoshow = laptimestoshow + "Lap " + (j + 1).ToString() + ": " + TimeList[j].ToString() + "\n";
         }
-        Debug.Log(laptimestoshow);
         PositionUI.text = laptimestoshow;
     }
 

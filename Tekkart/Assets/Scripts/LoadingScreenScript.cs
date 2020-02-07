@@ -57,7 +57,9 @@ public class LoadingScreenScript : MonoBehaviour
             }
 
             StageNameUI.text = WithSpaces;
-        } else
+        }
+
+        if (SceneName == "PressStart" || SceneName == "CupFinish")
         {
             NowHeadingTo.SetActive(false);
             StageNameUI.text = "";
@@ -85,6 +87,12 @@ public class LoadingScreenScript : MonoBehaviour
         foreach (AudioSource Audio in EveryAudioSource)
         {
             Audio.enabled = true;
+        }
+
+
+        if (SceneName == "PressStart")
+        {
+            GameObject.Find("StartScreen").GetComponent<PressAnyKey>().ToggleMenu();
         }
     }
 

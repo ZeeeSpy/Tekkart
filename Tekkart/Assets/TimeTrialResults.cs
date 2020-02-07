@@ -19,7 +19,6 @@ public class TimeTrialResults : MonoBehaviour
     {
         //PB calculations
         float totaltime = PlayerPrefs.GetFloat(StageName + "P");
-        Debug.Log("This Time:" + trtt + ": PB: " + totaltime);
         int minutes = 0;
         decimal seconds = 0;
 
@@ -45,7 +44,8 @@ public class TimeTrialResults : MonoBehaviour
         totaltime = 0;
         for (int i = 0; i < LapTimesArr.Length; i++)
         {
-            LapTimeString = LapTimeString + "Lap " + i+1 + ":  " + LapTimesArr[i] +"\n";
+            int j = i + 1;
+            LapTimeString = LapTimeString + "Lap " + j + ":  " + LapTimesArr[i] +"\n";
             totaltime = totaltime + (float)LapTimesArr[i];
         }
         minutes = (int)totaltime / 60;
