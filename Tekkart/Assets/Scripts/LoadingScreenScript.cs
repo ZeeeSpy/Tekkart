@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class LoadingScreenScript : MonoBehaviour
 {
     public GameObject Holder;
+
+    public Text StageNameUI;
+    public GameObject NowHeadingTo;
+
     private CountdownGo GameStarter;
 
     private float lowrange = 1.5f;
@@ -37,6 +43,26 @@ public class LoadingScreenScript : MonoBehaviour
     IEnumerator Load(string SceneName)
     {
         Holder.SetActive(true);
+
+        if(SceneName != "PressStart" || SceneName !="CupFinish")
+        {
+            NowHeadingTo.SetActive(true);
+            string WithSpaces = Regex.Replace(SceneName, @"([a-z])([A-Z])", "$1 $2");
+            
+            //Check if it's time attack
+            string str = WithSpaces.Substring(WithSpaces.Length - 1);
+            if (str == "T")
+            {
+                WithSpaces = WithSpaces.Substring(0, WithSpaces.Length - 3);
+            }
+
+            StageNameUI.text = WithSpaces;
+        } else
+        {
+            NowHeadingTo.SetActive(false);
+            StageNameUI.text = "";
+        }
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
 
         while (!operation.isDone)
@@ -91,5 +117,6 @@ public class LoadingScreenScript : MonoBehaviour
             //Destroy Player points when appropirate
         }
         Holder.SetActive(false);
+
     }
 }
