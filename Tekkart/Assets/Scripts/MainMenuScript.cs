@@ -25,6 +25,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject ProfileObject;
     public GameObject TimeTrialsCharacterSelectObject;
     public GameObject OptionsObject;
+    public GameObject TipsObject;
 
     public void OnButtonHover()
     {
@@ -144,9 +145,9 @@ public class MainMenuScript : MonoBehaviour
         ToggleMenu(ProfileObject);
     }
 
-    public void Info()
+    public void Tips()
     {
-
+        ToggleMenu(TipsObject);
     }
 
     public void Options()
