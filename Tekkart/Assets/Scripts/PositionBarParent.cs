@@ -21,6 +21,7 @@ public class PositionBarParent : MonoBehaviour
 
     public void ChangeBarValues(string[,] IncPositions, PlayerPointScript IncPPS)
     {
+        PlayerPrefs.SetInt("RACES_COMPLETE", (PlayerPrefs.GetInt("RACES_COMPLETE")+1));
         Array.Reverse(BarArray);
         PPS = IncPPS;
         int j = 0;

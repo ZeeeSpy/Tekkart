@@ -8,8 +8,9 @@ public class CreateProfileScript : MonoBehaviour
 
     //Keys
     private const string playernamekey = "PLAYER_NAME";
-    private const string playerscore = "PLAYER_POINTS";
     private const string mastervolume = "MASTER_VOLUME";
+    private const string playerpoints = "PLAYER_POINTS";
+    private const string racescomplete = "RACES_COMPLETE";
     public InputField nameinput;
     public GameObject ProceedObject;
     public Text ProceedTextBox;
@@ -22,17 +23,29 @@ public class CreateProfileScript : MonoBehaviour
         //Volume Set Up
         PlayerPrefs.SetFloat(mastervolume, 0.5f);
 
+        //Player Stats
+        PlayerPrefs.SetInt("PLAYER_POINTS", 0);
+        PlayerPrefs.SetInt(racescomplete, 0);
+        
+
+
         //Time Trial Set Up
         //Set up loop with arrays instead?
 
         //Chaolan Manor
-        PlayerPrefs.SetFloat("CMS", 1000.00f);
+        PlayerPrefs.SetFloat("CMS", 600.00f);
+        PlayerPrefs.SetFloat("CMP", 600.00f);
         //Infinite Azure
-        PlayerPrefs.SetFloat("IAS", 1000.00f);
+        PlayerPrefs.SetFloat("IAS", 600.00f);
+        PlayerPrefs.SetFloat("IAP", 600.00f);
         //Mt Mishima
-        PlayerPrefs.SetFloat("MMS", 1000.00f);
+        PlayerPrefs.SetFloat("MMS", 600.00f);
+        PlayerPrefs.SetFloat("MMP", 600.00f);
         //Wolves Den
-        PlayerPrefs.SetFloat("WDS", 1000.00f);
+        PlayerPrefs.SetFloat("WDS", 600.00f);
+        PlayerPrefs.SetFloat("WDP", 600.00f);
+
+
     }
 
     public void AreYouSure()
@@ -55,7 +68,6 @@ public class CreateProfileScript : MonoBehaviour
         //Favorite Character
         //Time Trial Records
         //Etc etc
-        PlayerPrefs.SetInt(playerscore, 1000);
         PlayerPrefs.SetString(playernamekey, nameinput.text);
         todisable.SetActive(false);
         toenable.SetActive(true);

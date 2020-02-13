@@ -95,6 +95,7 @@ public class PlayerPointScript : MonoBehaviour
 
     public string GetTrackAndPos(int numb)
     {
+        PlayerPrefs.SetInt("PLAYER_POINTS", (PlayerPrefs.GetInt("PLAYER_POINTS") + Scores[RacePositionArray[numb]]));
         return (StageNameArray[numb] + ":" +RacePositionArray[numb].ToString());
     }
 

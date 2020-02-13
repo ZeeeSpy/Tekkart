@@ -17,6 +17,7 @@ public class TimeTrialResults : MonoBehaviour
 
     public void SetResults(decimal[] LapTimesArr, string StageName, decimal trtt)
     {
+        PlayerPrefs.SetInt("RACES_COMPLETE", (PlayerPrefs.GetInt("RACES_COMPLETE") + 1));
         //PB calculations
         float totaltime = PlayerPrefs.GetFloat(StageName + "P");
         int minutes = 0;
