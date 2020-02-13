@@ -10,7 +10,6 @@ public class ProfileMenuScript : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log(PlayerPrefs.GetInt("PLAYER_POINTS"));
         string toshow = "";
         toshow = toshow + "Races Played: "+ PlayerPrefs.GetInt("RACES_COMPLETE") +"\n";
         toshow = toshow + "Total Points: " + PlayerPrefs.GetInt("PLAYER_POINTS") + "\n";
