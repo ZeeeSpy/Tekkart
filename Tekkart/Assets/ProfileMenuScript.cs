@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ProfileMenuScript : MonoBehaviour
 {
@@ -33,5 +34,11 @@ public class ProfileMenuScript : MonoBehaviour
         decimal seconds = (decimal)trtt - (minutes * 60);
         string toret = minutes + ":" + seconds;
         return toret;
+    }
+
+    public void ClearDate()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

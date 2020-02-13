@@ -51,7 +51,7 @@ public class CreateProfileScript : MonoBehaviour
     public void AreYouSure()
     {
         ProceedObject.SetActive(true);
-        ProceedTextBox.text = "Proceed with the name "+ nameinput.text + "? \n(This name can be changed later)";
+        ProceedTextBox.text = "Proceed with the name "+ nameinput.text + "? \n(This name cannot be changed later)";
     }
 
 
