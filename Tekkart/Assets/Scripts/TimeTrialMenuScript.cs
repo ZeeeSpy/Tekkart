@@ -5,13 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TimeTrialMenuScript : MonoBehaviour
 {
-    public void ChaolanManor()
+    public void LoadScene(string LevelName)
     {
-        GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen("ChaolanManorTT");
-    }
-
-    public void InfiniteAzure()
-    {
-        GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen("InfiniteAzureTT");
+        GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreenScript>().ShowLoadingScreen(LevelName);
     }
 }

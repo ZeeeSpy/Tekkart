@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Time Trials/Rose Cup/WolvesDenTT.unity
     guid: a96725b917d20a94c95239dc360e72de
+  - enabled: 1
+    path: Assets/Scenes/Time Trials/Rose Cup/MtMishimaTT.unity
+    guid: 929332095471adf4b90b707fef57dbad
   m_configObjects: {}
