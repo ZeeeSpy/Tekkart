@@ -17,6 +17,7 @@ TagManager:
   - PRP
   - KartMasterList
   - PRPTT
+  - CurrentItemText
   layers:
   - Default
   - TransparentFX

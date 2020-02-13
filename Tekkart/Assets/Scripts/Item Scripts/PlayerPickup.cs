@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPickup : MonoBehaviour, Pickupable
 {
@@ -11,6 +12,7 @@ public class PlayerPickup : MonoBehaviour, Pickupable
     private ItemParent ItemList;
     public GameObject Normal;
     public Transform Sphere;
+    private Text ItemUI;
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class PlayerPickup : MonoBehaviour, Pickupable
         try
         {
             ItemList = GameObject.FindGameObjectWithTag("ItemParent").GetComponent<ItemParent>();
+            ItemUI = GameObject.FindGameObjectWithTag("CurrentItemText").GetComponent<Text>();
         } catch
         {
             //In time trial
@@ -32,23 +35,9 @@ public class PlayerPickup : MonoBehaviour, Pickupable
             int numb = Random.Range(0, 3);
             
             Debug.Log("Got: " + ItemArray[numb]);
-            //TODO update ui 
-            /*
-            switch (numb)
-            {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-            }
-            */
+            ItemUI.text = ItemArray[numb];
             ItemNumb = numb;
             HasPickUp = true;
-
-            //Debug :)
-            //ItemNumb = 3;
         }
     }
 
@@ -57,6 +46,7 @@ public class PlayerPickup : MonoBehaviour, Pickupable
         if (Input.GetButtonDown("UseItem") && HasPickUp)
         { 
             Debug.Log("Item used");
+            ItemUI.text = "";
             HasPickUp = false;
             switch (ItemNumb)
             {
